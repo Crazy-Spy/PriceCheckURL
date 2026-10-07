@@ -1,0 +1,8 @@
+======================================================
+  PriceCheckURL - Servidor Web & API Local            
+======================================================
+ Servidor rodando em: http://localhost:8080/
+ Arquivo de configuracao: E:\_Git\PriceCheckURL\config.json
+ Pressione Ctrl+C nesta janela para encerrar.
+======================================================
+

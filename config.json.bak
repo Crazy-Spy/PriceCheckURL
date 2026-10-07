@@ -1,0 +1,204 @@
+{
+  "settings": {
+    "currency": "BRL",
+    "timeoutSeconds": 25,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  },
+  "containers": [
+    {
+      "id": "ryzen-7-5800x3d",
+      "name": "AMD Ryzen 7 5800X3D",
+      "category": "Processador",
+      "icon": "cpu",
+      "targetPrice": 2050,
+      "items": [
+        {
+          "id": "terabyte-5800x3d-standard",
+          "name": "Ryzen 7 5800X3D (Padrão)",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/20792/processador-amd-ryzen-7-5800x3d-34ghz-45ghz-turbo-8-cores-16-threads-am4-sem-cooler-sem-video",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "terabyte-5800x3d-anniversary",
+          "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/42633/processador-amd-ryzen-7-5800x3d-anniversary-edition-34ghz-45ghz-turbo-8-cores-16-threads-am4-sem-cooler-sem-video",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-5800x3d-1053828",
+          "name": "Ryzen 7 5800X3D (POF 1053828)",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/1053828/processador-amd-ryzen-7-5800x3d-3-4ghz-8-core-cache-100mb-am4-100-100000651pof",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-5800x3d-anniversary",
+          "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/1053076/processador-amd-ryzen-7-5800x3d-3-4ghz-turbo-4-5ghz-96mb-cache-am4-100-100000651pof",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "pichau-5800x3d-pof",
+          "name": "Ryzen 7 5800X3D (POF)",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/processador-amd-ryzen-7-5800x3d-8-core-16-threads-3-4ghz-4-5ghz-turbo-cache-100mb-am4-100-100000651pof",
+          "preferredMethod": "headless"
+        },
+        {
+          "id": "pichau-5800x3d-wof",
+          "name": "Ryzen 7 5800X3D (WOF)",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/processador-amd-ryzen-7-5800x3d-8-core-16-threads-3-4ghz-4-5ghz-turbo-cache-100mb-am4-100-100000651wof",
+          "preferredMethod": "headless"
+        }
+      ]
+    },
+    {
+      "id": "rtx-5070-ti-16gb",
+      "name": "RTX 5070 Ti 16Gb",
+      "category": "Placa de Vídeo",
+      "icon": "graphics-card",
+      "targetPrice": 7000,
+      "items": [
+        {
+          "id": "terabyte-rtx-5070-ti-frieren-edition-oc-6647",
+          "name": "RTX 5070 Ti Frieren Edition OC",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/34716/placa-de-video-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-16gb-gddr7-dlss-ray-tracing-g507t-16v3c",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "terabyte-rtx-5070-ti-ventus-3x-oc-3861",
+          "name": "RTX 5070 Ti Ventus 3X OC",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/34579/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "terabyte-rtx-5070-ti-oc-edition-9151",
+          "name": "RTX 5070 Ti OC Edition",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/34579/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-msi-rtx-5070-ti-gaming-trio-oc-7613",
+          "name": "MSI RTX 5070 Ti GAMING TRIO OC",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/1070648/placa-de-video-msi-rtx-5070-ti-gaming-trio-oc-nvidia-geforce-16gb-gddr7-g507t-16gtc",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-rog-strix-rtx-5070-ti-oc-16g-0271",
+          "name": "ROG STRIX RTX 5070 TI OC 16G",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/761536/placa-de-video-asus-rog-strix-rtx-5070-ti-oc-16g-gaming-nvidia-geforce-16gb-gddr7-256bits-triple-fan-dlss-4-90yv0m90-m0na00",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-palit-geforce-rtx-5070-ti-16gb-9351",
+          "name": "Palit GeForce RTX 5070 Ti 16GB",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/988703/placa-de-video-palit-geforce-rtx-5070-ti-16gb-gamingpro-s-gddr7-256bits-ne7507t019t2-gb2031u",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-rtx-5070-ti-16g-ventus-3x-oc-6813",
+          "name": "RTX 5070 TI 16G VENTUS 3X OC",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/714419/placa-de-video-msi-geforce-rtx-5070-ti-16g-ventus-3x-oc-nvidia-16gb-gddr7-ate-2497mhz-g507t-16v3c",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-asus-prime-rtx-5070-ti-o16g-6761",
+          "name": "ASUS PRIME RTX 5070 Ti O16G",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/706473/placa-de-video-asus-prime-rtx-5070-ti-o16g-nvidia-geforce-16gb-gddr7-ia-com-fp4-e-dlss4-edicao-oc-90yv0mf0-m0na00",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841",
+          "name": "Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/726011/placa-de-video-rtx-5070-ti-16gb-gddr7-256bits-ventus-3x-oc-msi-912-v531-092",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "kabum-msi-rtx5070ti-16gb-4669",
+          "name": "Msi RTX5070ti 16gb",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/857022/placa-de-video-nvidia-geforce-msi-rtx5070ti-16gb-gddr7-256its-shadow-3x-oc-912-v531-097",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916",
+          "name": "MSI GeForce RTX 5070 Ti Shadow 3X OC",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/placa-de-video-msi-geforce-rtx-5070-ti-shadow-3x-oc-16gb-gddr7-256-bit-g507t-16s3c-nac",
+          "preferredMethod": "headless"
+        },
+        {
+          "id": "pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476",
+          "name": "MSI GeForce RTX 5070 Ti Frieren Edition OC",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/placa-de-video-msi-geforce-rtx-5070-ti-frieren-edition-oc-16gb-gddr7-256-bit-g507t-16fec",
+          "preferredMethod": "headless"
+        },
+        {
+          "id": "pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308",
+          "name": "Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/placa-de-video-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-16gb-gddr7-256-bit-zt-b50710j3-10p-nac",
+          "preferredMethod": "headless"
+        },
+        {
+          "id": "pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498",
+          "name": "GeForce RTX 5070 Ti Ventus 3X OC",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/placa-de-video-msi-geforce-rtx-5070-ti-ventus-3x-oc-16gb-gddr7-256-bit-g507t-16v3c-nac",
+          "preferredMethod": "headless"
+        },
+        {
+          "id": "pichau-asus-geforce-rtx-5070-ti-16gb-1271",
+          "name": "Asus GeForce RTX 5070 Ti 16GB",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/placa-de-video-asus-geforce-rtx-5070-ti-16gb-gddr7-256-bit-prime-rtx5070ti-16g",
+          "preferredMethod": "headless"
+        }
+      ]
+    },
+    {
+      "id": "RM850e",
+      "name": "Fonte CORSAIR RMe Series RM850e",
+      "category": "Fonte",
+      "icon": "package",
+      "targetPrice": 700,
+      "items": [
+        {
+          "id": "kabum-fonte-corsair-rme-series-rm850e-0816",
+          "name": "Fonte CORSAIR RMe Series RM850e",
+          "store": "Kabum",
+          "url": "https://www.kabum.com.br/produto/708318/fonte-corsair-rme-series-rm850e-2025-850w-full-modular-cybenetics-gold-atx-branco-cp-9020293-br",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "terabyte-fonte-corsair-rm850e-850w-4469",
+          "name": "Fonte corsair rm850e 850w",
+          "store": "Terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/37183/fonte-corsair-rm850e-850w-cybenetics-gold-pcie-51-full-modular-branco-cp-9020293-br",
+          "preferredMethod": "curl"
+        },
+        {
+          "id": "pichau-fonte-corsair-rm850e-850w-4601",
+          "name": "Fonte corsair rm850e 850w",
+          "store": "Pichau",
+          "url": "https://www.pichau.com.br/fonte-corsair-rm850e-850w-full-modular-atx-3-1-pcie-5-1-cybenetics-gold-branco-cp-9020293-br",
+          "preferredMethod": "headless"
+        }
+      ]
+    }
+  ]
+}

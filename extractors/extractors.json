@@ -1,0 +1,208 @@
+{
+  "version": "2.0.0",
+  "extractors": [
+    {
+      "id": "kabum_com_br",
+      "name": "Kabum",
+      "domains": [
+        "kabum.com.br"
+      ],
+      "driver": "http",
+      "rules": {
+        "title": {
+          "selector": "h1",
+          "fallback": "meta[property='og:title']"
+        },
+        "price": {
+          "selector": "span.text-xs",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "ESGOTADO",
+            "INDISPONÍVEL",
+            "OUT OF STOCK",
+            "AVISE-ME"
+          ]
+        },
+        "image": {
+          "selector": "meta[property='og:image']",
+          "attribute": "content"
+        }
+      }
+    },
+    {
+      "id": "terabyte",
+      "name": "Terabyte",
+      "domains": [
+        "terabyteshop.com.br"
+      ],
+      "driver": "http",
+      "specialHandler": "terabyte_datalayer",
+      "rules": {
+        "title": {
+          "selector": "h1.tit-prod, h1",
+          "fallback": "meta[property='og:title']"
+        },
+        "price": {
+          "selector": "#val-prod, .val-prod, [id*='val-prod']",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "originalPrice": {
+          "selector": ".val-semdesc, #val-semdesc",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "PRODUTO INDISPONIVEL",
+            "ESGOTADO",
+            "INDISPONÍVEL",
+            "Sem estoque"
+          ],
+          "outOfStockSelector": "#indisponivel, .indisponivel"
+        },
+        "image": {
+          "selector": "#img-produto, meta[property='og:image']",
+          "attribute": "src"
+        }
+      }
+    },
+    {
+      "id": "pichau",
+      "name": "Pichau",
+      "domains": [
+        "pichau.com.br"
+      ],
+      "driver": "browser",
+      "specialHandler": "pichau_meta",
+      "rules": {
+        "title": {
+          "selector": "h1",
+          "fallback": "meta[property='og:title']"
+        },
+        "price": {
+          "selector": "meta[name='product:price:amount'], meta[name='twitter:data1']",
+          "attribute": "content",
+          "fallback": "div:contains('à vista') span, div:contains('no PIX') span"
+        },
+        "originalPrice": {
+          "selector": "div:contains('de R$') span",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "INDISPONÍVEL",
+            "ESGOTADO",
+            "Produto Esgotado"
+          ]
+        },
+        "image": {
+          "selector": "meta[property='og:image']",
+          "attribute": "content"
+        }
+      }
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "domains": [
+        "amazon.com.br",
+        "amazon.com"
+      ],
+      "driver": "browser",
+      "rules": {
+        "title": {
+          "selector": "#productTitle, #title",
+          "fallback": "meta[name='title']"
+        },
+        "price": {
+          "selector": ".priceToPay span.a-price-whole, .a-price .a-offscreen, #priceblock_ourprice, #priceblock_dealprice",
+          "regex": "(?:R\\$\\s*)?([\\d\\.,]+)"
+        },
+        "originalPrice": {
+          "selector": ".basisPrice .a-offscreen, span.a-text-price span.a-offscreen",
+          "regex": "(?:R\\$\\s*)?([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "Não temos previsão de quando este produto estará novamente em estoque",
+            "Atualmente indisponível",
+            "Currently unavailable"
+          ],
+          "outOfStockSelector": "#outOfStock"
+        },
+        "image": {
+          "selector": "#landingImage, meta[property='og:image']",
+          "attribute": "src"
+        }
+      }
+    },
+    {
+      "id": "mercadolivre",
+      "name": "Mercado Livre",
+      "domains": [
+        "mercadolivre.com.br",
+        "mercadolivre.com"
+      ],
+      "driver": "http",
+      "rules": {
+        "title": {
+          "selector": "h1.ui-pdp-title, h1",
+          "fallback": "meta[property='og:title']"
+        },
+        "price": {
+          "selector": "meta[itemprop='price'], .ui-pdp-price__second-line .andes-money-amount__fraction",
+          "attribute": "content",
+          "regex": "([\\d\\.,]+)"
+        },
+        "originalPrice": {
+          "selector": ".ui-pdp-price__original-value .andes-money-amount__fraction",
+          "regex": "([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "Estoque esgotado",
+            "Pausado"
+          ]
+        },
+        "image": {
+          "selector": "meta[property='og:image']",
+          "attribute": "content"
+        }
+      }
+    },
+    {
+      "id": "magazineluiza",
+      "name": "Magazine Luiza",
+      "domains": [
+        "magazineluiza.com.br"
+      ],
+      "driver": "http",
+      "rules": {
+        "title": {
+          "selector": "h1[data-testid='heading-product-title'], h1",
+          "fallback": "meta[property='og:title']"
+        },
+        "price": {
+          "selector": "[data-testid='price-value']",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "originalPrice": {
+          "selector": "[data-testid='price-original']",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
+        "inStock": {
+          "outOfStockKeywords": [
+            "Produto indisponível",
+            "Produto esgotado",
+            "Avise-me"
+          ]
+        },
+        "image": {
+          "selector": "meta[property='og:image']",
+          "attribute": "content"
+        }
+      }
+    }
+  ]
+}

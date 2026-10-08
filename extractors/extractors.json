@@ -37,7 +37,7 @@
       "domains": [
         "terabyteshop.com.br"
       ],
-      "driver": "http",
+      "driver": "browser",
       "specialHandler": "terabyte_datalayer",
       "rules": {
         "title": {
@@ -45,7 +45,7 @@
           "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": "#val-prod, .val-prod, [id*='val-prod']",
+          "selector": "#val-prod, .val-prod, .valVista, [id*='val-prod']",
           "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "originalPrice": {

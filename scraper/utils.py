@@ -123,3 +123,4 @@ def calculate_alert_tier(price: Optional[float], target_price: Optional[float]) 
             "category": "MUITO ALTO",
             "theme": "muito_alto"
         }
+

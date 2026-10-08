@@ -1,8 +1,10 @@
+import os
 import sys
 import re
 import json
+import time
 import argparse
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from bs4 import BeautifulSoup
 
 # Ensure utf-8 output on Windows consoles
@@ -16,302 +18,466 @@ if sys.platform == "win32":
 from .engine import ScraperEngine
 from .utils import get_domain, parse_price
 
-def clean_css_selector(tag_name: str, el) -> str:
-    if not el:
-        return tag_name
-    if el.get("id"):
-        safe_id = re.sub(r"[^\w-]", "", el["id"])
-        if safe_id:
-            return f"#{safe_id}"
-    if tag_name.lower() in ["h1", "h2"]:
-        return tag_name
-    classes = el.get("class", [])
-    safe_classes = [c for c in classes if re.match(r"^[a-zA-Z][a-zA-Z0-9_-]*$", c)]
-    if safe_classes:
-        good = [c for c in safe_classes if any(k in c.lower() for k in ["price", "preco", "val", "tit", "prod", "amount", "final", "total"])]
-        chosen = good[0] if good else safe_classes[0]
-        return f"{tag_name}.{chosen}"
-    return tag_name
+INJECTED_OVERLAY_SCRIPT = """
+(() => {
+    if (window.__PRICECHECK_WIZARD_ACTIVE__) return;
+    window.__PRICECHECK_WIZARD_ACTIVE__ = true;
 
-def discover_candidates(html: str) -> Dict[str, List[Dict[str, Any]]]:
-    soup = BeautifulSoup(html, "html.parser")
-    candidates = {
-        "titles": [],
-        "prices": [],
-        "images": [],
-        "stock": []
+    // State
+    const state = {
+        step: 1, // 1: title, 2: price, 3: originalPrice, 4: stock, 5: image, 6: done
+        title: { selector: '', text: '' },
+        price: { selector: '', text: '', numeric: null },
+        originalPrice: { selector: '', text: '' },
+        stock: { type: 'keywords', selector: '', label: 'Palavras-Chave Universais' },
+        image: { selector: '', src: '' }
+    };
+
+    // Helper: compute clean CSS selector
+    function computeSelector(el) {
+        if (!el || el === document.body || el === document.documentElement) return '';
+        if (el.id && !el.id.match(/\\d{5,}/) && !el.id.match(/[\\:\\[\\]\\/]/)) {
+            return '#' + CSS.escape(el.id);
+        }
+        const tag = el.tagName.toLowerCase();
+        if (tag === 'h1') return 'h1';
+
+        // Check clean classes
+        if (el.classList && el.classList.length > 0) {
+            const cleanClasses = Array.from(el.classList).filter(c => 
+                !c.includes(':') && !c.includes('[') && !c.includes(']') && !c.includes('/') &&
+                !c.match(/^css-/) && !c.match(/^[a-z0-9]{10,}$/i)
+            );
+            // Look for meaningful class names
+            const good = cleanClasses.filter(c => 
+                /(price|preco|val|tit|prod|amount|final|total|buy|comprar|indisponivel|esgotado)/i.test(c)
+            );
+            const chosen = good[0] || cleanClasses[0];
+            if (chosen) {
+                const sel = tag + '.' + CSS.escape(chosen);
+                if (document.querySelectorAll(sel).length <= 3) return sel;
+            }
+        }
+
+        // Parent context
+        if (el.parentElement && el.parentElement !== document.body) {
+            const parentSel = computeSelector(el.parentElement);
+            if (parentSel && !parentSel.includes('>')) {
+                return parentSel + ' ' + tag;
+            }
+        }
+        return tag;
     }
 
-    # 1. Title candidates
-    seen_titles = set()
-    h1 = soup.find("h1")
-    if h1 and h1.get_text(strip=True):
-        t = h1.get_text(strip=True)
-        candidates["titles"].append({
-            "selector": "h1",
-            "value": t,
-            "type": "css"
-        })
-        seen_titles.add(t)
+    // Create floating UI
+    const container = document.createElement('div');
+    container.id = '__pc_wizard_container';
+    container.innerHTML = `
+        <div style="
+            position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+            z-index: 2147483647; width: 92%; max-width: 680px;
+            background: rgba(11, 15, 25, 0.94); backdrop-filter: blur(12px);
+            border: 1px solid rgba(99, 102, 241, 0.4); border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); color: #f3f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 14px 18px; user-select: none; transition: all 0.2s ease;
+        ">
+            <!-- Header -->
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 26px; height: 26px; border-radius: 8px; background: #4f46e5; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">🎯</div>
+                    <div>
+                        <div style="font-size: 13px; font-weight: 700; color: #fff;">PriceCheckURL &bull; Criador Visual de Extrator</div>
+                        <div style="font-size: 11px; color: #9ca3af;" id="__pc_domain_label">Identificando loja...</div>
+                    </div>
+                </div>
+                <div id="__pc_step_badge" style="font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; background: rgba(99,102,241,0.2); color: #818cf8; border: 1px solid rgba(99,102,241,0.3);">
+                    Passo 1 de 5
+                </div>
+            </div>
 
-    og_title = soup.find("meta", property="og:title")
-    if og_title and og_title.get("content") and og_title["content"] not in seen_titles:
-        candidates["titles"].append({
-            "selector": "meta[property='og:title']",
-            "value": og_title["content"],
-            "type": "meta",
-            "attribute": "content"
-        })
-        seen_titles.add(og_title["content"])
+            <!-- Instruction Box -->
+            <div id="__pc_prompt" style="font-size: 13px; font-weight: 600; color: #38bdf8; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                👉 Passe o mouse e CLIQUE no TÍTULO do produto na página.
+            </div>
+            <div id="__pc_subprompt" style="font-size: 11px; color: #9ca3af; margin-bottom: 10px;">
+                O elemento selecionado receberá uma borda verde ao clicar.
+            </div>
 
-    # 2. Price candidates
-    seen_prices = set()
-    # Meta tag price
-    meta_p = soup.find("meta", property="product:price:amount") or soup.find("meta", attrs={"name": "product:price:amount"})
-    if meta_p and meta_p.get("content"):
-        val = parse_price(meta_p["content"])
-        if val:
-            candidates["prices"].append({
-                "selector": "meta[property='product:price:amount']",
-                "attribute": "content",
-                "value": f"R$ {val:.2f}",
-                "numeric": val,
-                "label": "Meta Tag Preço Oficial"
-            })
-            seen_prices.add(val)
+            <!-- Stock Options Box (Step 4 only) -->
+            <div id="__pc_stock_options" style="display: none; margin-bottom: 12px; gap: 6px; flex-direction: column;">
+                <div style="font-size: 11px; color: #cbd5e1; font-weight: 600; margin-bottom: 4px;">Escolha como essa loja indica estoque:</div>
+                <button type="button" id="__pc_stock_btn_buy" style="background: #1e293b; border: 1px solid #334155; color: #f1f5f9; padding: 7px 10px; border-radius: 8px; font-size: 11px; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    🛒 <strong>Opção 1:</strong> Clique no botão COMPRAR (Se sumir na página = Esgotado)
+                </button>
+                <button type="button" id="__pc_stock_btn_out" style="background: #1e293b; border: 1px solid #334155; color: #f1f5f9; padding: 7px 10px; border-radius: 8px; font-size: 11px; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    🚫 <strong>Opção 2:</strong> Clique no aviso de ESGOTADO (se o produto atual estiver esgotado)
+                </button>
+                <button type="button" id="__pc_stock_btn_keywords" style="background: #1e293b; border: 1px solid #334155; color: #f1f5f9; padding: 7px 10px; border-radius: 8px; font-size: 11px; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    ✨ <strong>Opção 3 (Padrão):</strong> Detecção Automática por Palavras ('Esgotado', 'Indisponível', etc.)
+                </button>
+            </div>
 
-    # Elements with class containing price/preco/val
-    for el in soup.find_all(True, class_=re.compile(r"(price|preco|valor|val-prod)", re.I)):
-        text = el.get_text(strip=True)
-        if "R$" in text or re.search(r"\d+[\.,]\d{2}", text):
-            m = re.search(r"R\$[\s\xa0]*([\d\.,]+)", text)
-            p_val = parse_price(m.group(1)) if m else parse_price(text)
-            if p_val and p_val not in seen_prices:
-                sel = clean_css_selector(el.name, el)
-                candidates["prices"].append({
-                    "selector": sel,
-                    "value": f"R$ {p_val:.2f}",
-                    "numeric": p_val,
-                    "raw": text[:60],
-                    "label": "Elemento DOM com classe de preço"
-                })
-                seen_prices.add(p_val)
+            <!-- Summary Table of Captured Values -->
+            <div id="__pc_summary" style="background: rgba(0,0,0,0.3); border-radius: 10px; padding: 8px 12px; font-size: 11px; margin-bottom: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                <div><span style="color: #64748b;">Título:</span> <strong id="__pc_val_title" style="color: #e2e8f0;">--</strong></div>
+                <div><span style="color: #64748b;">Preço:</span> <strong id="__pc_val_price" style="color: #34d399;">--</strong></div>
+                <div><span style="color: #64748b;">Preço Original:</span> <strong id="__pc_val_oldprice" style="color: #94a3b8;">--</strong></div>
+                <div><span style="color: #64748b;">Estoque:</span> <strong id="__pc_val_stock" style="color: #60a5fa;">Palavras-Chave</strong></div>
+            </div>
 
-    # Fallback any element with R$
-    if len(candidates["prices"]) < 2:
-        for el in soup.find_all(string=re.compile(r"R\$[\s\xa0]*[\d\.,]+")):
-            p_val = parse_price(el)
-            if p_val and p_val not in seen_prices:
-                parent = el.parent
-                if parent:
-                    sel = clean_css_selector(parent.name, parent)
-                    candidates["prices"].append({
-                        "selector": sel,
-                        "value": f"R$ {p_val:.2f}",
-                        "numeric": p_val,
-                        "raw": str(el).strip()[:50],
-                        "label": "Texto R$ encontrado"
-                    })
-                    seen_prices.add(p_val)
+            <!-- Action Buttons -->
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                <button type="button" id="__pc_btn_skip" style="background: #1e293b; hover: background: #334155; color: #94a3b8; border: 1px solid #334155; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer;">
+                    Pular este passo
+                </button>
+                <button type="button" id="__pc_btn_finish" style="background: #10b981; color: #fff; border: none; padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; display: none;">
+                    ✅ Concluir e Salvar Extrator
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(container);
 
-    # 3. Image candidates
-    og_img = soup.find("meta", property="og:image")
-    if og_img and og_img.get("content"):
-        candidates["images"].append({
-            "selector": "meta[property='og:image']",
-            "attribute": "content",
-            "value": og_img["content"]
-        })
+    // Hover Highlight Overlay Box
+    const hoverBox = document.createElement('div');
+    hoverBox.id = '__pc_hover_box';
+    hoverBox.style.cssText = 'position: absolute; pointer-events: none; border: 2px dashed #38bdf8; background: rgba(56, 189, 248, 0.12); z-index: 2147483646; display: none; transition: all 0.05s ease; border-radius: 4px;';
+    document.body.appendChild(hoverBox);
 
-    for img in soup.find_all("img"):
-        src = img.get("src")
-        if src and any(k in (img.get("id", "") + " ".join(img.get("class", [])) + src).lower() for k in ["prod", "main", "foto", "image"]):
-            candidates["images"].append({
-                "selector": f"img.{'.'.join(img['class'])}" if img.get("class") else "img",
-                "attribute": "src",
-                "value": src
-            })
-            break
-
-    # 4. Stock candidates
-    out_of_stock_found = []
-    for kw in ["ESGOTADO", "INDISPONÍVEL", "PRODUTO INDISPONÍVEL", "OUT OF STOCK", "AVISE-ME"]:
-        if kw in html.upper():
-            out_of_stock_found.append(kw)
-
-    candidates["stock"] = {
-        "outOfStockKeywordsDetected": out_of_stock_found,
-        "likelyInStock": len(out_of_stock_found) == 0
+    // Selected Elements Highlights
+    const selectedHighlights = [];
+    function addSelectedHighlight(el, color = '#10b981') {
+        const rect = el.getBoundingClientRect();
+        const box = document.createElement('div');
+        box.style.cssText = `position: absolute; pointer-events: none; border: 3px solid ${color}; background: rgba(16, 185, 129, 0.1); z-index: 2147483645; border-radius: 4px; top: ${rect.top + window.scrollY}px; left: ${rect.left + window.scrollX}px; width: ${rect.width}px; height: ${rect.height}px;`;
+        document.body.appendChild(box);
+        selectedHighlights.push(box);
     }
 
-    return candidates
+    let isSelectingStockButton = false;
+    let isSelectingStockOut = false;
 
-def interactive_wizard(url: str, auto_mode: bool = False) -> None:
-    print("\n" + "=" * 60)
-    print("   PRICECHECKURL - ASSISTENTE INTELIGENTE DE EXTRATORES")
-    print("=" * 60)
-    print(f"[*] Analisando URL: {url}")
+    // Hover Event
+    document.addEventListener('mouseover', (e) => {
+        if (container.contains(e.target) || e.target === hoverBox) return;
+        const rect = e.target.getBoundingClientRect();
+        hoverBox.style.display = 'block';
+        hoverBox.style.top = (rect.top + window.scrollY) + 'px';
+        hoverBox.style.left = (rect.left + window.scrollX) + 'px';
+        hoverBox.style.width = rect.width + 'px';
+        hoverBox.style.height = rect.height + 'px';
+    }, true);
+
+    // Click Event (Intercept all clicks on page elements)
+    document.addEventListener('click', (e) => {
+        if (container.contains(e.target)) return;
+        e.preventDefault();
+        e.stopPropagation();
+
+        const el = e.target;
+        const sel = computeSelector(el);
+        const text = el.innerText ? el.innerText.trim() : '';
+
+        if (state.step === 1) {
+            // STEP 1: TITLE
+            state.title = { selector: sel, text: text.substring(0, 80) };
+            document.getElementById('__pc_val_title').innerText = state.title.text;
+            addSelectedHighlight(el);
+            goToStep(2);
+        } else if (state.step === 2) {
+            // STEP 2: PRICE
+            state.price = { selector: sel, text: text.substring(0, 30) };
+            document.getElementById('__pc_val_price').innerText = state.price.text;
+            addSelectedHighlight(el);
+            goToStep(3);
+        } else if (state.step === 3) {
+            // STEP 3: ORIGINAL PRICE
+            state.originalPrice = { selector: sel, text: text.substring(0, 30) };
+            document.getElementById('__pc_val_oldprice').innerText = state.originalPrice.text;
+            addSelectedHighlight(el, '#94a3b8');
+            goToStep(4);
+        } else if (state.step === 4) {
+            // STEP 4: STOCK SELECTION
+            if (isSelectingStockButton) {
+                state.stock = { type: 'inStockSelector', selector: sel, label: 'Botão Comprar (' + sel + ')' };
+                document.getElementById('__pc_val_stock').innerText = 'Botão Comprar';
+                addSelectedHighlight(el, '#60a5fa');
+                isSelectingStockButton = false;
+                goToStep(5);
+            } else if (isSelectingStockOut) {
+                state.stock = { type: 'outOfStockSelector', selector: sel, label: 'Selo Esgotado (' + sel + ')' };
+                document.getElementById('__pc_val_stock').innerText = 'Selo Esgotado';
+                addSelectedHighlight(el, '#ef4444');
+                isSelectingStockOut = false;
+                goToStep(5);
+            }
+        } else if (state.step === 5) {
+            // STEP 5: IMAGE
+            const src = el.tagName.toLowerCase() === 'img' ? el.src : (el.querySelector('img') ? el.querySelector('img').src : '');
+            state.image = { selector: sel, src: src };
+            addSelectedHighlight(el);
+            goToStep(6);
+        }
+    }, true);
+
+    function goToStep(s) {
+        state.step = s;
+        const prompt = document.getElementById('__pc_prompt');
+        const subprompt = document.getElementById('__pc_subprompt');
+        const badge = document.getElementById('__pc_step_badge');
+        const stockOpts = document.getElementById('__pc_stock_options');
+        const skipBtn = document.getElementById('__pc_btn_skip');
+        const finishBtn = document.getElementById('__pc_btn_finish');
+
+        badge.innerText = `Passo ${s} de 5`;
+        stockOpts.style.display = 'none';
+        isSelectingStockButton = false;
+        isSelectingStockOut = false;
+
+        if (s === 2) {
+            prompt.innerHTML = '💰 Clique no PREÇO À VISTA / PIX na tela.';
+            subprompt.innerText = 'Ex: R$ 2.229,99 (o sistema extrai o valor numérico automaticamente).';
+            skipBtn.style.display = 'none';
+        } else if (s === 3) {
+            prompt.innerHTML = '🏷️ Clique no PREÇO ORIGINAL/PARCELADO (ou pule este passo).';
+            subprompt.innerText = 'Ex: Preço de tabela ou parcelado no cartão.';
+            skipBtn.style.display = 'inline-block';
+        } else if (s === 4) {
+            prompt.innerHTML = '📦 Como essa loja indica DISPONIBILIDADE/ESTOQUE?';
+            subprompt.innerText = 'Escolha uma das opções abaixo para garantir que o sistema detecte quando esgotar.';
+            stockOpts.style.display = 'flex';
+            skipBtn.style.display = 'inline-block';
+            skipBtn.innerText = 'Usar Palavras-chave Universais (Padrão)';
+        } else if (s === 5) {
+            prompt.innerHTML = '🖼️ Clique na IMAGEM principal do produto (ou pule este passo).';
+            subprompt.innerText = 'Usado para exibir foto miniatura do produto nos cards.';
+            skipBtn.style.display = 'inline-block';
+            skipBtn.innerText = 'Pular este passo';
+        } else if (s >= 6) {
+            prompt.innerHTML = '🎉 Extrator Pronto! Tudo capturado com sucesso.';
+            subprompt.innerText = 'Clique no botão verde abaixo para gravar a regra da loja.';
+            skipBtn.style.display = 'none';
+            finishBtn.style.display = 'inline-block';
+            hoverBox.style.display = 'none';
+        }
+    }
+
+    // Step 4 buttons handlers
+    document.getElementById('__pc_stock_btn_buy').onclick = (e) => {
+        e.stopPropagation();
+        isSelectingStockButton = true;
+        document.getElementById('__pc_prompt').innerHTML = '🛒 Agora clique no BOTÃO COMPRAR na página.';
+        document.getElementById('__pc_subprompt').innerText = 'Quando este botão sumir em checagens futuras, o produto será marcado como Esgotado.';
+        document.getElementById('__pc_stock_options').style.display = 'none';
+    };
+
+    document.getElementById('__pc_stock_btn_out').onclick = (e) => {
+        e.stopPropagation();
+        isSelectingStockOut = true;
+        document.getElementById('__pc_prompt').innerHTML = '🚫 Clique no elemento de ESGOTADO / INDISPONÍVEL.';
+        document.getElementById('__pc_subprompt').innerText = 'Sempre que este elemento aparecer, o produto será marcado como Esgotado.';
+        document.getElementById('__pc_stock_options').style.display = 'none';
+    };
+
+    document.getElementById('__pc_stock_btn_keywords').onclick = (e) => {
+        e.stopPropagation();
+        state.stock = { type: 'keywords', label: 'Palavras-Chave Universais' };
+        document.getElementById('__pc_val_stock').innerText = 'Palavras-Chave';
+        goToStep(5);
+    };
+
+    document.getElementById('__pc_btn_skip').onclick = (e) => {
+        e.stopPropagation();
+        if (state.step === 3) goToStep(4);
+        else if (state.step === 4) {
+            state.stock = { type: 'keywords', label: 'Palavras-Chave Universais' };
+            goToStep(5);
+        } else if (state.step === 5) goToStep(6);
+    };
+
+    document.getElementById('__pc_btn_finish').onclick = (e) => {
+        e.stopPropagation();
+        if (window.__onVisualExtractorFinished) {
+            window.__onVisualExtractorFinished(JSON.stringify(state));
+        }
+    };
+})();
+"""
+
+def launch_visual_wizard(url: str) -> None:
+    print("\n" + "=" * 65)
+    print("   PRICECHECKURL - CRIADOR VISUAL DE EXTRATORES (POINT-AND-CLICK)")
+    print("=" * 65)
+    print(f"[*] Abrindo navegador para: {url}")
+    print("[*] Aguarde o carregamento da página...")
 
     domain = get_domain(url)
-    print(f"[OK] Domínio extraído: {domain}")
-
     engine = ScraperEngine()
-    existing = engine.find_extractor_for_url(url)
-    if existing:
-        print(f"[!] Já existe um extrator para este domínio ({existing.get('name')}). Ele será atualizado se você prosseguir.")
+    store_name = domain.split(".")[0].capitalize()
 
-    print("\n[*] Baixando página para inspeção visual do DOM...")
-    html = engine.fetch_html(url, driver="http")
-    driver_choice = "http"
+    from playwright.sync_api import sync_playwright
 
-    if not html or len(html) < 2000 or "Just a moment..." in html:
-        print("[!] Requisição HTTP direta bloqueada ou incompleta. Tentando navegador headless...")
-        html = engine.fetch_html(url, driver="browser")
-        driver_choice = "browser"
+    with sync_playwright() as p:
+        # Launch real Chrome browser with UI
+        browser = engine._get_playwright_browser(p, headless=False)
+        if not browser:
+            print("[X] Erro: Não foi possível abrir o navegador na máquina.")
+            return
 
-    if not html:
-        print("[X] Falha: Não foi possível obter o HTML da página. Verifique se o link está acessível.")
+        context = browser.new_context(
+            viewport={"width": 1366, "height": 850},
+            locale="pt-BR"
+        )
+        page = context.new_page()
+
+        captured_data = {}
+        finish_flag = {"done": False}
+
+        def on_finished(json_str: str):
+            nonlocal captured_data
+            try:
+                captured_data = json.loads(json_str)
+                finish_flag["done"] = True
+            except Exception as e:
+                print(f"[!] Erro ao decodificar dados: {e}")
+
+        page.expose_function("__onVisualExtractorFinished", on_finished)
+
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_timeout(3000)
+        except Exception as e:
+            print(f"[!] Aviso durante carregamento da página: {e}")
+
+        # Inject visual inspector overlay
+        page.evaluate(INJECTED_OVERLAY_SCRIPT)
+        # Update domain label
+        page.evaluate(f"() => {{ document.getElementById('__pc_domain_label').innerText = 'Loja: {store_name} ({domain})'; }}")
+
+        print("\n" + "-" * 60)
+        print(">> O NAVEGADOR ESTÁ ABERTO NA SUA TELA!")
+        print(">> Siga os passos na barra superior no topo da janela:")
+        print("   1. Clique no TÍTULO do produto")
+        print("   2. Clique no PREÇO À VISTA / PIX")
+        print("   3. Clique no PREÇO ANTIGO (ou Pular)")
+        print("   4. Escolha a REGRA DE ESTOQUE (Botão Comprar ou Palavras-chave)")
+        print("   5. Clique em CONCLUIR E SALVAR")
+        print("-" * 60 + "\n")
+
+        # Wait until user finishes interacting with the overlay
+        while not finish_flag["done"]:
+            page.wait_for_timeout(500)
+            if page.is_closed():
+                print("[!] Janela do navegador foi fechada pelo usuário.")
+                break
+
+        browser.close()
+
+    if not captured_data or not captured_data.get("price", {}).get("selector"):
+        print("[!] Nenhum extrator gravado ou processo cancelado.")
         return
 
-    print(f"[OK] Página carregada com sucesso ({len(html)} bytes).")
-    candidates = discover_candidates(html)
+    # Build new declarative extractor object
+    title_info = captured_data.get("title", {})
+    price_info = captured_data.get("price", {})
+    oldprice_info = captured_data.get("originalPrice", {})
+    stock_info = captured_data.get("stock", {})
+    img_info = captured_data.get("image", {})
 
-    # 1. Title selection
-    print("\n" + "-" * 50)
-    print("1. SELEÇÃO DO TÍTULO DO PRODUTO:")
-    title_options = candidates["titles"]
-    selected_title_sel = "h1"
-    selected_title_attr = None
-
-    if title_options:
-        for idx, opt in enumerate(title_options, 1):
-            print(f"  [{idx}] {opt['selector']} -> \"{opt['value'][:60]}\"")
-        if auto_mode:
-            chosen_t = 1
-        else:
-            ans = input(f"Escolha uma opção [1-{len(title_options)}] ou digite um seletor CSS [Enter para 1]: ").strip()
-            chosen_t = int(ans) if ans.isdigit() and 1 <= int(ans) <= len(title_options) else (1 if not ans else ans)
-
-        if isinstance(chosen_t, int):
-            selected_title_sel = title_options[chosen_t - 1]["selector"]
-            selected_title_attr = title_options[chosen_t - 1].get("attribute")
-        else:
-            selected_title_sel = chosen_t
-    else:
-        print("  [!] Nenhum título evidente encontrado.")
-        if not auto_mode:
-            selected_title_sel = input("Digite o seletor CSS para o título (ex: h1): ").strip() or "h1"
-
-    # 2. Price selection
-    print("\n" + "-" * 50)
-    print("2. SELEÇÃO DO PREÇO À VISTA / PRINCIPAL:")
-    price_options = candidates["prices"]
-    selected_price_sel = None
-    selected_price_attr = None
-
-    if price_options:
-        for idx, opt in enumerate(price_options, 1):
-            lbl = f" ({opt.get('raw', '')})" if opt.get('raw') else ""
-            print(f"  [{idx}] {opt['selector']} -> {opt['value']}{lbl}")
-        if auto_mode:
-            chosen_p = 1
-        else:
-            ans = input(f"Escolha a opção de preço [1-{len(price_options)}] ou digite seletor CSS [Enter para 1]: ").strip()
-            chosen_p = int(ans) if ans.isdigit() and 1 <= int(ans) <= len(price_options) else (1 if not ans else ans)
-
-        if isinstance(chosen_p, int):
-            selected_price_sel = price_options[chosen_p - 1]["selector"]
-            selected_price_attr = price_options[chosen_p - 1].get("attribute")
-        else:
-            selected_price_sel = chosen_p
-    else:
-        print("  [!] Nenhum valor com 'R$' detectado de imediato.")
-        if not auto_mode:
-            selected_price_sel = input("Digite o seletor CSS do preço (ex: .price): ").strip()
-
-    # 3. Stock verification
-    print("\n" + "-" * 50)
-    print("3. DISPONIBILIDADE E ESTOQUE:")
-    stock_info = candidates["stock"]
-    if stock_info["outOfStockKeywordsDetected"]:
-        print(f"  [!] Palavras de esgotado encontradas na página: {stock_info['outOfStockKeywordsDetected']}")
-    else:
-        print("  [OK] Produto aparenta estar em estoque (nenhum termo 'Esgotado' identificado).")
-
-    # 4. Image
-    img_sel = "meta[property='og:image']"
-    img_attr = "content"
-    if candidates["images"]:
-        img_sel = candidates["images"][0]["selector"]
-        img_attr = candidates["images"][0].get("attribute", "src")
-
-    # Build new extractor definition
-    store_name = domain.split(".")[0].capitalize()
     new_extractor = {
         "id": domain.replace(".", "_"),
         "name": store_name,
         "domains": [domain],
-        "driver": driver_choice,
+        "driver": "browser", # Use browser for guaranteed Cloudflare bypass
         "rules": {
             "title": {
-                "selector": selected_title_sel,
+                "selector": title_info.get("selector") or "h1",
                 "fallback": "meta[property='og:title']"
             },
             "price": {
-                "selector": selected_price_sel or "h1",
+                "selector": price_info.get("selector") or ".val-prod",
                 "regex": "R\\$\\s*([\\d\\.,]+)"
             },
             "inStock": {
-                "outOfStockKeywords": ["ESGOTADO", "INDISPONÍVEL", "OUT OF STOCK", "AVISE-ME"]
-            },
-            "image": {
-                "selector": img_sel,
-                "attribute": img_attr
+                "outOfStockKeywords": ["ESGOTADO", "INDISPONÍVEL", "OUT OF STOCK", "AVISE-ME", "SEM ESTOQUE"]
             }
         }
     }
-    if selected_price_attr:
-        new_extractor["rules"]["price"]["attribute"] = selected_price_attr
 
-    # Test extraction with the newly generated extractor!
-    print("\n" + "=" * 50)
-    print("TESTANDO EXTRATOR GERADO:")
-    parsed = engine.parse(html, url, extractor=new_extractor)
+    # Stock configuration
+    stock_type = stock_info.get("type")
+    if stock_type == "inStockSelector" and stock_info.get("selector"):
+        new_extractor["rules"]["inStock"]["inStockSelector"] = stock_info["selector"]
+    elif stock_type == "outOfStockSelector" and stock_info.get("selector"):
+        new_extractor["rules"]["inStock"]["outOfStockSelector"] = stock_info["selector"]
 
-    print(f"  Título extraído : {parsed.get('title')}")
-    print(f"  Preço extraído  : R$ {parsed.get('price')}")
-    print(f"  Estoque         : {parsed.get('availabilityText')} ({parsed.get('inStock')})")
-    print(f"  Imagem          : {parsed.get('imageUrl')}")
-    print(f"  Status          : {parsed.get('status').upper()}")
-    print("=" * 50)
+    if oldprice_info.get("selector"):
+        new_extractor["rules"]["originalPrice"] = {
+            "selector": oldprice_info["selector"],
+            "regex": "R\\$\\s*([\\d\\.,]+)"
+        }
 
-    if not auto_mode:
-        confirm = input(f"\nDeseja salvar este extrator para '{domain}' em extractors.json? [S/n]: ").strip().lower()
-        if confirm in ["", "s", "sim", "y", "yes"]:
-            engine.save_extractor(new_extractor)
-            print(f"[OK] Extrator para '{domain}' salvo com sucesso! Qualquer nova URL desta loja usará esta regra.")
+    if img_info.get("selector"):
+        new_extractor["rules"]["image"] = {
+            "selector": img_info["selector"],
+            "attribute": "src"
+        }
+
+    # Save to extractors.json
+    saved = engine.save_extractor(new_extractor)
+    if saved:
+        print("\n" + "=" * 60)
+        print(f"[OK] EXTRATOR VISUAL SALVO COM SUCESSO PARA A LOJA: {store_name} ({domain})!")
+        print(f"  - Seletor do Título: {new_extractor['rules']['title']['selector']}")
+        print(f"  - Seletor do Preço : {new_extractor['rules']['price']['selector']}")
+        if "inStockSelector" in new_extractor["rules"]["inStock"]:
+            print(f"  - Regra de Estoque : Presença do botão ({new_extractor['rules']['inStock']['inStockSelector']})")
         else:
-            print("[*] Operação cancelada pelo usuário.")
+            print("  - Regra de Estoque : Palavras-chave universais")
+        print("=" * 60)
+        print(f"\nAgora, qualquer link de {domain} no PriceCheckURL usará automaticamente essas regras!")
     else:
-        engine.save_extractor(new_extractor)
-        print(f"[OK] Extrator para '{domain}' salvo automaticamente em modo --auto.")
+        print("[X] Erro ao gravar extractors.json.")
 
 def main():
-    parser = argparse.ArgumentParser(description="Assistente para criação de extratores personalizados do PriceCheckURL.")
-    parser.add_argument("url", nargs="?", help="URL do produto para inspecionar e criar o extrator")
-    parser.add_argument("--auto", action="store_true", help="Gera e salva o extrator automaticamente usando as melhores heurísticas")
+    parser = argparse.ArgumentParser(description="Criador Visual Inteligente de Extratores (Point-and-Click).")
+    parser.add_argument("url", nargs="?", help="URL do produto na loja para inspecionar")
+    parser.add_argument("--auto", action="store_true", help="Gera extrator automaticamente em modo headless sem interface")
     args = parser.parse_args()
 
     url = args.url
     if not url:
-        print("Digite a URL do produto na nova loja:")
+        print("Informe a URL do produto que deseja mapear:")
         url = input("URL: ").strip()
 
     if not url:
-        print("URL não fornecida. Encerrando.")
+        print("URL vazia. Encerrando.")
         sys.exit(1)
 
-    interactive_wizard(url, auto_mode=args.auto)
+    if args.auto:
+        # Non-interactive mode
+        from .engine import ScraperEngine
+        engine = ScraperEngine()
+        domain = get_domain(url)
+        store_name = domain.split(".")[0].capitalize()
+        html = engine.fetch_html(url, driver="browser")
+        parsed = engine.parse(html, url)
+        new_extractor = {
+            "id": domain.replace(".", "_"),
+            "name": store_name,
+            "domains": [domain],
+            "driver": "browser",
+            "rules": {
+                "title": { "selector": "h1", "fallback": "meta[property='og:title']" },
+                "price": { "selector": "meta[property='product:price:amount'], .val-prod, .price", "regex": "R\\$\\s*([\\d\\.,]+)" },
+                "inStock": { "outOfStockKeywords": ["ESGOTADO", "INDISPONÍVEL", "AVISE-ME"] }
+            }
+        }
+        engine.save_extractor(new_extractor)
+        print(f"[OK] Extrator para '{domain}' salvo em modo --auto.")
+    else:
+        launch_visual_wizard(url)
 
 if __name__ == "__main__":
     main()

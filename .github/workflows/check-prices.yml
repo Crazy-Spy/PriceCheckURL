@@ -55,3 +55,4 @@ jobs:
             git commit -m "chore(prices): automated update [$(date -u +'%Y-%m-%d %H:%M UTC')]"
             git push
           fi
+

@@ -112,24 +112,36 @@ class ScraperEngine:
             logger.debug(f"Falha no fetch HTTP: {e}")
         return None
 
-    def _fetch_browser(self, url: str, timeout: int = 35) -> Optional[str]:
+    def _get_playwright_browser(self, p, headless: bool = True):
+        for ch in ["chrome", "msedge", None]:
+            try:
+                if ch:
+                    return p.chromium.launch(channel=ch, headless=headless, args=["--no-sandbox", "--disable-gpu"])
+                else:
+                    return p.chromium.launch(headless=headless, args=["--no-sandbox", "--disable-gpu"])
+            except Exception:
+                continue
+        return None
+
+    def _fetch_browser(self, url: str, timeout: int = 40) -> Optional[str]:
         try:
             from playwright.sync_api import sync_playwright
             with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-gpu"])
+                browser = self._get_playwright_browser(p, headless=True)
+                if not browser:
+                    logger.warning("Nenhum executável de navegador disponível para Playwright.")
+                    return None
                 context = browser.new_context(
                     user_agent=DEFAULT_USER_AGENT,
                     locale="pt-BR"
                 )
                 page = context.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
-                # Wait briefly for dynamic client-side hydration
-                page.wait_for_timeout(2000)
+                # Wait briefly for dynamic client-side hydration and anti-bot verification
+                page.wait_for_timeout(3000)
                 content = page.content()
                 browser.close()
                 return content
-        except ImportError:
-            logger.debug("Playwright não instalado no ambiente local. Usando fallback HTTP.")
         except Exception as e:
             logger.warning(f"Erro no Playwright browser: {e}")
         return None
@@ -254,23 +266,25 @@ class ScraperEngine:
         out_keywords = stock_rule.get("outOfStockKeywords", ["ESGOTADO", "INDISPONÍVEL", "OUT OF STOCK"])
         html_upper = html.upper()
 
-        if any(kw.upper() in html_upper for kw in out_keywords):
-            result["inStock"] = False
-            result["availabilityText"] = "Esgotado"
-        elif stock_rule.get("outOfStockSelector"):
-            try:
-                if soup.select_one(stock_rule["outOfStockSelector"]):
-                    result["inStock"] = False
-                    result["availabilityText"] = "Esgotado"
-            except Exception:
-                pass
-        elif stock_rule.get("inStockSelector"):
+        if stock_rule.get("inStockSelector"):
             try:
                 has_stock = bool(soup.select_one(stock_rule["inStockSelector"]))
                 result["inStock"] = has_stock
                 result["availabilityText"] = "Em Estoque" if has_stock else "Esgotado"
             except Exception:
-                pass
+                result["inStock"] = True
+                result["availabilityText"] = "Em Estoque"
+        elif stock_rule.get("outOfStockSelector"):
+            try:
+                is_out = bool(soup.select_one(stock_rule["outOfStockSelector"]))
+                result["inStock"] = not is_out
+                result["availabilityText"] = "Esgotado" if is_out else "Em Estoque"
+            except Exception:
+                result["inStock"] = True
+                result["availabilityText"] = "Em Estoque"
+        elif any(kw.upper() in html_upper for kw in out_keywords):
+            result["inStock"] = False
+            result["availabilityText"] = "Esgotado"
         else:
             result["inStock"] = True
             result["availabilityText"] = "Em Estoque"

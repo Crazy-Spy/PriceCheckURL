@@ -116,3 +116,4 @@ Caso queira rodar localmente na sua máquina:
    python -m http.server 8080
    ```
    Acesse: `http://localhost:8080`
+

@@ -865,6 +865,61 @@
 
         let activeChartStoreFilter = 'all';
 
+        function distanceToSegment(px, py, x1, y1, x2, y2) {
+            const dx = x2 - x1;
+            const dy = y2 - y1;
+            const l2 = dx * dx + dy * dy;
+            if (l2 === 0) return Math.hypot(px - x1, py - y1);
+            const t = Math.max(0, Math.min(1, ((px - x1) * dx + (py - y1) * dy) / l2));
+            const projX = x1 + t * dx;
+            const projY = y1 + t * dy;
+            return Math.hypot(px - projX, py - projY);
+        }
+
+        function findNearestDataset(chart, mouseX, mouseY, maxDistance = 32) {
+            if (!chart || !chart.data || !chart.data.datasets) return null;
+            let closestDatasetIndex = null;
+            let minDistance = Infinity;
+
+            chart.data.datasets.forEach((ds, dsIndex) => {
+                if (ds.isTargetLine || !chart.isDatasetVisible(dsIndex)) return;
+                const meta = chart.getDatasetMeta(dsIndex);
+                if (!meta || meta.hidden || !meta.data || meta.data.length === 0) return;
+
+                for (let i = 0; i < meta.data.length; i++) {
+                    const pt = meta.data[i];
+                    if (!pt || pt.skip || isNaN(pt.x) || isNaN(pt.y)) continue;
+
+                    // Distância euclidiana até o ponto
+                    const dPoint = Math.hypot(pt.x - mouseX, pt.y - mouseY);
+                    if (dPoint < minDistance) {
+                        minDistance = dPoint;
+                        closestDatasetIndex = dsIndex;
+                    }
+
+                    // Distância perpendicular até o segmento de linha
+                    if (i > 0) {
+                        const prev = meta.data[i - 1];
+                        if (prev && !prev.skip && !isNaN(prev.x) && !isNaN(prev.y)) {
+                            // Ignora segmentos puramente verticais (dx == 0) para não interceptar outras linhas
+                            if (Math.abs(prev.x - pt.x) > 0.5) {
+                                const dSegment = distanceToSegment(mouseX, mouseY, prev.x, prev.y, pt.x, pt.y);
+                                if (dSegment < minDistance) {
+                                    minDistance = dSegment;
+                                    closestDatasetIndex = dsIndex;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            if (minDistance <= maxDistance && closestDatasetIndex !== null) {
+                return { datasetIndex: closestDatasetIndex, distance: minDistance };
+            }
+            return null;
+        }
+
         function updateChartForContainer(containerId) {
             const container = (appConfig.containers || []).find(c => c.id === containerId);
             if (!container) return;
@@ -906,36 +961,59 @@
             if (!ctx) return;
             const cHistory = priceHistory.filter(h => h.containerId === containerId);
 
-            // Group by item name and record store
-            const itemMap = {};
-            const itemStoreMap = {};
+            // Agrupa por chave única do item (itemId ou loja+nome) para nunca fundir ofertas de lojas distintas
+            const itemDatasetsMap = {};
             cHistory.forEach(h => {
-                if (!itemMap[h.name]) {
-                    itemMap[h.name] = [];
-                    itemStoreMap[h.name] = h.store || 'Loja';
+                const key = h.itemId || (h.store ? `${h.store}_${h.name}` : h.name);
+                if (!itemDatasetsMap[key]) {
+                    const store = h.store || 'Loja';
+                    const hasStoreInName = (h.name || '').toLowerCase().includes(store.toLowerCase());
+                    const label = hasStoreInName ? h.name : `${h.name} (${store})`;
+                    itemDatasetsMap[key] = {
+                        key: key,
+                        name: h.name,
+                        store: store,
+                        label: label,
+                        data: []
+                    };
                 }
-                itemMap[h.name].push({ x: h.date || h.timestamp, y: h.price });
+                const ts = h.date || h.timestamp;
+                const arr = itemDatasetsMap[key].data;
+                const last = arr[arr.length - 1];
+                if (!last || last.x !== ts) {
+                    arr.push({ x: ts, y: h.price });
+                } else {
+                    last.y = h.price;
+                }
             });
 
-            // Also check latestPrices if an item has no historical points yet
+            // Adiciona itens que tenham preços recentes mas ainda não entraram no histórico agregado
             cItems.forEach(item => {
-                if (!itemMap[item.name] && item.price) {
-                    itemMap[item.name] = [{ x: item.lastUpdated || new Date().toISOString(), y: item.price }];
-                    itemStoreMap[item.name] = item.store || 'Loja';
+                const key = item.id || (item.store ? `${item.store}_${item.name}` : item.name);
+                if (!itemDatasetsMap[key] && item.price) {
+                    const store = item.store || 'Loja';
+                    const hasStoreInName = (item.name || '').toLowerCase().includes(store.toLowerCase());
+                    const label = hasStoreInName ? item.name : `${item.name} (${store})`;
+                    itemDatasetsMap[key] = {
+                        key: key,
+                        name: item.name,
+                        store: store,
+                        label: label,
+                        data: [{ x: item.lastUpdated || new Date().toISOString(), y: item.price }]
+                    };
                 }
             });
 
-            const uniqueStores = Array.from(new Set(Object.values(itemStoreMap).filter(Boolean)));
+            const uniqueStores = Array.from(new Set(Object.values(itemDatasetsMap).map(d => d.store).filter(Boolean)));
 
             const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6', '#14b8a6', '#f43f5e', '#a855f7', '#06b6d4'];
-            const datasets = Object.keys(itemMap).map((name, idx) => {
+            const datasets = Object.values(itemDatasetsMap).map((itemObj, idx) => {
                 const color = colors[idx % colors.length];
-                const store = itemStoreMap[name] || 'Loja';
                 return {
-                    label: name,
-                    store: store,
+                    label: itemObj.label,
+                    store: itemObj.store,
                     isTargetLine: false,
-                    data: itemMap[name],
+                    data: itemObj.data,
                     borderColor: color,
                     backgroundColor: color + '15',
                     tension: 0.25,
@@ -971,47 +1049,48 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    animation: false,
                     interaction: {
                         mode: 'index',
                         intersect: false,
                     },
                     onHover: (event, elements, chart) => {
-                        const canvas = event.native ? event.native.target : (event.target || document.getElementById('priceHistoryChart'));
-                        if (canvas) {
-                            let hasElement = elements && elements.length > 0;
-                            if (!hasElement) {
-                                const nearest = chart.getElementsAtEventForMode(event.native || event, 'nearest', { intersect: false }, false);
-                                hasElement = nearest && nearest.length > 0;
-                            }
-                            canvas.style.cursor = hasElement ? 'pointer' : 'default';
-                        }
+                        const canvas = chart.canvas;
+                        if (!canvas) return;
+                        const rect = canvas.getBoundingClientRect();
+                        const clientX = event.native ? event.native.clientX : (rect.left + (event.x || 0));
+                        const clientY = event.native ? event.native.clientY : (rect.top + (event.y || 0));
+                        const mouseX = clientX - rect.left;
+                        const mouseY = clientY - rect.top;
+
+                        const match = findNearestDataset(chart, mouseX, mouseY, 28);
+                        canvas.style.cursor = match ? 'pointer' : 'default';
                     },
                     onClick: (event, elements, chart) => {
-                        let targetDatasetIndex = null;
-                        
-                        if (elements && elements.length > 0) {
-                            targetDatasetIndex = elements[0].datasetIndex;
-                        } else {
-                            // Nearest element click fallback
-                            const nearest = chart.getElementsAtEventForMode(event.native || event, 'nearest', { intersect: false }, false);
-                            if (nearest && nearest.length > 0) {
-                                targetDatasetIndex = nearest[0].datasetIndex;
-                            }
-                        }
+                        const canvas = chart.canvas;
+                        if (!canvas) return;
+                        const rect = canvas.getBoundingClientRect();
+                        const clientX = event.native ? event.native.clientX : (rect.left + (event.x || 0));
+                        const clientY = event.native ? event.native.clientY : (rect.top + (event.y || 0));
+                        const mouseX = clientX - rect.left;
+                        const mouseY = clientY - rect.top;
 
-                        if (targetDatasetIndex !== null) {
-                            const ds = chart.data.datasets[targetDatasetIndex];
-                            if (ds && !ds.isTargetLine) {
-                                const visibleNonTarget = chart.data.datasets.filter((d, idx) => !d.isTargetLine && chart.isDatasetVisible(idx));
-                                if (visibleNonTarget.length === 1 && chart.isDatasetVisible(targetDatasetIndex)) {
-                                    // Clicking again on the currently isolated line restores all curves!
-                                    resetAllChartLines();
-                                    showToast('Todas as linhas restauradas!', 'info');
-                                } else {
-                                    // Isolate the clicked line!
-                                    isolateChartDataset(targetDatasetIndex);
-                                    showToast(`Linha isolada: ${ds.label}`, 'success');
-                                }
+                        // Localiza com precisão geométrica a linha mais próxima do clique em 2D (X e Y)
+                        const match = findNearestDataset(chart, mouseX, mouseY, 35);
+                        if (!match) return;
+
+                        const targetDatasetIndex = match.datasetIndex;
+                        const ds = chart.data.datasets[targetDatasetIndex];
+                        if (ds && !ds.isTargetLine) {
+                            const visibleNonTarget = chart.data.datasets.filter((d, idx) => !d.isTargetLine && chart.isDatasetVisible(idx));
+                            if (visibleNonTarget.length === 1 && chart.isDatasetVisible(targetDatasetIndex)) {
+                                // Clicar novamente na mesma linha isolada restaura todas as curvas!
+                                resetAllChartLines();
+                                showToast('Todas as linhas restauradas!', 'info');
+                            } else {
+                                // Isola a linha clicada com precisão absoluta!
+                                isolateChartDataset(targetDatasetIndex);
+                                showToast(`Linha isolada: ${ds.label}`, 'success');
                             }
                         }
                     },
@@ -1092,7 +1171,7 @@
                 }
             });
 
-            chartInstance.update();
+            chartInstance.update('none');
 
             const resetBtn = document.getElementById('btnResetChartLines');
             const focusInd = document.getElementById('chartFocusIndicator');
@@ -1136,7 +1215,7 @@
                 }
             });
 
-            chartInstance.update();
+            chartInstance.update('none');
 
             const resetBtn = document.getElementById('btnResetChartLines');
             const focusInd = document.getElementById('chartFocusIndicator');
@@ -1160,7 +1239,7 @@
             if (!chartInstance) return;
             const curVis = chartInstance.isDatasetVisible(targetIdx);
             chartInstance.setDatasetVisibility(targetIdx, !curVis);
-            chartInstance.update();
+            chartInstance.update('none');
 
             // Check how many non-target datasets are visible
             const visibleNonTarget = chartInstance.data.datasets.filter((ds, idx) => !ds.isTargetLine && chartInstance.isDatasetVisible(idx));
@@ -1195,7 +1274,7 @@
             chartInstance.data.datasets.forEach((ds, idx) => {
                 chartInstance.setDatasetVisibility(idx, true);
             });
-            chartInstance.update();
+            chartInstance.update('none');
 
             const resetBtn = document.getElementById('btnResetChartLines');
             const focusInd = document.getElementById('chartFocusIndicator');

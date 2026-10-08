@@ -15,8 +15,19 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-from .engine import ScraperEngine, DEFAULT_USER_AGENT
-from .utils import get_domain, parse_price
+# Ensure module directories in sys.path to support both direct script and module execution
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+_parent_dir = os.path.dirname(_current_dir)
+for _p in [_current_dir, _parent_dir]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from .engine import ScraperEngine, DEFAULT_USER_AGENT
+    from .utils import get_domain, parse_price
+except (ImportError, ValueError):
+    from engine import ScraperEngine, DEFAULT_USER_AGENT
+    from utils import get_domain, parse_price
 
 INJECTED_OVERLAY_SCRIPT = """
 (() => {
@@ -723,7 +734,6 @@ def main():
         sys.exit(1)
 
     if args.auto:
-        from .engine import ScraperEngine
         engine = ScraperEngine()
         domain = get_domain(url)
         store_name = domain.split(".")[0].capitalize()

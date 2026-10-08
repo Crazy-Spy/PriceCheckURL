@@ -5,7 +5,10 @@ import logging
 from typing import Optional, Dict, Any, List
 from bs4 import BeautifulSoup
 
-from .utils import parse_price, get_domain
+try:
+    from .utils import parse_price, get_domain
+except (ImportError, ValueError):
+    from utils import parse_price, get_domain
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")

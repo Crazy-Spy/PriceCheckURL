@@ -14,8 +14,19 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-from .engine import ScraperEngine
-from .utils import calculate_alert_tier
+# Ensure module directories in sys.path to support both direct script and module execution
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+_parent_dir = os.path.dirname(_current_dir)
+for _p in [_current_dir, _parent_dir]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from .engine import ScraperEngine
+    from .utils import calculate_alert_tier
+except (ImportError, ValueError):
+    from engine import ScraperEngine
+    from utils import calculate_alert_tier
 
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s")
 logger = logging.getLogger("PriceCheck")

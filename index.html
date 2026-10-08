@@ -216,9 +216,44 @@
                     </div>
                 </div>
 
+                <!-- CONTROLES DO GRÁFICO: FILTRO POR LOJA E STATUS -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gray-900/60 p-3 rounded-xl border border-gray-800/60 text-xs">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-gray-400 text-[11px] font-medium flex items-center gap-1 shrink-0">
+                            <i class="ph ph-funnel"></i> Filtrar Loja:
+                        </span>
+                        <div class="flex flex-wrap items-center gap-1.5" id="chartStoreFilters">
+                            <!-- Dynamic Store Buttons -->
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 shrink-0">
+                        <span id="chartFocusIndicator" class="hidden text-amber-400 text-[11px] font-medium flex items-center gap-1">
+                            <i class="ph ph-crosshair"></i> <span id="chartFocusText">Linha isolada</span>
+                        </span>
+                        <button id="btnResetChartLines" onclick="resetAllChartLines()" class="hidden px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 transition text-[11px] font-semibold flex items-center gap-1">
+                            <i class="ph ph-eye"></i> Mostrar Todas as Linhas
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Canvas do Gráfico -->
-                <div class="h-80 w-full pt-2">
+                <div class="h-80 w-full pt-1">
                     <canvas id="priceHistoryChart"></canvas>
+                </div>
+
+                <!-- Legenda Interativa de Linhas com Botões "Isolar" -->
+                <div class="pt-3 border-t border-gray-800/60 space-y-2">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px] text-gray-400 px-1">
+                        <span class="flex items-center gap-1.5">
+                            <i class="ph ph-cursor-click text-indigo-400"></i>
+                            <span>Clique na linha para <strong>ocultar/exibir</strong> ou no botão <strong class="text-indigo-300">Isolar</strong> para focar nela:</span>
+                        </span>
+                        <span class="text-[10px] text-gray-500 hidden sm:inline">Passe o cursor sobre o gráfico para comparar todas na mesma data</span>
+                    </div>
+                    <div id="customChartLegend" class="flex flex-wrap items-center gap-2">
+                        <!-- Pills interativos gerados via JS -->
+                    </div>
                 </div>
             </div>
 
@@ -828,9 +863,14 @@
             }
         }
 
+        let activeChartStoreFilter = 'all';
+
         function updateChartForContainer(containerId) {
             const container = (appConfig.containers || []).find(c => c.id === containerId);
             if (!container) return;
+
+            // Reset active store filter on container change
+            activeChartStoreFilter = 'all';
 
             // Update Chart Card Header
             const titleEl = document.getElementById('chartContainerTitle');
@@ -866,18 +906,35 @@
             if (!ctx) return;
             const cHistory = priceHistory.filter(h => h.containerId === containerId);
 
-            // Group by item name
+            // Group by item name and record store
             const itemMap = {};
+            const itemStoreMap = {};
             cHistory.forEach(h => {
-                if (!itemMap[h.name]) itemMap[h.name] = [];
+                if (!itemMap[h.name]) {
+                    itemMap[h.name] = [];
+                    itemStoreMap[h.name] = h.store || 'Loja';
+                }
                 itemMap[h.name].push({ x: h.date || h.timestamp, y: h.price });
             });
 
-            const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6', '#14b8a6', '#f43f5e'];
+            // Also check latestPrices if an item has no historical points yet
+            cItems.forEach(item => {
+                if (!itemMap[item.name] && item.price) {
+                    itemMap[item.name] = [{ x: item.lastUpdated || new Date().toISOString(), y: item.price }];
+                    itemStoreMap[item.name] = item.store || 'Loja';
+                }
+            });
+
+            const uniqueStores = Array.from(new Set(Object.values(itemStoreMap).filter(Boolean)));
+
+            const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6', '#14b8a6', '#f43f5e', '#a855f7', '#06b6d4'];
             const datasets = Object.keys(itemMap).map((name, idx) => {
                 const color = colors[idx % colors.length];
+                const store = itemStoreMap[name] || 'Loja';
                 return {
                     label: name,
+                    store: store,
+                    isTargetLine: false,
                     data: itemMap[name],
                     borderColor: color,
                     backgroundColor: color + '15',
@@ -894,6 +951,7 @@
                 const targetLine = datasets[0].data.map(pt => ({ x: pt.x, y: container.targetPrice }));
                 datasets.push({
                     label: `Preço-Alvo (${formatBRL(container.targetPrice)})`,
+                    isTargetLine: true,
                     data: targetLine,
                     borderColor: '#ef4444',
                     borderDash: [6, 4],
@@ -918,8 +976,7 @@
                     },
                     plugins: {
                         legend: {
-                            position: 'bottom',
-                            labels: { color: '#9ca3af', font: { size: 11 }, boxWidth: 12, padding: 15 }
+                            display: false // Custom HTML interactive legend is used instead
                         },
                         tooltip: {
                             backgroundColor: '#0f172a',
@@ -948,6 +1005,211 @@
                         }
                     }
                 }
+            });
+
+            renderChartStoreFilters(uniqueStores);
+            renderCustomChartLegend();
+        }
+
+        function renderChartStoreFilters(stores) {
+            const container = document.getElementById('chartStoreFilters');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const allBtn = document.createElement('button');
+            allBtn.type = 'button';
+            allBtn.className = `px-2.5 py-1 rounded-lg font-medium text-[11px] transition ${activeChartStoreFilter === 'all' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`;
+            allBtn.textContent = 'Todas as Lojas';
+            allBtn.onclick = () => filterChartStore('all');
+            container.appendChild(allBtn);
+
+            stores.forEach(st => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `px-2.5 py-1 rounded-lg font-medium text-[11px] transition ${activeChartStoreFilter.toLowerCase() === st.toLowerCase() ? 'bg-indigo-600 text-white shadow-sm' : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`;
+                btn.textContent = st;
+                btn.onclick = () => filterChartStore(st);
+                container.appendChild(btn);
+            });
+        }
+
+        function filterChartStore(storeName) {
+            if (!chartInstance) return;
+            activeChartStoreFilter = storeName;
+
+            let visibleCount = 0;
+            chartInstance.data.datasets.forEach((ds, idx) => {
+                if (ds.isTargetLine) {
+                    chartInstance.setDatasetVisibility(idx, true);
+                } else if (storeName === 'all') {
+                    chartInstance.setDatasetVisibility(idx, true);
+                    visibleCount++;
+                } else {
+                    const matches = (ds.store || '').toLowerCase() === storeName.toLowerCase();
+                    chartInstance.setDatasetVisibility(idx, matches);
+                    if (matches) visibleCount++;
+                }
+            });
+
+            chartInstance.update();
+
+            const resetBtn = document.getElementById('btnResetChartLines');
+            const focusInd = document.getElementById('chartFocusIndicator');
+            const focusText = document.getElementById('chartFocusText');
+
+            if (storeName === 'all') {
+                if (resetBtn) resetBtn.classList.add('hidden');
+                if (focusInd) focusInd.classList.add('hidden');
+            } else {
+                if (resetBtn) resetBtn.classList.remove('hidden');
+                if (focusInd) {
+                    focusInd.classList.remove('hidden');
+                    if (focusText) focusText.textContent = `Loja: ${storeName} (${visibleCount} oferta${visibleCount > 1 ? 's' : ''})`;
+                }
+            }
+
+            // Update button styles in store filters
+            document.querySelectorAll('#chartStoreFilters button').forEach(btn => {
+                if ((btn.textContent === 'Todas as Lojas' && storeName === 'all') || btn.textContent.toLowerCase() === storeName.toLowerCase()) {
+                    btn.className = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-indigo-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700';
+                }
+            });
+
+            renderCustomChartLegend();
+        }
+
+        function isolateChartDataset(targetIdx) {
+            if (!chartInstance) return;
+            const targetDs = chartInstance.data.datasets[targetIdx];
+            if (!targetDs) return;
+
+            activeChartStoreFilter = 'custom';
+
+            chartInstance.data.datasets.forEach((ds, idx) => {
+                if (ds.isTargetLine) {
+                    chartInstance.setDatasetVisibility(idx, true);
+                } else {
+                    chartInstance.setDatasetVisibility(idx, idx === targetIdx);
+                }
+            });
+
+            chartInstance.update();
+
+            const resetBtn = document.getElementById('btnResetChartLines');
+            const focusInd = document.getElementById('chartFocusIndicator');
+            const focusText = document.getElementById('chartFocusText');
+
+            if (resetBtn) resetBtn.classList.remove('hidden');
+            if (focusInd) {
+                focusInd.classList.remove('hidden');
+                if (focusText) focusText.textContent = `Linha isolada: ${targetDs.label}`;
+            }
+
+            // Unset store filters active buttons
+            document.querySelectorAll('#chartStoreFilters button').forEach(btn => {
+                btn.className = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700';
+            });
+
+            renderCustomChartLegend();
+        }
+
+        function toggleChartDataset(targetIdx) {
+            if (!chartInstance) return;
+            const curVis = chartInstance.isDatasetVisible(targetIdx);
+            chartInstance.setDatasetVisibility(targetIdx, !curVis);
+            chartInstance.update();
+
+            // Check how many non-target datasets are visible
+            const visibleNonTarget = chartInstance.data.datasets.filter((ds, idx) => !ds.isTargetLine && chartInstance.isDatasetVisible(idx));
+            const resetBtn = document.getElementById('btnResetChartLines');
+            const focusInd = document.getElementById('chartFocusIndicator');
+            const focusText = document.getElementById('chartFocusText');
+
+            if (visibleNonTarget.length === 1) {
+                if (resetBtn) resetBtn.classList.remove('hidden');
+                if (focusInd) {
+                    focusInd.classList.remove('hidden');
+                    if (focusText) focusText.textContent = `Linha isolada: ${visibleNonTarget[0].label}`;
+                }
+            } else if (visibleNonTarget.length < chartInstance.data.datasets.filter(d => !d.isTargetLine).length) {
+                if (resetBtn) resetBtn.classList.remove('hidden');
+                if (focusInd) {
+                    focusInd.classList.remove('hidden');
+                    if (focusText) focusText.textContent = `${visibleNonTarget.length} linhas visíveis`;
+                }
+            } else {
+                if (resetBtn) resetBtn.classList.add('hidden');
+                if (focusInd) focusInd.classList.add('hidden');
+            }
+
+            renderCustomChartLegend();
+        }
+
+        function resetAllChartLines() {
+            if (!chartInstance) return;
+            activeChartStoreFilter = 'all';
+
+            chartInstance.data.datasets.forEach((ds, idx) => {
+                chartInstance.setDatasetVisibility(idx, true);
+            });
+            chartInstance.update();
+
+            const resetBtn = document.getElementById('btnResetChartLines');
+            const focusInd = document.getElementById('chartFocusIndicator');
+            if (resetBtn) resetBtn.classList.add('hidden');
+            if (focusInd) focusInd.classList.add('hidden');
+
+            document.querySelectorAll('#chartStoreFilters button').forEach(btn => {
+                if (btn.textContent === 'Todas as Lojas') {
+                    btn.className = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-indigo-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700';
+                }
+            });
+
+            renderCustomChartLegend();
+        }
+
+        function renderCustomChartLegend() {
+            const container = document.getElementById('customChartLegend');
+            if (!container || !chartInstance) return;
+            container.innerHTML = '';
+
+            const visibleNonTarget = chartInstance.data.datasets.filter((ds, idx) => !ds.isTargetLine && chartInstance.isDatasetVisible(idx));
+
+            chartInstance.data.datasets.forEach((ds, idx) => {
+                if (ds.isTargetLine) {
+                    const badge = document.createElement('div');
+                    badge.className = 'inline-flex items-center rounded-xl bg-red-950/40 border border-red-500/30 px-2.5 py-1 gap-2 text-xs';
+                    badge.innerHTML = `
+                        <span class="w-3.5 h-0 border-b-2 border-dashed border-red-500"></span>
+                        <span class="font-semibold text-red-400 text-[11px]">${ds.label}</span>
+                    `;
+                    container.appendChild(badge);
+                    return;
+                }
+
+                const isVisible = chartInstance.isDatasetVisible(idx);
+                const isOnlyOne = isVisible && visibleNonTarget.length === 1;
+                const lastPoint = ds.data && ds.data.length > 0 ? ds.data[ds.data.length - 1] : null;
+                const lastVal = lastPoint ? lastPoint.y : null;
+
+                const chip = document.createElement('div');
+                chip.className = `inline-flex items-center rounded-xl border text-xs pl-2.5 pr-1 py-1 gap-1.5 transition ${isVisible ? 'bg-gray-900 border-gray-800 hover:border-gray-700' : 'bg-gray-950/60 border-gray-900 opacity-40'} group`;
+
+                chip.innerHTML = `
+                    <button type="button" onclick="toggleChartDataset(${idx})" class="flex items-center gap-2 text-left" title="Clique para ${isVisible ? 'ocultar' : 'mostrar'} esta curva">
+                        <span class="w-2.5 h-2.5 rounded-full shrink-0 shadow-sm" style="background-color: ${ds.borderColor}"></span>
+                        <span class="font-medium text-[11px] ${isVisible ? 'text-gray-200 group-hover:text-white' : 'line-through text-gray-500'} max-w-[200px] truncate">${ds.label}</span>
+                        ${lastVal ? `<span class="font-mono text-[10px] ${isVisible ? 'text-emerald-400 font-semibold' : 'text-gray-600'}">${formatBRL(lastVal)}</span>` : ''}
+                    </button>
+                    <button type="button" onclick="isolateChartDataset(${idx})" class="px-2 py-0.5 rounded-lg text-[10px] font-semibold transition shrink-0 ml-1 ${isOnlyOne ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-gray-800 hover:bg-indigo-600 text-gray-400 hover:text-white'}" title="${isOnlyOne ? 'Esta linha já está isolada' : 'Isolar somente esta linha no gráfico'}">
+                        ${isOnlyOne ? '★ Isolado' : 'Isolar'}
+                    </button>
+                `;
+                container.appendChild(chip);
             });
         }
 

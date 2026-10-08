@@ -15,7 +15,7 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-from .engine import ScraperEngine
+from .engine import ScraperEngine, DEFAULT_USER_AGENT
 from .utils import get_domain, parse_price
 
 INJECTED_OVERLAY_SCRIPT = """

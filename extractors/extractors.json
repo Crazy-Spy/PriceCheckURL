@@ -32,37 +32,37 @@
       }
     },
     {
-      "id": "terabyte",
-      "name": "Terabyte",
+      "id": "terabyteshop_com_br",
+      "name": "Terabyteshop",
       "domains": [
         "terabyteshop.com.br"
       ],
       "driver": "browser",
-      "specialHandler": "terabyte_datalayer",
       "rules": {
         "title": {
-          "selector": "h1.tit-prod, h1",
+          "selector": "a",
           "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": "#val-prod, .val-prod, .valVista, [id*='val-prod']",
-          "regex": "R\\$\\s*([\\d\\.,]+)"
-        },
-        "originalPrice": {
-          "selector": ".val-semdesc, #val-semdesc",
+          "selector": "#valVista",
           "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "inStock": {
           "outOfStockKeywords": [
-            "PRODUTO INDISPONIVEL",
             "ESGOTADO",
             "INDISPONÍVEL",
-            "Sem estoque"
+            "OUT OF STOCK",
+            "AVISE-ME",
+            "SEM ESTOQUE"
           ],
-          "outOfStockSelector": "#indisponivel, .indisponivel"
+          "inStockSelector": "button.tbt_comprar"
+        },
+        "originalPrice": {
+          "selector": "p.precode del",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "image": {
-          "selector": "#img-produto, meta[property='og:image']",
+          "selector": "img.zoomImg",
           "attribute": "src"
         }
       }

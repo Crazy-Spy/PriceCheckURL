@@ -113,12 +113,19 @@ class ScraperEngine:
         return None
 
     def _get_playwright_browser(self, p, headless: bool = True):
+        args = [
+            "--disable-blink-features=AutomationControlled",
+            "--no-sandbox",
+            "--disable-gpu",
+            "--disable-infobars",
+            "--disable-dev-shm-usage"
+        ]
         for ch in ["chrome", "msedge", None]:
             try:
                 if ch:
-                    return p.chromium.launch(channel=ch, headless=headless, args=["--no-sandbox", "--disable-gpu"])
+                    return p.chromium.launch(channel=ch, headless=headless, args=args)
                 else:
-                    return p.chromium.launch(headless=headless, args=["--no-sandbox", "--disable-gpu"])
+                    return p.chromium.launch(headless=headless, args=args)
             except Exception:
                 continue
         return None
@@ -135,10 +142,11 @@ class ScraperEngine:
                     user_agent=DEFAULT_USER_AGENT,
                     locale="pt-BR"
                 )
+                context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined });")
                 page = context.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
                 # Wait briefly for dynamic client-side hydration and anti-bot verification
-                page.wait_for_timeout(3000)
+                page.wait_for_timeout(3500)
                 content = page.content()
                 browser.close()
                 return content

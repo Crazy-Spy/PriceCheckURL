@@ -471,7 +471,8 @@ INJECTED_OVERLAY_SCRIPT = """
         backBtn.style.display = (s > 1 && s <= 5) ? 'inline-block' : 'none';
 
         if (s === 2) {
-            skipBtn.style.display = 'none';
+            skipBtn.style.display = 'inline-block';
+            skipBtn.innerText = 'Pular (Produto Esgotado / Sem Preço)';
             setSelectionMode(true);
         } else if (s === 3) {
             skipBtn.style.display = 'inline-block';
@@ -531,7 +532,11 @@ INJECTED_OVERLAY_SCRIPT = """
 
     document.getElementById('__pc_btn_skip').onclick = (e) => {
         e.stopPropagation();
-        if (state.step === 3) goToStep(4);
+        if (state.step === 2) {
+            state.price = { selector: "meta[name='product:price:amount'], .val-prod, [class*='price']", text: "Automático / Indisponível" };
+            document.getElementById('__pc_val_price').innerText = "Indisponível";
+            goToStep(3);
+        } else if (state.step === 3) goToStep(4);
         else if (state.step === 5) goToStep(6);
     };
 
@@ -566,9 +571,11 @@ def launch_visual_wizard(url: str) -> None:
             return
 
         context = browser.new_context(
+            user_agent=DEFAULT_USER_AGENT,
             viewport={"width": 1366, "height": 850},
             locale="pt-BR"
         )
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined });")
         page = context.new_page()
 
         captured_data = {}

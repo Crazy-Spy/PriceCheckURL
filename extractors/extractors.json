@@ -7,14 +7,14 @@
       "domains": [
         "kabum.com.br"
       ],
-      "driver": "http",
+      "driver": "browser",
       "rules": {
         "title": {
           "selector": "h1",
           "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": "span.text-xs",
+          "selector": "number-flow-react.text-2xl",
           "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "inStock": {
@@ -22,12 +22,18 @@
             "ESGOTADO",
             "INDISPONÍVEL",
             "OUT OF STOCK",
-            "AVISE-ME"
-          ]
+            "AVISE-ME",
+            "SEM ESTOQUE"
+          ],
+          "inStockSelector": "#purchase span"
+        },
+        "originalPrice": {
+          "selector": "div.col-start-1 div div div div div span",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "image": {
-          "selector": "meta[property='og:image']",
-          "attribute": "content"
+          "selector": "div.contents div div div div div div button img",
+          "attribute": "src"
         }
       }
     },

@@ -229,11 +229,11 @@
           "preferredMethod": "curl"
         },
         {
-          "id": "outro-xbox-series-x-3646",
+          "id": "amazon-xbox-series-x-3646",
           "name": "XBOX Series X",
-          "store": "Outro",
+          "store": "Amazon",
           "url": "https://www.amazon.com.br/Console-console-jogos-Xbox-controlador/dp/B09NR21ST7/ref=sr_1_3?crid=3OD14S2RBU706&dib=eyJ2IjoiMSJ9.FQ7xK0mLSvZhLxUEDLRM7eI0JJ2U9zvrYRvX75F6B-1ySTx4Ho0I7g1oadD1nDeklktjG0amPU-JK7NJdeG9IZoAP0A_JVvlbNt2LA5FT-OVjN8hEv5h9-Gz0JN2RNH4PNdn1AE34nFYQAr79ilPOq-DtdU59bEv2qkoY_D7p_EHy-Zb-J3beVLUB7UvkIRrHkX2-DyuqROrhGh9C_26LZwfz5IbQvq8RUidDegw6y2Ul6krc8CVpRMtDSFgsKd0f9CElCvGhMtSc--z9kFm9fyjny40m8fba3DO40YoEJE.xNBoWhFAkV2ABKLoalSW7cXuevVWpFcQdS87eIpEPBU&dib_tag=se&keywords=xbox+series+x&qid=1789598897&sprefix=XBOX+%2Caps%2C230&sr=8-3&ufe=app_do%3Aamzn1.fos.95de73c3-5dda-43a7-bd1f-63af03b14751",
-          "preferredMethod": "curl"
+          "preferredMethod": "headless"
         }
       ]
     }

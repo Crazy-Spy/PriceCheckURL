@@ -647,11 +647,14 @@ def launch_visual_wizard(url: str) -> None:
     stock_info = captured_data.get("stock", {})
     img_info = captured_data.get("image", {})
 
+    from datetime import datetime
     new_extractor = {
         "id": domain.replace(".", "_"),
         "name": store_name,
         "domains": [domain],
         "driver": "browser", # Use browser for guaranteed Cloudflare bypass
+        "source": "wizard",
+        "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "rules": {
             "title": {
                 "selector": title_info.get("selector") or "h1",

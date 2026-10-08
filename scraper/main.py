@@ -88,7 +88,11 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
             logger.info(f"Verificando: {item_name} [{store}]...")
 
             extractor = engine.find_extractor_for_url(url)
-            driver = pref_method if pref_method else (extractor.get("driver") if extractor else "http")
+            # If extractor specifies browser, or item specifically requests headless/browser, use browser
+            if (extractor and extractor.get("driver") == "browser") or pref_method in ["headless", "browser"]:
+                driver = "browser"
+            else:
+                driver = pref_method if pref_method else (extractor.get("driver") if extractor else "http")
 
             # Fetch & Parse
             html = engine.fetch_html(url, driver=driver)
@@ -191,6 +195,7 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
         f.write("window.PRICE_CHECK_CONFIG = " + json.dumps(config, ensure_ascii=False) + ";\n")
         f.write("window.PRICE_CHECK_LATEST = " + json.dumps(results, ensure_ascii=False) + ";\n")
         f.write("window.PRICE_CHECK_HISTORY = " + json.dumps(history_list, ensure_ascii=False) + ";\n")
+        f.write("window.PRICE_CHECK_EXTRACTORS = " + json.dumps({"version": "2.0.0", "extractors": engine.extractors}, ensure_ascii=False) + ";\n")
 
     logger.info("Execução do PriceCheck concluída com sucesso!")
 

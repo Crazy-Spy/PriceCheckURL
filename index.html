@@ -612,6 +612,9 @@
                 const res = await fetch('extractors/extractors.json');
                 if (res.ok) extractorsData = await res.json();
             } catch {}
+            if ((!extractorsData.extractors || extractorsData.extractors.length === 0) && window.PRICE_CHECK_EXTRACTORS) {
+                extractorsData = window.PRICE_CHECK_EXTRACTORS;
+            }
 
             renderDashboard();
             renderExtractorsList();
@@ -826,15 +829,33 @@
             listDiv.innerHTML = '';
 
             list.forEach(ext => {
+                const isWizard = ext.source === 'wizard';
                 const row = document.createElement('div');
-                row.className = 'p-2.5 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs';
+                row.className = 'p-3 rounded-xl bg-gray-900/90 border border-gray-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs hover:border-gray-700 transition';
+                
+                const sourceBadge = isWizard
+                    ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 inline-flex items-center gap-1"><i class="ph ph-magic-wand"></i> Criado via Wizard</span>`
+                    : `<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-800 text-gray-400 inline-flex items-center gap-1"><i class="ph ph-code"></i> Padrão</span>`;
+
+                const driverBadge = (ext.driver === 'browser')
+                    ? `<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Playwright</span>`
+                    : `<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-gray-800 text-gray-400">HTTP</span>`;
+
                 row.innerHTML = `
                     <div class="flex items-center gap-2.5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                        <span class="font-semibold text-white">${ext.name}</span>
-                        <span class="text-gray-400 text-[11px]">(${ext.domains.join(', ')})</span>
+                        <span class="w-2.5 h-2.5 rounded-full ${isWizard ? 'bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.5)]' : 'bg-emerald-400'} shrink-0"></span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-xs">${ext.name}</span>
+                                ${sourceBadge}
+                            </div>
+                            <span class="text-gray-400 text-[11px] font-mono">${ext.domains.join(', ')}</span>
+                        </div>
                     </div>
-                    <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-gray-800 text-indigo-300">${ext.driver || 'http'}</span>
+                    <div class="flex items-center gap-2 self-end sm:self-auto">
+                        <span class="text-[10px] text-gray-500 hidden sm:inline" title="Seletor de Preço">${ext.rules?.price?.selector || ''}</span>
+                        ${driverBadge}
+                    </div>
                 `;
                 listDiv.appendChild(row);
             });

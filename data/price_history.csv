@@ -763,3 +763,31 @@
 2026-10-07T20:37:33,07/10/2026 20:37:33,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,9093.6,True
 2026-10-07T20:37:33,07/10/2026 20:37:33,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,831.99,False
 2026-10-07T20:37:33,07/10/2026 20:37:33,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2139.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2864.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9099.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8299.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9838.77,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,9093.6,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,831.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-07T23:02:02,07/10/2026 23:02:02,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,True
+2026-10-07T23:02:02,07/10/2026 23:02:02,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7019.55,True

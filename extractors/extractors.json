@@ -8,6 +8,8 @@
         "kabum.com.br"
       ],
       "driver": "browser",
+      "source": "wizard",
+      "updatedAt": "2026-10-07 20:30:00",
       "rules": {
         "title": {
           "selector": "h1",
@@ -44,6 +46,8 @@
         "terabyteshop.com.br"
       ],
       "driver": "browser",
+      "source": "wizard",
+      "updatedAt": "2026-10-07 21:00:00",
       "rules": {
         "title": {
           "selector": "h1",
@@ -80,6 +84,8 @@
         "pichau.com.br"
       ],
       "driver": "browser",
+      "source": "wizard",
+      "updatedAt": "2026-10-07 22:15:00",
       "rules": {
         "title": {
           "selector": "h1",
@@ -109,36 +115,39 @@
       }
     },
     {
-      "id": "amazon",
+      "id": "amazon_com_br",
       "name": "Amazon",
       "domains": [
-        "amazon.com.br",
-        "amazon.com"
+        "amazon.com.br"
       ],
       "driver": "browser",
+      "source": "wizard",
+      "updatedAt": "2026-10-07 22:50:00",
       "rules": {
         "title": {
-          "selector": "#productTitle, #title",
-          "fallback": "meta[name='title']"
+          "selector": "#productTitle",
+          "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": ".priceToPay span.a-price-whole, .a-price .a-offscreen, #priceblock_ourprice, #priceblock_dealprice",
-          "regex": "(?:R\\$\\s*)?([\\d\\.,]+)"
-        },
-        "originalPrice": {
-          "selector": ".basisPrice .a-offscreen, span.a-text-price span.a-offscreen",
-          "regex": "(?:R\\$\\s*)?([\\d\\.,]+)"
+          "selector": "div.apex-core-price-identifier div",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "inStock": {
           "outOfStockKeywords": [
-            "Não temos previsão de quando este produto estará novamente em estoque",
-            "Atualmente indisponível",
-            "Currently unavailable"
+            "ESGOTADO",
+            "INDISPONÍVEL",
+            "OUT OF STOCK",
+            "AVISE-ME",
+            "SEM ESTOQUE"
           ],
-          "outOfStockSelector": "#outOfStock"
+          "inStockSelector": "#buy-now-button"
+        },
+        "originalPrice": {
+          "selector": "span.aok-relative span span span",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "image": {
-          "selector": "#landingImage, meta[property='og:image']",
+          "selector": "#magnifierLens",
           "attribute": "src"
         }
       }
@@ -151,6 +160,7 @@
         "mercadolivre.com"
       ],
       "driver": "http",
+      "source": "padrao",
       "rules": {
         "title": {
           "selector": "h1.ui-pdp-title, h1",
@@ -184,6 +194,7 @@
         "magazineluiza.com.br"
       ],
       "driver": "http",
+      "source": "padrao",
       "rules": {
         "title": {
           "selector": "h1[data-testid='heading-product-title'], h1",

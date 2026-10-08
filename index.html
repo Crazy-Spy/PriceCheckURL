@@ -249,7 +249,7 @@
                             <i class="ph ph-cursor-click text-indigo-400"></i>
                             <span>Clique <strong>diretamente em qualquer linha do gráfico</strong> ou no botão <strong class="text-indigo-300">Isolar</strong> para focar nela:</span>
                         </span>
-                        <span class="text-[10px] text-gray-500 hidden sm:inline">Dica: Clique novamente na mesma linha para restaurar todas as curvas</span>
+                        <span class="text-[10px] text-gray-500 hidden sm:inline">Dica: O pop-up foca na curva apontada. Clique para isolar ou restaurar.</span>
                     </div>
                     <div id="customChartLegend" class="flex flex-wrap items-center gap-2">
                         <!-- Pills interativos gerados via JS -->
@@ -1051,7 +1051,8 @@
                     maintainAspectRatio: false,
                     animation: false,
                     interaction: {
-                        mode: 'index',
+                        mode: 'nearest',
+                        axis: 'xy',
                         intersect: false,
                     },
                     onHover: (event, elements, chart) => {
@@ -1099,6 +1100,9 @@
                             display: false // Custom HTML interactive legend is used instead
                         },
                         tooltip: {
+                            mode: 'nearest',
+                            axis: 'xy',
+                            intersect: false,
                             backgroundColor: '#0f172a',
                             titleColor: '#f8fafc',
                             bodyColor: '#cbd5e1',

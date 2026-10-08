@@ -40,7 +40,7 @@
       "driver": "browser",
       "rules": {
         "title": {
-          "selector": "a",
+          "selector": "h1",
           "fallback": "meta[property='og:title']"
         },
         "price": {

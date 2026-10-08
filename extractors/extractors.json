@@ -153,37 +153,40 @@
       }
     },
     {
-      "id": "mercadolivre",
-      "name": "Mercado Livre",
+      "id": "mercadolivre_com_br",
+      "name": "Mercadolivre",
       "domains": [
-        "mercadolivre.com.br",
-        "mercadolivre.com"
+        "mercadolivre.com.br"
       ],
-      "driver": "http",
-      "source": "padrao",
+      "driver": "browser",
+      "source": "wizard",
+      "updatedAt": "2026-10-08 18:50:33",
       "rules": {
         "title": {
-          "selector": "h1.ui-pdp-title, h1",
+          "selector": "h1",
           "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": "meta[itemprop='price'], .ui-pdp-price__second-line .andes-money-amount__fraction",
-          "attribute": "content",
-          "regex": "([\\d\\.,]+)"
-        },
-        "originalPrice": {
-          "selector": ".ui-pdp-price__original-value .andes-money-amount__fraction",
-          "regex": "([\\d\\.,]+)"
+          "selector": "div.ui-pdp-price__second-line",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "inStock": {
           "outOfStockKeywords": [
-            "Estoque esgotado",
-            "Pausado"
-          ]
+            "ESGOTADO",
+            "INDISPONÍVEL",
+            "OUT OF STOCK",
+            "AVISE-ME",
+            "SEM ESTOQUE"
+          ],
+          "inStockSelector": "#_R_9b759ij5m5pa_ span"
+        },
+        "originalPrice": {
+          "selector": "div.ui-pdp-price__main-container span",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "image": {
-          "selector": "meta[property='og:image']",
-          "attribute": "content"
+          "selector": "div.ui-pdp-gallery__column span figure img",
+          "attribute": "src"
         }
       }
     },

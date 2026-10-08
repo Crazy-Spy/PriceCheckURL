@@ -178,51 +178,77 @@
                 </div>
             </div>
 
-            <!-- Filters & Container Selector -->
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card rounded-2xl p-4">
-                <div class="flex flex-wrap items-center gap-2">
-                    <span class="text-xs text-gray-400 font-medium mr-1 flex items-center gap-1">
-                        <i class="ph ph-funnel"></i> Filtrar:
+            <!-- CONTAINER SELECTOR (Cards de Seleção dos Produtos) -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                        <i class="ph ph-folders text-indigo-400"></i> Selecione o Produto / Grupo:
                     </span>
-                    <button onclick="setOpportunityFilter('all')" class="filter-btn active px-3 py-1.5 rounded-xl text-xs font-medium bg-indigo-600 text-white transition" data-filter="all">Todos</button>
-                    <button onclick="setOpportunityFilter('compra_certa')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="compra_certa">Compra Certa</button>
-                    <button onclick="setOpportunityFilter('aceitavel')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="aceitavel">Aceitável (+8%)</button>
-                    <button onclick="setOpportunityFilter('in_stock')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="in_stock">Em Estoque</button>
+                    <span class="text-xs text-indigo-400 font-medium" id="activeContainerSummary">--</span>
                 </div>
-
-                <div class="flex items-center gap-3">
-                    <div class="relative w-full md:w-64">
-                        <i class="ph ph-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-sm"></i>
-                        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar produto ou loja..." class="w-full bg-gray-900/90 border border-gray-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition">
-                    </div>
+                <div id="containerTabsBar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <!-- Cards dinâmicos para cada produto -->
                 </div>
             </div>
 
-            <!-- Containers & Products View -->
-            <div id="containersList" class="space-y-6">
-                <!-- Dynamically populated containers -->
-            </div>
-
-            <!-- Chart Section -->
-            <div class="glass-card rounded-2xl p-6 border border-gray-800">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
-                            <i class="ph ph-chart-line text-lg"></i>
+            <!-- COMPARATIVE PRICE CHART (O ELEMENTO PRINCIPAL NO TOPO) -->
+            <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-800/80 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div id="chartHeaderIcon" class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="ph ph-chart-line"></i>
                         </div>
                         <div>
-                            <h3 class="text-sm font-bold text-white">Histórico de Preços ao Longo do Tempo</h3>
-                            <p class="text-xs text-gray-400" id="chartSubtitle">Acompanhe a oscilação de valores e quedas de preço</p>
+                            <div class="flex items-center gap-2">
+                                <h3 id="chartContainerTitle" class="text-base font-bold text-white tracking-tight">Carregando...</h3>
+                                <span id="chartContainerCategory" class="px-2 py-0.5 rounded-md bg-gray-900 border border-gray-800 text-[11px] text-gray-400">Hardware</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-0.5">
+                                <span>Preço-Alvo: <strong id="chartContainerTarget" class="text-indigo-300 font-mono">R$ --</strong></span>
+                                <span>&bull;</span>
+                                <span class="text-gray-400">Histórico e comparação direta entre lojas</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <select id="chartContainerSelect" onchange="updateChartForContainer(this.value)" class="bg-gray-900 border border-gray-800 rounded-xl px-3 py-1.5 text-xs text-gray-300 focus:outline-none focus:border-indigo-500">
-                            <!-- Populated with containers -->
-                        </select>
+                    
+                    <div class="flex items-center gap-3" id="chartHeaderBestPrice">
+                        <!-- Preenchido dinamicamente -->
                     </div>
                 </div>
-                <div class="h-72 w-full">
+
+                <!-- Canvas do Gráfico -->
+                <div class="h-80 w-full pt-2">
                     <canvas id="priceHistoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- ACTIVE PRODUCT OFFERS (Cards das Lojas Exclusivos do Produto Selecionado) -->
+            <div class="space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card rounded-2xl p-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="ph ph-storefront text-indigo-400"></i> Lojas & Ofertas (<span id="activeContainerItemCount">0</span>)
+                        </span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button onclick="setOpportunityFilter('all')" class="filter-btn active px-3 py-1.5 rounded-xl text-xs font-medium bg-indigo-600 text-white transition" data-filter="all">Todos</button>
+                            <button onclick="setOpportunityFilter('compra_certa')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="compra_certa">Compra Certa</button>
+                            <button onclick="setOpportunityFilter('aceitavel')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="aceitavel">Aceitável (+8%)</button>
+                            <button onclick="setOpportunityFilter('in_stock')" class="filter-btn px-3 py-1.5 rounded-xl text-xs font-medium bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 transition" data-filter="in_stock">Em Estoque</button>
+                        </div>
+
+                        <div class="relative w-full sm:w-56">
+                            <i class="ph ph-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-sm"></i>
+                            <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar loja ou modelo..." class="w-full bg-gray-900/90 border border-gray-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de Cards apenas do produto ativo -->
+                <div id="activeContainerCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                    <!-- Itens do produto selecionado -->
                 </div>
             </div>
         </div>
@@ -525,6 +551,7 @@
         let latestPrices = [];
         let priceHistory = [];
         let extractorsData = { version: "2.0.0", extractors: [] };
+        let activeContainerId = null;
         let activeFilter = 'all';
         let chartInstance = null;
 
@@ -623,9 +650,6 @@
 
         // RENDER DASHBOARD
         function renderDashboard() {
-            const containersDiv = document.getElementById('containersList');
-            containersDiv.innerHTML = '';
-
             let totalItems = latestPrices.length;
             let inStockCount = latestPrices.filter(p => p.inStock).length;
             let opportunitiesCount = latestPrices.filter(p => p.alertTier && (p.alertTier.category === 'COMPRA CERTA' || p.alertTier.category === 'PREÇO ACEITÁVEL')).length;
@@ -642,56 +666,115 @@
             }
 
             if (!appConfig.containers || appConfig.containers.length === 0) {
-                containersDiv.innerHTML = '<div class="glass-card rounded-2xl p-8 text-center text-gray-400">Nenhum container configurado. Crie um na aba Produtos & Links!</div>';
+                document.getElementById('containerTabsBar').innerHTML = '<div class="col-span-full glass-card rounded-2xl p-6 text-center text-gray-400 text-xs">Nenhum container configurado. Crie um na aba Grupos & URLs!</div>';
                 return;
             }
 
-            appConfig.containers.forEach(container => {
-                const cItems = latestPrices.filter(p => p.containerId === container.id);
-                const bestPriceItem = cItems.filter(p => p.inStock && p.price).sort((a,b) => a.price - b.price)[0];
+            if (!activeContainerId || !appConfig.containers.some(c => c.id === activeContainerId)) {
+                activeContainerId = appConfig.containers[0].id;
+            }
 
-                const cCard = document.createElement('div');
-                cCard.className = 'glass-card rounded-2xl p-6 border border-gray-800 space-y-4';
-                cCard.innerHTML = `
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-800/80 pb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg font-bold">
-                                <i class="ph ph-cpu"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white tracking-tight">${container.name}</h3>
-                                <div class="flex items-center gap-2 text-xs text-gray-400">
-                                    <span class="px-2 py-0.5 rounded-md bg-gray-900 border border-gray-800 text-[11px]">${container.category || 'Hardware'}</span>
-                                    <span>&bull;</span>
-                                    <span>Preço-Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(container.targetPrice)}</strong></span>
-                                </div>
-                            </div>
+            renderContainerTabs();
+            selectContainer(activeContainerId);
+        }
+
+        function getContainerIcon(category, iconName) {
+            const cat = (category || '').toLowerCase();
+            const ic = (iconName || '').toLowerCase();
+            if (ic.includes('game') || cat.includes('jogo') || cat.includes('perif')) return 'ph-game-controller';
+            if (ic.includes('graphic') || cat.includes('vídeo') || cat.includes('video')) return 'ph-desktop-tower';
+            if (ic.includes('package') || cat.includes('fonte')) return 'ph-plug';
+            return 'ph-cpu';
+        }
+
+        function selectContainer(containerId) {
+            activeContainerId = containerId;
+            renderContainerTabs();
+            updateChartForContainer(containerId);
+            renderActiveContainerCards();
+        }
+
+        function renderContainerTabs() {
+            const tabsBar = document.getElementById('containerTabsBar');
+            if (!tabsBar) return;
+            tabsBar.innerHTML = '';
+
+            const activeContainer = (appConfig.containers || []).find(c => c.id === activeContainerId);
+            const summarySpan = document.getElementById('activeContainerSummary');
+            if (summarySpan && activeContainer) {
+                summarySpan.textContent = `Visualizando: ${activeContainer.name}`;
+            }
+
+            (appConfig.containers || []).forEach(c => {
+                const isActive = c.id === activeContainerId;
+                const cItems = latestPrices.filter(p => p.containerId === c.id);
+                const inStockItems = cItems.filter(p => p.inStock && p.price);
+                const bestPriceItem = inStockItems.sort((a,b) => a.price - b.price)[0];
+
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => selectContainer(c.id);
+
+                const activeClasses = isActive
+                    ? 'bg-indigo-600/20 border-indigo-500 shadow-lg shadow-indigo-500/10 ring-1 ring-indigo-500/50'
+                    : 'bg-gray-900/80 border-gray-800/80 hover:bg-gray-800/70 hover:border-gray-700';
+
+                btn.className = `p-4 rounded-2xl border text-left transition duration-200 flex flex-col justify-between gap-3 group relative overflow-hidden ${activeClasses}`;
+
+                const badgeBg = bestPriceItem
+                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-gray-800 text-gray-400 border border-gray-700/50';
+                
+                const badgeText = bestPriceItem
+                    ? `${formatBRL(bestPriceItem.price)}`
+                    : 'Esgotado';
+
+                btn.innerHTML = `
+                    <div class="flex items-center justify-between gap-2 w-full">
+                        <div class="w-9 h-9 rounded-xl ${isActive ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/30' : 'bg-gray-800 text-gray-400 group-hover:text-white'} flex items-center justify-center text-lg transition shrink-0">
+                            <i class="ph ${getContainerIcon(c.category, c.icon)}"></i>
                         </div>
-                        <div class="flex items-center gap-3">
-                            ${bestPriceItem ? `
-                                <div class="text-right">
-                                    <span class="text-[10px] uppercase font-semibold text-gray-400 block">Melhor Preço em Estoque</span>
-                                    <span class="text-base font-bold text-emerald-400 font-mono">${formatBRL(bestPriceItem.price)}</span>
-                                    <span class="text-[11px] text-gray-400 block">${bestPriceItem.store}</span>
-                                </div>
-                            ` : `
-                                <span class="text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-xl">Todos esgotados</span>
-                            `}
+                        <span class="text-[11px] font-bold font-mono px-2.5 py-0.5 rounded-full ${badgeBg}">
+                            ${badgeText}
+                        </span>
+                    </div>
+
+                    <div class="w-full">
+                        <h4 class="text-xs font-bold ${isActive ? 'text-white' : 'text-gray-200 group-hover:text-white'} tracking-tight truncate">${c.name}</h4>
+                        <div class="flex items-center justify-between text-[11px] text-gray-400 mt-1">
+                            <span>Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(c.targetPrice)}</strong></span>
+                            <span>${cItems.length} ofertas</span>
                         </div>
                     </div>
 
-                    <!-- Items Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5" id="grid-${container.id}">
-                        ${renderItemsForContainer(cItems, container.targetPrice)}
-                    </div>
+                    ${isActive ? '<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500"></div>' : ''}
                 `;
-                containersDiv.appendChild(cCard);
+                tabsBar.appendChild(btn);
             });
+        }
+
+        function renderActiveContainerCards() {
+            const grid = document.getElementById('activeContainerCardsGrid');
+            const countSpan = document.getElementById('activeContainerItemCount');
+            if (!grid) return;
+
+            const container = (appConfig.containers || []).find(c => c.id === activeContainerId);
+            if (!container) {
+                grid.innerHTML = '<div class="col-span-full text-center text-gray-400 py-8">Nenhum container selecionado.</div>';
+                if (countSpan) countSpan.textContent = '0';
+                return;
+            }
+
+            const cItems = latestPrices.filter(p => p.containerId === container.id);
+            if (countSpan) countSpan.textContent = cItems.length;
+
+            grid.innerHTML = renderItemsForContainer(cItems, container.targetPrice);
+            filterCards();
         }
 
         function renderItemsForContainer(items, targetPrice) {
             if (!items || items.length === 0) {
-                return '<div class="col-span-full text-xs text-gray-500 p-3">Nenhum item verificado para este container ainda.</div>';
+                return '<div class="col-span-full text-xs text-gray-400 p-8 glass-card rounded-2xl text-center">Nenhuma oferta cadastrada para este produto ainda.</div>';
             }
 
             return items.map(item => {
@@ -706,7 +789,7 @@
                 else if (tier.theme === 'muito_alto') badgeColor = 'bg-rose-500/15 text-rose-400 border border-rose-500/30';
 
                 return `
-                    <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800/80 glass-card-hover flex flex-col justify-between gap-3">
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800/80 glass-card-hover flex flex-col justify-between gap-3 transition">
                         <div>
                             <div class="flex items-center justify-between gap-2 mb-2">
                                 <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full border ${theme.tag}">${item.store || 'Loja'}</span>
@@ -739,44 +822,87 @@
 
         // CHART
         function initChart() {
-            const select = document.getElementById('chartContainerSelect');
-            select.innerHTML = '';
-            if (appConfig.containers) {
-                appConfig.containers.forEach((c, idx) => {
-                    const opt = document.createElement('option');
-                    opt.value = c.id;
-                    opt.textContent = c.name;
-                    select.appendChild(opt);
-                });
-            }
             if (appConfig.containers && appConfig.containers.length > 0) {
-                updateChartForContainer(appConfig.containers[0].id);
+                if (!activeContainerId) activeContainerId = appConfig.containers[0].id;
+                selectContainer(activeContainerId);
             }
         }
 
         function updateChartForContainer(containerId) {
-            const ctx = document.getElementById('priceHistoryChart').getContext('2d');
+            const container = (appConfig.containers || []).find(c => c.id === containerId);
+            if (!container) return;
+
+            // Update Chart Card Header
+            const titleEl = document.getElementById('chartContainerTitle');
+            const catEl = document.getElementById('chartContainerCategory');
+            const targetEl = document.getElementById('chartContainerTarget');
+            const iconEl = document.getElementById('chartHeaderIcon');
+            const bestEl = document.getElementById('chartHeaderBestPrice');
+
+            if (titleEl) titleEl.textContent = container.name;
+            if (catEl) catEl.textContent = container.category || 'Hardware';
+            if (targetEl) targetEl.textContent = formatBRL(container.targetPrice);
+            if (iconEl) iconEl.innerHTML = `<i class="ph ${getContainerIcon(container.category, container.icon)}"></i>`;
+
+            const cItems = latestPrices.filter(p => p.containerId === containerId);
+            const inStockItems = cItems.filter(p => p.inStock && p.price);
+            const bestPriceItem = inStockItems.sort((a,b) => a.price - b.price)[0];
+
+            if (bestEl) {
+                if (bestPriceItem) {
+                    bestEl.innerHTML = `
+                        <div class="text-right">
+                            <span class="text-[10px] uppercase font-semibold text-gray-400 block">Melhor Preço em Estoque</span>
+                            <span class="text-base font-bold text-emerald-400 font-mono">${formatBRL(bestPriceItem.price)}</span>
+                            <span class="text-[11px] text-gray-400 block">${bestPriceItem.store}</span>
+                        </div>
+                    `;
+                } else {
+                    bestEl.innerHTML = `<span class="text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-xl">Todos esgotados</span>`;
+                }
+            }
+
+            const ctx = document.getElementById('priceHistoryChart')?.getContext('2d');
+            if (!ctx) return;
             const cHistory = priceHistory.filter(h => h.containerId === containerId);
 
-            // Group by item
+            // Group by item name
             const itemMap = {};
             cHistory.forEach(h => {
                 if (!itemMap[h.name]) itemMap[h.name] = [];
                 itemMap[h.name].push({ x: h.date || h.timestamp, y: h.price });
             });
 
+            const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6', '#14b8a6', '#f43f5e'];
             const datasets = Object.keys(itemMap).map((name, idx) => {
-                const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6'];
+                const color = colors[idx % colors.length];
                 return {
                     label: name,
                     data: itemMap[name],
-                    borderColor: colors[idx % colors.length],
-                    backgroundColor: colors[idx % colors.length] + '20',
-                    tension: 0.2,
+                    borderColor: color,
+                    backgroundColor: color + '15',
+                    tension: 0.25,
                     fill: false,
-                    borderWidth: 2
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointHoverRadius: 6
                 };
             });
+
+            // Target Price reference line
+            if (container.targetPrice && datasets.length > 0 && datasets[0].data.length > 0) {
+                const targetLine = datasets[0].data.map(pt => ({ x: pt.x, y: container.targetPrice }));
+                datasets.push({
+                    label: `Preço-Alvo (${formatBRL(container.targetPrice)})`,
+                    data: targetLine,
+                    borderColor: '#ef4444',
+                    borderDash: [6, 4],
+                    fill: false,
+                    borderWidth: 1.5,
+                    pointRadius: 0,
+                    pointHoverRadius: 0
+                });
+            }
 
             if (chartInstance) chartInstance.destroy();
 
@@ -786,21 +912,38 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
                     plugins: {
-                        legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } },
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#9ca3af', font: { size: 11 }, boxWidth: 12, padding: 15 }
+                        },
                         tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#f8fafc',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 10,
                             callbacks: {
                                 label: (ctx) => `${ctx.dataset.label}: ${formatBRL(ctx.parsed.y)}`
                             }
                         }
                     },
                     scales: {
-                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af' } },
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: { color: '#9ca3af', font: { size: 10 } }
+                        },
                         y: {
-                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            grid: { color: 'rgba(255,255,255,0.04)' },
                             ticks: {
                                 color: '#9ca3af',
-                                callback: (val) => 'R$ ' + val
+                                font: { size: 11 },
+                                callback: (val) => 'R$ ' + val.toLocaleString('pt-BR')
                             }
                         }
                     }
@@ -1156,32 +1299,45 @@
         }
 
         function filterCards() {
-            const search = (document.getElementById('searchInput').value || '').toLowerCase();
-            document.querySelectorAll('#containersList > div').forEach(cCard => {
-                let hasVisible = false;
-                cCard.querySelectorAll('.glass-card-hover').forEach(itemCard => {
-                    const text = itemCard.textContent.toLowerCase();
-                    const matchesSearch = text.includes(search);
-                    let matchesFilter = true;
+            const search = (document.getElementById('searchInput')?.value || '').toLowerCase();
+            const grid = document.getElementById('activeContainerCardsGrid');
+            if (!grid) return;
 
-                    if (activeFilter === 'compra_certa') {
-                        matchesFilter = text.includes('compra certa');
-                    } else if (activeFilter === 'aceitavel') {
-                        matchesFilter = text.includes('aceitável');
-                    } else if (activeFilter === 'in_stock') {
-                        matchesFilter = text.includes('em estoque');
-                    }
+            let visibleCount = 0;
+            grid.querySelectorAll('.glass-card-hover').forEach(itemCard => {
+                const text = itemCard.textContent.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                let matchesFilter = true;
 
-                    if (matchesSearch && matchesFilter) {
-                        itemCard.classList.remove('hidden');
-                        hasVisible = true;
-                    } else {
-                        itemCard.classList.add('hidden');
-                    }
-                });
-                if (hasVisible) cCard.classList.remove('hidden');
-                else cCard.classList.add('hidden');
+                if (activeFilter === 'compra_certa') {
+                    matchesFilter = text.includes('compra certa');
+                } else if (activeFilter === 'aceitavel') {
+                    matchesFilter = text.includes('aceitável');
+                } else if (activeFilter === 'in_stock') {
+                    matchesFilter = text.includes('em estoque');
+                }
+
+                if (matchesSearch && matchesFilter) {
+                    itemCard.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    itemCard.classList.add('hidden');
+                }
             });
+
+            let emptyNotice = document.getElementById('cardsEmptyNotice');
+            if (visibleCount === 0) {
+                if (!emptyNotice) {
+                    emptyNotice = document.createElement('div');
+                    emptyNotice.id = 'cardsEmptyNotice';
+                    emptyNotice.className = 'col-span-full glass-card rounded-2xl p-8 text-center text-gray-400 text-xs';
+                    grid.appendChild(emptyNotice);
+                }
+                emptyNotice.textContent = 'Nenhuma oferta corresponde aos filtros aplicados para este produto.';
+                emptyNotice.classList.remove('hidden');
+            } else if (emptyNotice) {
+                emptyNotice.classList.add('hidden');
+            }
         }
 
         // Start application

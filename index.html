@@ -247,9 +247,9 @@
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px] text-gray-400 px-1">
                         <span class="flex items-center gap-1.5">
                             <i class="ph ph-cursor-click text-indigo-400"></i>
-                            <span>Clique na linha para <strong>ocultar/exibir</strong> ou no botão <strong class="text-indigo-300">Isolar</strong> para focar nela:</span>
+                            <span>Clique <strong>diretamente em qualquer linha do gráfico</strong> ou no botão <strong class="text-indigo-300">Isolar</strong> para focar nela:</span>
                         </span>
-                        <span class="text-[10px] text-gray-500 hidden sm:inline">Passe o cursor sobre o gráfico para comparar todas na mesma data</span>
+                        <span class="text-[10px] text-gray-500 hidden sm:inline">Dica: Clique novamente na mesma linha para restaurar todas as curvas</span>
                     </div>
                     <div id="customChartLegend" class="flex flex-wrap items-center gap-2">
                         <!-- Pills interativos gerados via JS -->
@@ -940,9 +940,10 @@
                     backgroundColor: color + '15',
                     tension: 0.25,
                     fill: false,
-                    borderWidth: 2,
-                    pointRadius: 3,
-                    pointHoverRadius: 6
+                    borderWidth: 2.5,
+                    pointRadius: 3.5,
+                    pointHoverRadius: 8,
+                    pointHitRadius: 22
                 };
             });
 
@@ -973,6 +974,46 @@
                     interaction: {
                         mode: 'index',
                         intersect: false,
+                    },
+                    onHover: (event, elements, chart) => {
+                        const canvas = event.native ? event.native.target : (event.target || document.getElementById('priceHistoryChart'));
+                        if (canvas) {
+                            let hasElement = elements && elements.length > 0;
+                            if (!hasElement) {
+                                const nearest = chart.getElementsAtEventForMode(event.native || event, 'nearest', { intersect: false }, false);
+                                hasElement = nearest && nearest.length > 0;
+                            }
+                            canvas.style.cursor = hasElement ? 'pointer' : 'default';
+                        }
+                    },
+                    onClick: (event, elements, chart) => {
+                        let targetDatasetIndex = null;
+                        
+                        if (elements && elements.length > 0) {
+                            targetDatasetIndex = elements[0].datasetIndex;
+                        } else {
+                            // Nearest element click fallback
+                            const nearest = chart.getElementsAtEventForMode(event.native || event, 'nearest', { intersect: false }, false);
+                            if (nearest && nearest.length > 0) {
+                                targetDatasetIndex = nearest[0].datasetIndex;
+                            }
+                        }
+
+                        if (targetDatasetIndex !== null) {
+                            const ds = chart.data.datasets[targetDatasetIndex];
+                            if (ds && !ds.isTargetLine) {
+                                const visibleNonTarget = chart.data.datasets.filter((d, idx) => !d.isTargetLine && chart.isDatasetVisible(idx));
+                                if (visibleNonTarget.length === 1 && chart.isDatasetVisible(targetDatasetIndex)) {
+                                    // Clicking again on the currently isolated line restores all curves!
+                                    resetAllChartLines();
+                                    showToast('Todas as linhas restauradas!', 'info');
+                                } else {
+                                    // Isolate the clicked line!
+                                    isolateChartDataset(targetDatasetIndex);
+                                    showToast(`Linha isolada: ${ds.label}`, 'success');
+                                }
+                            }
+                        }
                     },
                     plugins: {
                         legend: {

@@ -74,37 +74,37 @@
       }
     },
     {
-      "id": "pichau",
+      "id": "pichau_com_br",
       "name": "Pichau",
       "domains": [
         "pichau.com.br"
       ],
       "driver": "browser",
-      "specialHandler": "pichau_meta",
       "rules": {
         "title": {
           "selector": "h1",
           "fallback": "meta[property='og:title']"
         },
         "price": {
-          "selector": "meta[name='product:price:amount'], meta[name='twitter:data1']",
-          "attribute": "content",
-          "fallback": "div:contains('à vista') span, div:contains('no PIX') span"
-        },
-        "originalPrice": {
-          "selector": "div:contains('de R$') span",
+          "selector": "div.mui-1jk88bq-price_vista-extraSpacePriceVista",
           "regex": "R\\$\\s*([\\d\\.,]+)"
         },
         "inStock": {
           "outOfStockKeywords": [
-            "INDISPONÍVEL",
             "ESGOTADO",
-            "Produto Esgotado"
+            "INDISPONÍVEL",
+            "OUT OF STOCK",
+            "AVISE-ME",
+            "SEM ESTOQUE"
           ]
         },
+        "originalPrice": {
+          "selector": "div.mui-7ie9un-price_total",
+          "regex": "R\\$\\s*([\\d\\.,]+)"
+        },
         "image": {
-          "selector": "meta[property='og:image']",
-          "attribute": "content"
+          "selector": "img.mui-1btw989-slideImage",
+          "attribute": "src"
         }
       }
     },

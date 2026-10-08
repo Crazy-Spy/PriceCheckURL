@@ -564,19 +564,35 @@ def launch_visual_wizard(url: str) -> None:
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
-        # Launch real Chrome browser with UI
-        browser = engine._get_playwright_browser(p, headless=False)
-        if not browser:
+        import tempfile
+        user_data_dir = os.path.join(tempfile.gettempdir(), "pricecheck_chrome_profile")
+        args = [
+            "--disable-blink-features=AutomationControlled",
+            "--no-sandbox",
+            "--disable-infobars"
+        ]
+        context = None
+        for ch in ["chrome", "msedge", None]:
+            try:
+                context = p.chromium.launch_persistent_context(
+                    user_data_dir=user_data_dir,
+                    channel=ch,
+                    headless=False,
+                    user_agent=DEFAULT_USER_AGENT,
+                    args=args,
+                    viewport={"width": 1366, "height": 850},
+                    locale="pt-BR"
+                )
+                break
+            except Exception:
+                continue
+
+        if not context:
             print("[X] Erro: Não foi possível abrir o navegador na máquina.")
             return
 
-        context = browser.new_context(
-            user_agent=DEFAULT_USER_AGENT,
-            viewport={"width": 1366, "height": 850},
-            locale="pt-BR"
-        )
-        context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined });")
-        page = context.new_page()
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); window.chrome = { runtime: {} };")
+        page = context.pages[0] if context.pages else context.new_page()
 
         captured_data = {}
         finish_flag = {"done": False}
@@ -593,7 +609,7 @@ def launch_visual_wizard(url: str) -> None:
 
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(3500)
         except Exception as e:
             print(f"[!] Aviso durante carregamento da página: {e}")
 
@@ -618,7 +634,7 @@ def launch_visual_wizard(url: str) -> None:
                 print("[!] Janela do navegador foi fechada pelo usuário.")
                 break
 
-        browser.close()
+        context.close()
 
     if not captured_data or not captured_data.get("price", {}).get("selector"):
         print("[!] Nenhum extrator gravado ou processo cancelado.")

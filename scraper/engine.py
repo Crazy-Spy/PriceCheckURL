@@ -132,23 +132,40 @@ class ScraperEngine:
 
     def _fetch_browser(self, url: str, timeout: int = 40) -> Optional[str]:
         try:
+            import tempfile
             from playwright.sync_api import sync_playwright
+            user_data_dir = os.path.join(tempfile.gettempdir(), "pricecheck_chrome_cache")
+            args = [
+                "--disable-blink-features=AutomationControlled",
+                "--no-sandbox",
+                "--disable-gpu",
+                "--disable-infobars"
+            ]
             with sync_playwright() as p:
-                browser = self._get_playwright_browser(p, headless=True)
-                if not browser:
+                context = None
+                for ch in ["chrome", "msedge", None]:
+                    try:
+                        context = p.chromium.launch_persistent_context(
+                            user_data_dir=user_data_dir,
+                            channel=ch,
+                            headless=True,
+                            user_agent=DEFAULT_USER_AGENT,
+                            args=args,
+                            locale="pt-BR"
+                        )
+                        break
+                    except Exception:
+                        continue
+                if not context:
                     logger.warning("Nenhum executável de navegador disponível para Playwright.")
                     return None
-                context = browser.new_context(
-                    user_agent=DEFAULT_USER_AGENT,
-                    locale="pt-BR"
-                )
-                context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined });")
-                page = context.new_page()
+                context.add_init_script("Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); window.chrome = { runtime: {} };")
+                page = context.pages[0] if context.pages else context.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
                 # Wait briefly for dynamic client-side hydration and anti-bot verification
                 page.wait_for_timeout(3500)
                 content = page.content()
-                browser.close()
+                context.close()
                 return content
         except Exception as e:
             logger.warning(f"Erro no Playwright browser: {e}")

@@ -1059,10 +1059,55 @@
             // 2. Ordena TODO o histórico ESTRITAMENTE em ordem cronológica crescente (do mais antigo ao mais recente)
             parsedHistory.sort((a, b) => a._time - b._time);
 
-            // 3. Aplica o filtro de período de tempo ativo (all, 30d, 15d, 7d, 24h)
-            let filteredHistory = parsedHistory;
-            if (activeChartTimeFilter !== 'all' && parsedHistory.length > 0) {
-                const maxTime = parsedHistory[parsedHistory.length - 1]._time;
+            // 3. Filtra apenas checagens onde HOUVE MUDANÇA de valor em alguma loja (evita plotar pontos repetidos sem alteração)
+            const checksByTime = {};
+            parsedHistory.forEach(h => {
+                if (!checksByTime[h._time]) {
+                    checksByTime[h._time] = {
+                        time: h._time,
+                        items: {}
+                    };
+                }
+                const key = h.itemId || (h.store ? `${h.store}_${h.name}` : h.name);
+                checksByTime[h._time].items[key] = h.price;
+            });
+
+            const sortedCheckTimes = Object.keys(checksByTime).map(Number).sort((a, b) => a - b);
+            const changeCheckTimes = [];
+            let lastKnownPrices = null;
+
+            sortedCheckTimes.forEach((t, idx) => {
+                const currentPrices = checksByTime[t].items;
+                if (idx === 0) {
+                    // Primeira checagem é a linha de base inicial
+                    changeCheckTimes.push(t);
+                    lastKnownPrices = { ...currentPrices };
+                    return;
+                }
+
+                // Verifica se qualquer item daquele container teve preço diferente da checagem anterior
+                let hasChange = false;
+                for (const [key, price] of Object.entries(currentPrices)) {
+                    const prevP = lastKnownPrices[key];
+                    if (prevP === undefined || (price !== undefined && Math.abs(price - prevP) > 0.01)) {
+                        hasChange = true;
+                        break;
+                    }
+                }
+
+                if (hasChange) {
+                    changeCheckTimes.push(t);
+                    lastKnownPrices = { ...lastKnownPrices, ...currentPrices };
+                }
+            });
+
+            const changeTimesSet = new Set(changeCheckTimes);
+            const changeHistory = parsedHistory.filter(h => changeTimesSet.has(h._time));
+
+            // 4. Aplica o filtro de período de tempo ativo (all, 30d, 15d, 7d, 24h)
+            let filteredHistory = changeHistory;
+            if (activeChartTimeFilter !== 'all' && changeHistory.length > 0) {
+                const maxTime = changeHistory[changeHistory.length - 1]._time;
                 let msOffset = 0;
                 if (activeChartTimeFilter === '24h') msOffset = 24 * 60 * 60 * 1000;
                 else if (activeChartTimeFilter === '7d') msOffset = 7 * 24 * 60 * 60 * 1000;
@@ -1070,7 +1115,7 @@
                 else if (activeChartTimeFilter === '30d') msOffset = 30 * 24 * 60 * 60 * 1000;
 
                 const cutoffTime = maxTime - msOffset;
-                const windowed = parsedHistory.filter(h => h._time >= cutoffTime);
+                const windowed = changeHistory.filter(h => h._time >= cutoffTime);
                 if (windowed.length > 0) {
                     filteredHistory = windowed;
                 }

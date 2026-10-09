@@ -89,6 +89,8 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
 
         logger.info(f"--- Container: {c_name} (Alvo: R$ {c_target:.2f}) ---")
 
+        container_history_entries = []
+
         for item in items:
             item_id = item.get("id")
             item_name = item.get("name")
@@ -153,7 +155,7 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
 
             if parsed.get("status") == "success" and current_price:
                 logger.info(f"  [OK] R$ {current_price:.2f} ({result_item['availabilityText']})")
-                new_history_entries.append({
+                container_history_entries.append({
                     "timestamp": now_iso,
                     "date": now_br,
                     "itemId": item_id,
@@ -173,6 +175,20 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
                     result_item["status"] = "cached"
 
             results.append(result_item)
+
+        # Regra de negócio: só grava no histórico se ao menos uma loja do container mudou de preço
+        container_has_price_change = False
+        for entry in container_history_entries:
+            prev_p = prev_prices.get(entry["itemId"], {}).get("price")
+            if prev_p is None or abs(float(entry["price"]) - float(prev_p)) > 0.01:
+                container_has_price_change = True
+                break
+
+        if container_has_price_change:
+            logger.info(f"  -> Mudança de preço detectada no container '{c_name}'. Gravando histórico para todas as lojas.")
+            new_history_entries.extend(container_history_entries)
+        else:
+            logger.info(f"  -> Preços inalterados no container '{c_name}'. Histórico mantido sem novas entradas repetidas.")
 
     # 1. Save latest_prices.json
     with open(latest_file, "w", encoding="utf-8") as f:

@@ -93,6 +93,15 @@ Para que o bot do GitHub Actions consiga atualizar o histórico de preços:
 3. Marque a opção **Allow GitHub Actions to create and approve pull requests**.
 4. Clique em **Save**.
 
+### 4. Ativar Alertas no Discord (Notificações Push)
+Para receber alertas visuais no seu servidor do Discord quando um produto atingir o preço-alvo:
+1. No seu Discord, vá nas configurações do canal > **Integrações** > **Webhooks** > **Novo Webhook** e copie o link.
+2. No seu repositório no GitHub, vá em **Settings** > **Secrets and variables** > **Actions**.
+3. Clique em **New repository secret**:
+   * **Name**: `DISCORD_WEBHOOK_URL`
+   * **Secret**: Cole a URL do Webhook do Discord.
+4. Clique em **Add secret**. Pronto! A cada checagem, você receberá cards com link direto e detalhes das melhores ofertas.
+
 ---
 
 ## 🪄 Como Criar Extratores para Novas Lojas

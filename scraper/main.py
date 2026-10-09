@@ -23,13 +23,36 @@ for _p in [_current_dir, _parent_dir]:
 
 try:
     from .engine import ScraperEngine
-    from .utils import calculate_alert_tier
+    from .utils import calculate_alert_tier, send_discord_alert
 except (ImportError, ValueError):
     from engine import ScraperEngine
-    from utils import calculate_alert_tier
+    from utils import calculate_alert_tier, send_discord_alert
 
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s")
 logger = logging.getLogger("PriceCheck")
+
+def get_discord_webhook_url(base_dir: str) -> str:
+    """
+    Obtém a URL do Webhook do Discord via variável de ambiente (GitHub Actions Secrets)
+    ou arquivo local .env.
+    """
+    url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    if url:
+        return url
+
+    env_file = os.path.join(base_dir, ".env")
+    if os.path.isfile(env_file):
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("DISCORD_WEBHOOK_URL="):
+                        val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        if val:
+                            return val
+        except Exception:
+            pass
+    return ""
 
 def run_price_check(config_path: str = None, data_dir: str = None) -> None:
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -50,6 +73,10 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
 
     with open(config_path, "r", encoding="utf-8-sig") as f:
         config = json.load(f)
+
+    discord_webhook = get_discord_webhook_url(base_dir)
+    if discord_webhook:
+        logger.info("Discord Webhook configurado e ativo para notificações de oportunidade.")
 
     # Load existing latest prices to compute deltas
     prev_prices: Dict[str, Dict[str, Any]] = {}
@@ -165,6 +192,36 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
                     "price": current_price,
                     "inStock": result_item["inStock"]
                 })
+
+                # Disparo inteligente de alerta no Discord
+                if discord_webhook and result_item["inStock"] and current_price:
+                    tier_cat = alert_tier.get("category")
+                    if tier_cat in ("COMPRA CERTA", "PREÇO ACEITÁVEL"):
+                        prev_tier = prev_record.get("alertTier", {}).get("category")
+                        should_notify = False
+                        if prev_price is None:
+                            should_notify = True
+                        elif current_price < prev_price:
+                            should_notify = True
+                        elif prev_tier not in ("COMPRA CERTA", "PREÇO ACEITÁVEL"):
+                            should_notify = True
+
+                        if should_notify:
+                            logger.info(f"  🔔 Disparando alerta no Discord: {item_name} (R$ {current_price:.2f})")
+                            sent = send_discord_alert(
+                                webhook_url=discord_webhook,
+                                item_name=item_name,
+                                store=store,
+                                url=url,
+                                current_price=current_price,
+                                target_price=c_target,
+                                alert_tier=alert_tier,
+                                image_url=result_item.get("imageUrl"),
+                                container_name=c_name,
+                                availability=result_item["availabilityText"]
+                            )
+                            if sent:
+                                logger.info("  ✅ Alerta enviado ao Discord com sucesso!")
             else:
                 logger.warning(f"  [AVISO] Falha ao extrair ({parsed.get('error') or 'sem preço'}). Mantendo dados anteriores se houver.")
                 # Preserve previous price if current fetch failed

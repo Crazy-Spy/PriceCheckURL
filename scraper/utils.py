@@ -124,3 +124,72 @@ def calculate_alert_tier(price: Optional[float], target_price: Optional[float]) 
             "theme": "muito_alto"
         }
 
+
+def send_discord_alert(
+    webhook_url: str,
+    item_name: str,
+    store: str,
+    url: str,
+    current_price: float,
+    target_price: float,
+    alert_tier: Dict[str, Any],
+    image_url: Optional[str] = None,
+    container_name: Optional[str] = None,
+    availability: str = "Em Estoque"
+) -> bool:
+    """
+    Dispara um alerta rico (Embed) para o webhook do Discord quando um produto
+    atinge a categoria 'COMPRA CERTA' ou 'PREÇO ACEITÁVEL'.
+    """
+    if not webhook_url or not webhook_url.startswith("https://discord.com/api/webhooks/"):
+        return False
+
+    is_compra_certa = alert_tier.get("category") == "COMPRA CERTA"
+    color = 0x10B981 if is_compra_certa else 0xF59E0B
+    prefix = "🟢 COMPRA CERTA!" if is_compra_certa else "🟡 PREÇO ACEITÁVEL!"
+
+    diff = current_price - target_price
+    diff_pct = alert_tier.get("percentDiff", 0)
+
+    if diff <= 0:
+        margem_str = f"R$ {abs(diff):.2f} abaixo da sua meta ({diff_pct:.1f}%)"
+    else:
+        margem_str = f"R$ {diff:.2f} acima da sua meta (+{diff_pct:.1f}%)"
+
+    embed = {
+        "title": f"{prefix} {item_name}",
+        "url": url,
+        "description": f"Oferta monitorada em **{store}** atingiu condição de compra favorável!",
+        "color": color,
+        "fields": [
+            {"name": "💰 Preço Atual", "value": f"**R$ {current_price:,.2f}**".replace(",", "X").replace(".", ",").replace("X", "."), "inline": True},
+            {"name": "🎯 Preço-Alvo", "value": f"R$ {target_price:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."), "inline": True},
+            {"name": "📉 Margem", "value": margem_str, "inline": True},
+            {"name": "🏪 Loja", "value": store, "inline": True},
+            {"name": "📦 Estoque", "value": availability, "inline": True},
+            {"name": "📁 Grupo / Produto", "value": container_name or item_name, "inline": True},
+            {"name": "🔗 Oferta", "value": f"[👉 Clique aqui para abrir a oferta na {store}]({url})", "inline": False}
+        ],
+        "footer": {
+            "text": "PriceCheckURL • Monitor Inteligente de Preços"
+        }
+    }
+
+    if image_url and str(image_url).startswith("http"):
+        embed["thumbnail"] = {"url": image_url}
+
+    payload = {
+        "username": "PriceCheck Bot",
+        "avatar_url": "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f4b0.png",
+        "embeds": [embed]
+    }
+
+    try:
+        import httpx
+        with httpx.Client(timeout=10.0) as client:
+            res = client.post(webhook_url, json=payload)
+            return res.status_code in (200, 204)
+    except Exception:
+        return False
+
+

@@ -135,11 +135,13 @@ def send_discord_alert(
     alert_tier: Dict[str, Any],
     image_url: Optional[str] = None,
     container_name: Optional[str] = None,
-    availability: str = "Em Estoque"
+    availability: str = "Em Estoque",
+    mention: Optional[str] = None
 ) -> bool:
     """
     Dispara um alerta rico (Embed) para o webhook do Discord quando um produto
     atinge a categoria 'COMPRA CERTA' ou 'PREÇO ACEITÁVEL'.
+    Suporta menção direta de usuário (<@ID>), cargo ou @here/@everyone.
     """
     if not webhook_url or not webhook_url.startswith("https://discord.com/api/webhooks/"):
         return False
@@ -181,8 +183,15 @@ def send_discord_alert(
     payload = {
         "username": "PriceCheck Bot",
         "avatar_url": "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f4b0.png",
-        "embeds": [embed]
+        "embeds": [embed],
+        "allowed_mentions": {"parse": ["everyone", "users", "roles"]}
     }
+
+    if mention:
+        m = str(mention).strip()
+        if m.isdigit():
+            m = f"<@{m}>"
+        payload["content"] = f"{m} 🔥 **Alerta de Oportunidade:** {item_name} em **{store}**!"
 
     try:
         import httpx

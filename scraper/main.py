@@ -54,6 +54,29 @@ def get_discord_webhook_url(base_dir: str) -> str:
             pass
     return ""
 
+def get_discord_mention(base_dir: str) -> str:
+    """
+    Obtém a menção configurada (ex: ID numérico, @here, @everyone ou username)
+    via DISCORD_MENTION do ambiente ou arquivo .env local.
+    """
+    mention = os.environ.get("DISCORD_MENTION", "").strip()
+    if mention:
+        return mention
+
+    env_file = os.path.join(base_dir, ".env")
+    if os.path.isfile(env_file):
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("DISCORD_MENTION="):
+                        val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        if val:
+                            return val
+        except Exception:
+            pass
+    return ""
+
 def run_price_check(config_path: str = None, data_dir: str = None) -> None:
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if not config_path:
@@ -75,8 +98,9 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
         config = json.load(f)
 
     discord_webhook = get_discord_webhook_url(base_dir)
+    discord_mention = get_discord_mention(base_dir)
     if discord_webhook:
-        logger.info("Discord Webhook configurado e ativo para notificações de oportunidade.")
+        logger.info(f"Discord Webhook configurado e ativo. Menção configurada: {discord_mention or 'Nenhuma'}")
 
     # Load existing latest prices to compute deltas
     prev_prices: Dict[str, Dict[str, Any]] = {}
@@ -218,7 +242,8 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
                                 alert_tier=alert_tier,
                                 image_url=result_item.get("imageUrl"),
                                 container_name=c_name,
-                                availability=result_item["availabilityText"]
+                                availability=result_item["availabilityText"],
+                                mention=discord_mention
                             )
                             if sent:
                                 logger.info("  ✅ Alerta enviado ao Discord com sucesso!")

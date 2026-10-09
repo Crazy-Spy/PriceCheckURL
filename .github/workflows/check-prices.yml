@@ -43,6 +43,7 @@ jobs:
       - name: Run Price Check Engine
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_MENTION: ${{ secrets.DISCORD_MENTION }}
         run: |
           python -m scraper.main
 

@@ -99,8 +99,9 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
 
     discord_webhook = get_discord_webhook_url(base_dir)
     discord_mention = get_discord_mention(base_dir)
+    dashboard_url = os.environ.get("DASHBOARD_URL", "https://crazy-spy.github.io/PriceCheckURL/").strip()
     if discord_webhook:
-        logger.info(f"Discord Webhook configurado e ativo. Menção configurada: {discord_mention or 'Nenhuma'}")
+        logger.info(f"Discord Webhook configurado e ativo. Menção: {discord_mention or 'Nenhuma'} | Dashboard: {dashboard_url}")
 
     # Load existing latest prices to compute deltas
     prev_prices: Dict[str, Dict[str, Any]] = {}
@@ -243,7 +244,8 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
                                 image_url=result_item.get("imageUrl"),
                                 container_name=c_name,
                                 availability=result_item["availabilityText"],
-                                mention=discord_mention
+                                mention=discord_mention,
+                                dashboard_url=dashboard_url
                             )
                             if sent:
                                 logger.info("  ✅ Alerta enviado ao Discord com sucesso!")

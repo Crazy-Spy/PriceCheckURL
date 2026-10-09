@@ -136,12 +136,14 @@ def send_discord_alert(
     image_url: Optional[str] = None,
     container_name: Optional[str] = None,
     availability: str = "Em Estoque",
-    mention: Optional[str] = None
+    mention: Optional[str] = None,
+    dashboard_url: str = "https://crazy-spy.github.io/PriceCheckURL/"
 ) -> bool:
     """
     Dispara um alerta rico (Embed) para o webhook do Discord quando um produto
     atinge a categoria 'COMPRA CERTA' ou 'PREÇO ACEITÁVEL'.
-    Suporta menção direta de usuário (<@ID>), cargo ou @here/@everyone.
+    Suporta menção direta de usuário (<@ID>), cargo ou @here/@everyone,
+    além de link direto para a loja e para o Painel Web (PriceCheckURL).
     """
     if not webhook_url or not webhook_url.startswith("https://discord.com/api/webhooks/"):
         return False
@@ -170,7 +172,8 @@ def send_discord_alert(
             {"name": "🏪 Loja", "value": store, "inline": True},
             {"name": "📦 Estoque", "value": availability, "inline": True},
             {"name": "📁 Grupo / Produto", "value": container_name or item_name, "inline": True},
-            {"name": "🔗 Oferta", "value": f"[👉 Clique aqui para abrir a oferta na {store}]({url})", "inline": False}
+            {"name": "🛒 Oferta na Loja", "value": f"[👉 Ir para a {store}]({url})", "inline": True},
+            {"name": "📊 Painel Web", "value": f"[📈 Acessar Dashboard]({dashboard_url})", "inline": True}
         ],
         "footer": {
             "text": "PriceCheckURL • Monitor Inteligente de Preços"

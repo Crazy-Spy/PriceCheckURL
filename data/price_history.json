@@ -7315,5 +7315,25 @@
     "store": "Amazon",
     "price": 379.99,
     "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T09:14:34",
+    "date": "09/10/2026 09:14:34",
+    "itemId": "kabum-console-xbox-series-x-microsoft-1tb-8657",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x microsoft 1tb",
+    "store": "Kabum",
+    "price": 7499.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T09:14:34",
+    "date": "09/10/2026 09:14:34",
+    "itemId": "amazon-xbox-series-x-3646",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Amazon",
+    "price": 7019.55,
+    "inStock": true
   }
 ]

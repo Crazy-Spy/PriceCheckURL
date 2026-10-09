@@ -7335,5 +7335,85 @@
     "store": "Amazon",
     "price": 7019.55,
     "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "terabyte-rtx-5070-ti-ventus-3x-oc-3861",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "RTX 5070 Ti Ventus 3X OC",
+    "store": "Terabyte",
+    "price": 9299.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-msi-rtx-5070-ti-gaming-trio-oc-7613",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "MSI RTX 5070 Ti GAMING TRIO OC",
+    "store": "Kabum",
+    "price": 12999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-rog-strix-rtx-5070-ti-oc-16g-0271",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "ROG STRIX RTX 5070 TI OC 16G",
+    "store": "Kabum",
+    "price": 12999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-palit-geforce-rtx-5070-ti-16gb-9351",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Palit GeForce RTX 5070 Ti 16GB",
+    "store": "Kabum",
+    "price": 8499.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-rtx-5070-ti-16g-ventus-3x-oc-6813",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "RTX 5070 TI 16G VENTUS 3X OC",
+    "store": "Kabum",
+    "price": 9999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-asus-prime-rtx-5070-ti-o16g-6761",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "ASUS PRIME RTX 5070 Ti O16G",
+    "store": "Kabum",
+    "price": 9999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc",
+    "store": "Kabum",
+    "price": 9299.9,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T17:02:55",
+    "date": "09/10/2026 17:02:55",
+    "itemId": "kabum-msi-rtx5070ti-16gb-4669",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Msi RTX5070ti 16gb",
+    "store": "Kabum",
+    "price": 8445.9,
+    "inStock": true
   }
 ]

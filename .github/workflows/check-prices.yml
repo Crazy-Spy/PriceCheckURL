@@ -2,8 +2,8 @@ name: Price Check & Auto Update
 
 on:
   schedule:
-    # Executa a cada 4 horas (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 UTC)
-    - cron: '0 */4 * * *'
+    # Executa a cada 2 horas no minuto 22 (00:22, 02:22, 04:22, 06:22, ... UTC)
+    - cron: '22 */2 * * *'
   workflow_dispatch: # Permite disparo manual via interface do GitHub ou API
 
 permissions:

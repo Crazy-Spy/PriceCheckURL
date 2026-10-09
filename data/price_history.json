@@ -7165,5 +7165,155 @@
     "store": "Amazon",
     "price": 7019.55,
     "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "terabyte-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Terabyte",
+    "price": 2229.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-5800x3d-1053828",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF 1053828)",
+    "store": "Kabum",
+    "price": 2099.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Kabum",
+    "price": 2864.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "terabyte-rtx-5070-ti-frieren-edition-oc-6647",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "RTX 5070 Ti Frieren Edition OC",
+    "store": "Terabyte",
+    "price": 9099.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "terabyte-rtx-5070-ti-oc-edition-9151",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "RTX 5070 Ti OC Edition",
+    "store": "Terabyte",
+    "price": 9299.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-msi-rtx-5070-ti-gaming-trio-oc-7613",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "MSI RTX 5070 Ti GAMING TRIO OC",
+    "store": "Kabum",
+    "price": 12999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-rog-strix-rtx-5070-ti-oc-16g-0271",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "ROG STRIX RTX 5070 TI OC 16G",
+    "store": "Kabum",
+    "price": 12999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-palit-geforce-rtx-5070-ti-16gb-9351",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Palit GeForce RTX 5070 Ti 16GB",
+    "store": "Kabum",
+    "price": 8299.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-rtx-5070-ti-16g-ventus-3x-oc-6813",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "RTX 5070 TI 16G VENTUS 3X OC",
+    "store": "Kabum",
+    "price": 9999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-asus-prime-rtx-5070-ti-o16g-6761",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "ASUS PRIME RTX 5070 Ti O16G",
+    "store": "Kabum",
+    "price": 9999.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc",
+    "store": "Kabum",
+    "price": 9299.9,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-msi-rtx5070ti-16gb-4669",
+    "containerId": "rtx-5070-ti-16gb",
+    "name": "Msi RTX5070ti 16gb",
+    "store": "Kabum",
+    "price": 8445.9,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "terabyte-console-xbox-series-x-1tb-black-com-8239",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x 1tb black com",
+    "store": "Terabyte",
+    "price": 3996.32,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "kabum-console-xbox-series-x-microsoft-1tb-8657",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x microsoft 1tb",
+    "store": "Kabum",
+    "price": 7499.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-09T01:07:58",
+    "date": "09/10/2026 01:07:58",
+    "itemId": "amazon-xbox-series-x-3646",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Amazon",
+    "price": 379.99,
+    "inStock": false
   }
 ]

@@ -7445,5 +7445,35 @@
     "store": "Kabum",
     "price": 2564.99,
     "inStock": true
+  },
+  {
+    "timestamp": "2026-10-10T06:01:41",
+    "date": "10/10/2026 06:01:41",
+    "itemId": "terabyte-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Terabyte",
+    "price": 2229.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-10T06:01:41",
+    "date": "10/10/2026 06:01:41",
+    "itemId": "kabum-5800x3d-1053828",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF 1053828)",
+    "store": "Kabum",
+    "price": 2099.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-10T06:01:41",
+    "date": "10/10/2026 06:01:41",
+    "itemId": "kabum-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Kabum",
+    "price": 2361.32,
+    "inStock": true
   }
 ]

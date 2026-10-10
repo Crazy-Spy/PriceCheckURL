@@ -25,7 +25,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://img.terabyteshop.com.br/produto/p/processador-amd-ryzen-7-5800x3d-34ghz-45ghz-turbo-8-cores-16-threads-am4-sem-cooler-sem-video_138996.jpg",
         "sku": "AMD",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -54,7 +54,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://img.terabyteshop.com.br/produto/g/processador-amd-ryzen-7-5800x3d-anniversary-edition-34ghz-45ghz-turbo-8-cores-16-threads-am4-sem-cooler-sem-video_274689.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -83,7 +83,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/1053828/processador-amd-ryzen-7-5800x3d-3-4ghz-8-core-cache-100mb-am4-100-100000651pof_1784051518_g.jpg",
         "sku": "1053828",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -94,17 +94,17 @@
         "store": "Kabum",
         "url": "https://www.kabum.com.br/produto/1053076/processador-amd-ryzen-7-5800x3d-3-4ghz-turbo-4-5ghz-96mb-cache-am4-100-100000651pof",
         "rawTitle": "Processador Amd Ryzen 7 5800x3d Anniversary Edition, 3.4ghz (4.5ghz Turbo), 8-cores 16-threads, Am4, Sem Cooler, Sem Vídeo",
-        "price": 2564.99,
+        "price": 2361.32,
         "priceOriginal": 2864.99,
-        "previousPrice": 2864.99,
-        "priceChange": -300.0,
-        "priceChangePct": -10.47,
+        "previousPrice": 2564.99,
+        "priceChange": -203.67,
+        "priceChangePct": -7.94,
         "variationType": "down",
         "alertTier": {
-            "action": "Preço muito elevado (+25.12% acima do alvo). Aguarde redução significativa.",
+            "action": "Preço muito elevado (+15.19% acima do alvo). Aguarde redução significativa.",
             "targetPrice": 2050.0,
-            "percentDiff": 25.12,
-            "badge": "Muito Alto (+25.12%)",
+            "percentDiff": 15.19,
+            "badge": "Muito Alto (+15.19%)",
             "category": "MUITO ALTO",
             "theme": "muito_alto"
         },
@@ -112,7 +112,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/1053076/large/Processador-Amd-Ryzen-7-5800x3d-Anniversary-Edition-3-4ghz-4-5ghz-Turbo-8-cores-16-threads-Am4-Sem-Cooler-Sem-V-deo_1791578924.jpg",
         "sku": "1053076",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -141,7 +141,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/1/0/100-100000651pof2.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -170,7 +170,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/1/0/100-100000651wof.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -188,6 +188,35 @@
         "priceChangePct": 0.0,
         "variationType": "none",
         "alertTier": {
+            "action": "Preço muito elevado (+30.0% acima do alvo). Aguarde redução significativa.",
+            "targetPrice": 7000.0,
+            "percentDiff": 30.0,
+            "badge": "Muito Alto (+30.0%)",
+            "category": "MUITO ALTO",
+            "theme": "muito_alto"
+        },
+        "inStock": true,
+        "availabilityText": "Em Estoque",
+        "imageUrl": "https://img.terabyteshop.com.br/produto/g/placa-de-video-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-16gb-gddr7-dlss-ray-tracing-g507t-16v3c_230278.jpg",
+        "sku": null,
+        "lastUpdated": "2026-10-10T06:01:41",
+        "status": "success"
+    },
+    {
+        "id": "terabyte-rtx-5070-ti-ventus-3x-oc-3861",
+        "containerId": "rtx-5070-ti-16gb",
+        "containerName": "RTX 5070 Ti 16Gb",
+        "name": "RTX 5070 Ti Ventus 3X OC",
+        "store": "Terabyte",
+        "url": "https://www.terabyteshop.com.br/produto/34579/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g",
+        "rawTitle": "Placa de Vídeo Asus Prime NVIDIA GeForce RTX 5070 Ti OC Edition, 16GB, GDDR7, DLSS, Ray Tracing, PRIME-RTX5070TI-O16G",
+        "price": 9299.99,
+        "priceOriginal": 14749.9,
+        "previousPrice": 9299.99,
+        "priceChange": 0.0,
+        "priceChangePct": 0.0,
+        "variationType": "none",
+        "alertTier": {
             "action": "Indisponível",
             "targetPrice": 7000.0,
             "percentDiff": 0,
@@ -197,16 +226,16 @@
         },
         "inStock": true,
         "availabilityText": "Em Estoque",
-        "imageUrl": "https://img.terabyteshop.com.br/produto/g/placa-de-video-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-16gb-gddr7-dlss-ray-tracing-g507t-16v3c_230278.jpg",
+        "imageUrl": "https://img.terabyteshop.com.br/produto/g/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g_229484.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
-        "id": "terabyte-rtx-5070-ti-ventus-3x-oc-3861",
+        "id": "terabyte-rtx-5070-ti-oc-edition-9151",
         "containerId": "rtx-5070-ti-16gb",
         "containerName": "RTX 5070 Ti 16Gb",
-        "name": "RTX 5070 Ti Ventus 3X OC",
+        "name": "RTX 5070 Ti OC Edition",
         "store": "Terabyte",
         "url": "https://www.terabyteshop.com.br/produto/34579/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g",
         "rawTitle": "Placa de Vídeo Asus Prime NVIDIA GeForce RTX 5070 Ti OC Edition, 16GB, GDDR7, DLSS, Ray Tracing, PRIME-RTX5070TI-O16G",
@@ -228,37 +257,8 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://img.terabyteshop.com.br/produto/g/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g_229484.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
-    },
-    {
-        "id": "terabyte-rtx-5070-ti-oc-edition-9151",
-        "containerId": "rtx-5070-ti-16gb",
-        "containerName": "RTX 5070 Ti 16Gb",
-        "name": "RTX 5070 Ti OC Edition",
-        "store": "Terabyte",
-        "url": "https://www.terabyteshop.com.br/produto/34579/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g",
-        "rawTitle": "Placa de Vídeo Asus Prime NVIDIA GeForce RTX 5070 Ti OC Edition, 16GB, GDDR7, DLSS, Ray Tracing, PRIME-RTX5070TI-O16G",
-        "price": 9299.99,
-        "priceOriginal": 14749.9,
-        "previousPrice": 9299.99,
-        "priceChange": 0.0,
-        "priceChangePct": 0.0,
-        "variationType": "none",
-        "alertTier": {
-            "action": "Indisponível",
-            "targetPrice": 7000.0,
-            "percentDiff": 0,
-            "badge": "N/A",
-            "category": "Sem Preço",
-            "theme": "muted"
-        },
-        "inStock": true,
-        "availabilityText": "Em Estoque",
-        "imageUrl": "https://img.terabyteshop.com.br/produto/g/placa-de-video-asus-prime-nvidia-geforce-rtx-5070-ti-oc-edition-16gb-gddr7-dlss-ray-tracing-prime-rtx5070ti-o16g_229484.jpg",
-        "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
-        "status": "cached"
     },
     {
         "id": "kabum-msi-rtx-5070-ti-gaming-trio-oc-7613",
@@ -286,7 +286,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/1070648/placa-de-video-msi-rtx-5070-ti-gaming-trio-oc-nvidia-geforce-16gb-gddr7-g507t-16gtc_1788439990_g.jpg",
         "sku": "1070648",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -315,7 +315,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/761536/placa-de-video-asus-rog-strix-rtx5070ti-o16g-gaming-90yv0m90-m0na00_1749737026_g.jpg",
         "sku": "761536",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -344,7 +344,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/988703/placa-de-video-palit-geforce-rtx-5070-ti-16gb-gamingpro-s-gddr7-256bits-ne7507t019t2-gb2031u_1776288607_g.jpg",
         "sku": "988703",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -373,7 +373,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/714419/placa-de-video-msi-geforce-rtx-5070-ti-16g-ventus-3x-oc-nvidia-16gb-gddr7-ate-2497mhz-g507t-16v3c_1739889552_g.jpg",
         "sku": "714419",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -402,7 +402,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/706473/placa-de-video-asus-prime-rtx5070ti-o16g-nvidia-16gb-gddr7-ia-com-fp4-e-dlss4-edicao-oc-90yv0mf0-m0na00_1739192485_g.jpg",
         "sku": "706473",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -431,7 +431,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/726011/large/Placa-De-V-deo-Msi-Nvidia-Geforce-RTX-5070-Ti-Ventus-3x-Oc-16gb-Gddr7-Dlss-Ray-Tracing-G507t-16v3c_1790972050.jpg",
         "sku": "726011",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -460,7 +460,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/857022/large/Placa-De-V-deo-Nvidia-Geforce-Msi-RTX5070ti-16gb-Gddr7-256its-Shadow-3x-Oc-912-v531-097_1789052012.jpg",
         "sku": "857022",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -489,7 +489,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/g/5/g507t-16s3c-nac3.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -518,7 +518,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/g/5/g507t-16fec3.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -547,7 +547,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/z/t/zt-b50710j3-10p-nac122523.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -576,7 +576,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/g/5/g507t-16v3c-nac1.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -605,7 +605,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/p/r/prime-rtx5070ti-16g9.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -634,7 +634,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/708318/fonte-corsair-rme-series-rm850e-2025-full-modular-cybenetics-gold-atx-branco-cp-9020293-br_1751892811_g.jpg",
         "sku": "708318",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -652,19 +652,19 @@
         "priceChangePct": 0.0,
         "variationType": "none",
         "alertTier": {
-            "action": "Preço muito elevado (+64.21% acima do alvo). Aguarde redução significativa.",
+            "action": "Indisponível",
             "targetPrice": 700.0,
-            "percentDiff": 64.21,
-            "badge": "Muito Alto (+64.21%)",
-            "category": "MUITO ALTO",
-            "theme": "muito_alto"
+            "percentDiff": 0,
+            "badge": "N/A",
+            "category": "Sem Preço",
+            "theme": "muted"
         },
         "inStock": false,
         "availabilityText": "Esgotado",
         "imageUrl": "https://img.terabyteshop.com.br/produto/p/fonte-corsair-rm850e-850w-cybenetics-gold-pcie-51-full-modular-branco-cp-9020293-br_243605.jpg",
         "sku": "Corsair",
-        "lastUpdated": "2026-10-09T22:44:23",
-        "status": "success"
+        "lastUpdated": "2026-10-10T06:01:41",
+        "status": "cached"
     },
     {
         "id": "pichau-fonte-corsair-rm850e-850w-4601",
@@ -692,7 +692,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/c/p/cp-9020293-br3.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -721,7 +721,7 @@
         "availabilityText": "Esgotado",
         "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/r/r/rrt-000066.jpg",
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "cached"
     },
     {
@@ -739,19 +739,19 @@
         "priceChangePct": 0.0,
         "variationType": "none",
         "alertTier": {
-            "action": "Indisponível",
+            "action": "Preço atingiu ou ficou abaixo do seu preço-alvo. Excelente hora para comprar!",
             "targetPrice": 4000.0,
-            "percentDiff": 0,
-            "badge": "N/A",
-            "category": "Sem Preço",
-            "theme": "muted"
+            "percentDiff": -0.09,
+            "badge": "Compra Certa",
+            "category": "COMPRA CERTA",
+            "theme": "compra_certa"
         },
         "inStock": false,
         "availabilityText": "Esgotado",
         "imageUrl": "https://img.terabyteshop.com.br/produto/p/console-xbox-series-x-1tb-black-com-1-controle-rrt-00006_159122.jpg",
         "sku": "Microsoft",
-        "lastUpdated": "2026-10-09T22:44:23",
-        "status": "cached"
+        "lastUpdated": "2026-10-10T06:01:41",
+        "status": "success"
     },
     {
         "id": "kabum-console-xbox-series-x-microsoft-1tb-8657",
@@ -779,7 +779,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/209239/large/Console-Xbox-Series-X-Microsoft-1Tb-Controle-Sem-Fio-Preto_1788272014.jpg",
         "sku": "209239",
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     },
     {
@@ -808,7 +808,7 @@
         "availabilityText": "Em Estoque",
         "imageUrl": null,
         "sku": null,
-        "lastUpdated": "2026-10-09T22:44:23",
+        "lastUpdated": "2026-10-10T06:01:41",
         "status": "success"
     }
 ]

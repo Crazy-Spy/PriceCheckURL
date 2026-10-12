@@ -247,12 +247,17 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-2 shrink-0">
+                    <div class="flex flex-wrap items-center gap-2 shrink-0">
                         <span id="chartFocusIndicator" class="hidden text-amber-400 text-[11px] font-medium flex items-center gap-1">
                             <i class="ph ph-crosshair"></i> <span id="chartFocusText">Linha isolada</span>
                         </span>
                         <button id="btnResetChartLines" onclick="resetAllChartLines()" class="hidden px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 transition text-[11px] font-semibold flex items-center gap-1">
                             <i class="ph ph-eye"></i> Mostrar Todas as Linhas
+                        </button>
+                        <button type="button" onclick="openIgnoredPricesModal()" class="px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-rose-500/20 border border-gray-700/70 hover:border-rose-500/40 text-gray-300 hover:text-rose-300 transition text-[11px] font-semibold flex items-center gap-1.5" title="Marcar valores do gráfico como incorretos ou restaurar valores ignorados">
+                            <i class="ph ph-prohibit text-sm text-rose-400"></i>
+                            <span>Ignorar Valor</span>
+                            <span id="ignoredPricesCountBadge" class="px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-[10px] font-mono leading-none hidden">0</span>
                         </button>
                     </div>
                 </div>
@@ -591,6 +596,58 @@
         </div>
     </div>
 
+    <!-- Modal Gerenciar / Ignorar Valores Incorretos -->
+    <div id="ignoredPricesModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card rounded-2xl w-full max-w-2xl p-6 space-y-5 border border-rose-500/30 bg-[#0c121e] max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="ph ph-prohibit"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-white">Gerenciar Valores Incorretos / Ignorados</h3>
+                        <p class="text-xs text-gray-400">Descarte leituras incorretas (ex: acessórios/parcelas) do gráfico e dos alertas</p>
+                    </div>
+                </div>
+                <button onclick="closeIgnoredPricesModal()" class="text-gray-400 hover:text-white">
+                    <i class="ph ph-x text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Seção 1: Valores capturados no produto ativo -->
+            <div class="space-y-2.5">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xs font-bold text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="ph ph-chart-line-down text-indigo-400"></i>
+                        <span>Valores Registrados no Produto Atual (<span id="ignoredModalContainerName" class="text-indigo-300">--</span>)</span>
+                    </h4>
+                    <span class="text-[11px] text-gray-400">Clique em "Valor Errado" para descartar</span>
+                </div>
+                <div id="ignoredModalRecentPricesList" class="space-y-1.5 max-h-60 overflow-y-auto pr-1">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+
+            <!-- Seção 2: Valores já ignorados -->
+            <div class="space-y-2.5 pt-3 border-t border-gray-800/80">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="ph ph-shield-slash text-rose-400"></i>
+                        <span>Valores Marcados como Incorretos (Bloqueados)</span>
+                    </h4>
+                </div>
+                <div id="ignoredModalBlockedList" class="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-3 border-t border-gray-800 text-[11px] text-gray-400">
+                <span>As alterações ficam salvas no navegador e são sincronizadas com o GitHub (se configurado).</span>
+                <button onclick="closeIgnoredPricesModal()" class="py-2 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-white text-xs font-semibold transition shrink-0">Fechar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification Container -->
     <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -602,9 +659,12 @@
     <!-- Main Application JavaScript -->
     <script>
         // STATE
-        let appConfig = { settings: { currency: "BRL" }, containers: [] };
+        let appConfig = { settings: { currency: "BRL" }, containers: [], ignoredPrices: [] };
+        let rawLatestPrices = [];
+        let rawPriceHistory = [];
         let latestPrices = [];
         let priceHistory = [];
+        let ignoredPricesList = [];
         let extractorsData = { version: "2.0.0", extractors: [] };
         let activeContainerId = null;
         let activeFilter = 'all';
@@ -622,6 +682,333 @@
         function formatBRL(val) {
             if (val === null || val === undefined || isNaN(val) || val <= 0) return 'R$ --,--';
             return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calculateAlertTierJS(price, targetPrice) {
+            if (price === null || price === undefined || isNaN(price) || price <= 0) {
+                return {
+                    action: 'Indisponível',
+                    targetPrice: targetPrice || 0,
+                    percentDiff: 0,
+                    badge: 'N/A',
+                    category: 'Sem Preço',
+                    theme: 'muted'
+                };
+            }
+            if (!targetPrice || targetPrice <= 0) {
+                return {
+                    action: 'Monitorando preço',
+                    targetPrice: 0,
+                    percentDiff: 0,
+                    badge: 'Monitorando',
+                    category: 'MONITORANDO',
+                    theme: 'info'
+                };
+            }
+            const diffPct = Number((((price - targetPrice) / targetPrice) * 100).toFixed(2));
+            if (diffPct <= 0) {
+                return {
+                    action: 'Preço atingiu ou ficou abaixo do seu preço-alvo. Excelente hora para comprar!',
+                    targetPrice,
+                    percentDiff: diffPct,
+                    badge: 'Compra Certa',
+                    category: 'COMPRA CERTA',
+                    theme: 'compra_certa'
+                };
+            } else if (diffPct <= 8.0) {
+                return {
+                    action: `Até 8% acima do preço-alvo (+${diffPct}%). Pode valer a compra dependendo da urgência.`,
+                    targetPrice,
+                    percentDiff: diffPct,
+                    badge: `Aceitável (+${diffPct}%)`,
+                    category: 'PREÇO ACEITÁVEL',
+                    theme: 'aceitavel'
+                };
+            } else if (diffPct <= 15.0) {
+                return {
+                    action: `Preço acima do ideal (+${diffPct}%). Recomendável aguardar novas promoções.`,
+                    targetPrice,
+                    percentDiff: diffPct,
+                    badge: `Acima (+${diffPct}%)`,
+                    category: 'ACIMA DO IDEAL',
+                    theme: 'acima_ideal'
+                };
+            } else {
+                return {
+                    action: `Preço muito elevado (+${diffPct}% acima do alvo). Aguarde redução significativa.`,
+                    targetPrice,
+                    percentDiff: diffPct,
+                    badge: `Muito Alto (+${diffPct}%)`,
+                    category: 'MUITO ALTO',
+                    theme: 'muito_alto'
+                };
+            }
+        }
+
+        function loadIgnoredPricesState() {
+            const merged = [];
+            const addUnique = (entry) => {
+                if (!entry || !entry.itemId || entry.price === undefined || entry.price === null) return;
+                const p = Number(entry.price);
+                if (isNaN(p)) return;
+                const exists = merged.some(x => x.itemId === entry.itemId && Math.abs(Number(x.price) - p) <= 0.01);
+                if (!exists) {
+                    merged.push({
+                        itemId: entry.itemId,
+                        price: p,
+                        name: entry.name || entry.itemId,
+                        store: entry.store || 'Loja',
+                        containerId: entry.containerId || '',
+                        ignoredAt: entry.ignoredAt || new Date().toISOString()
+                    });
+                }
+            };
+
+            if (Array.isArray(appConfig.ignoredPrices)) {
+                appConfig.ignoredPrices.forEach(addUnique);
+            }
+            (appConfig.containers || []).forEach(c => {
+                (c.items || []).forEach(it => {
+                    if (Array.isArray(it.ignoredPrices)) {
+                        it.ignoredPrices.forEach(p => addUnique({
+                            itemId: it.id,
+                            price: p,
+                            name: it.name,
+                            store: it.store,
+                            containerId: c.id
+                        }));
+                    }
+                });
+            });
+            try {
+                const localRaw = localStorage.getItem('pc_ignored_prices');
+                if (localRaw) {
+                    const localArr = JSON.parse(localRaw);
+                    if (Array.isArray(localArr)) localArr.forEach(addUnique);
+                }
+            } catch {}
+
+            ignoredPricesList = merged;
+            syncIgnoredStateToConfigObject();
+        }
+
+        function syncIgnoredStateToConfigObject() {
+            appConfig.ignoredPrices = ignoredPricesList;
+            (appConfig.containers || []).forEach(c => {
+                (c.items || []).forEach(it => {
+                    const pricesForIt = ignoredPricesList
+                        .filter(x => x.itemId === it.id)
+                        .map(x => x.price);
+                    if (pricesForIt.length > 0) {
+                        it.ignoredPrices = pricesForIt;
+                    } else {
+                        delete it.ignoredPrices;
+                    }
+                });
+            });
+            try {
+                localStorage.setItem('pc_ignored_prices', JSON.stringify(ignoredPricesList));
+            } catch {}
+        }
+
+        function isPriceIgnored(itemId, price) {
+            if (!itemId || price === null || price === undefined) return false;
+            const p = Number(price);
+            if (isNaN(p)) return false;
+            return ignoredPricesList.some(x => x.itemId === itemId && Math.abs(Number(x.price) - p) <= 0.01);
+        }
+
+        function recomputeFilteredData() {
+            priceHistory = rawPriceHistory.filter(h => !isPriceIgnored(h.itemId, h.price));
+            latestPrices = JSON.parse(JSON.stringify(rawLatestPrices));
+
+            latestPrices.forEach(item => {
+                if (isPriceIgnored(item.id, item.price)) {
+                    // Busca o último preço válido no histórico filtrado para este item
+                    const validHistoryForItem = priceHistory.filter(h => h.itemId === item.id && h.price > 0);
+                    let fallbackPrice = null;
+                    if (validHistoryForItem.length > 0) {
+                        fallbackPrice = validHistoryForItem[validHistoryForItem.length - 1].price;
+                    } else if (item.previousPrice && !isPriceIgnored(item.id, item.previousPrice)) {
+                        fallbackPrice = item.previousPrice;
+                    }
+
+                    const container = (appConfig.containers || []).find(c => c.id === item.containerId);
+                    const targetPrice = container ? container.targetPrice : 0;
+
+                    item.price = fallbackPrice;
+                    item.previousPrice = fallbackPrice;
+                    item.priceChange = 0;
+                    item.priceChangePct = 0;
+                    item.variationType = 'none';
+                    item.alertTier = calculateAlertTierJS(fallbackPrice, targetPrice);
+                }
+            });
+
+            const badge = document.getElementById('ignoredPricesCountBadge');
+            if (badge) {
+                if (ignoredPricesList.length > 0) {
+                    badge.textContent = ignoredPricesList.length;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+        }
+
+        async function syncIgnoredDataToGitHub() {
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+            if (!repo || !token) return;
+
+            await saveToGitHubIfConfigured('config.json', JSON.stringify(appConfig, null, 2));
+            await saveToGitHubIfConfigured('data/latest_prices.json', JSON.stringify(latestPrices, null, 4));
+            await saveToGitHubIfConfigured('data/price_history.json', JSON.stringify(priceHistory, null, 2));
+        }
+
+        function ignoreItemPrice(itemId, price) {
+            if (!itemId || price === null || price === undefined || isNaN(price) || price <= 0) return;
+            const numPrice = Number(price);
+
+            const itemMeta = rawLatestPrices.find(i => i.id === itemId)
+                || rawPriceHistory.find(h => h.itemId === itemId)
+                || { name: itemId, store: 'Loja', containerId: activeContainerId };
+
+            if (!isPriceIgnored(itemId, numPrice)) {
+                ignoredPricesList.push({
+                    itemId: itemId,
+                    price: numPrice,
+                    name: itemMeta.name || itemId,
+                    store: itemMeta.store || 'Loja',
+                    containerId: itemMeta.containerId || activeContainerId || '',
+                    ignoredAt: new Date().toISOString()
+                });
+            }
+
+            syncIgnoredStateToConfigObject();
+            recomputeFilteredData();
+            renderDashboard();
+            if (!document.getElementById('ignoredPricesModal').classList.contains('hidden')) {
+                renderIgnoredPricesModalContent();
+            }
+            showToast(`Valor ${formatBRL(numPrice)} (${itemMeta.store || 'Loja'}) marcado como incorreto e ignorado!`, 'success');
+            syncIgnoredDataToGitHub();
+        }
+
+        function restoreIgnoredPrice(itemId, price) {
+            const numPrice = Number(price);
+            ignoredPricesList = ignoredPricesList.filter(
+                x => !(x.itemId === itemId && Math.abs(Number(x.price) - numPrice) <= 0.01)
+            );
+            syncIgnoredStateToConfigObject();
+            recomputeFilteredData();
+            renderDashboard();
+            if (!document.getElementById('ignoredPricesModal').classList.contains('hidden')) {
+                renderIgnoredPricesModalContent();
+            }
+            showToast(`Valor ${formatBRL(numPrice)} restaurado!`, 'info');
+            syncIgnoredDataToGitHub();
+        }
+
+        function openIgnoredPricesModal() {
+            renderIgnoredPricesModalContent();
+            document.getElementById('ignoredPricesModal').classList.remove('hidden');
+        }
+
+        function closeIgnoredPricesModal() {
+            document.getElementById('ignoredPricesModal').classList.add('hidden');
+        }
+
+        function renderIgnoredPricesModalContent() {
+            const container = (appConfig.containers || []).find(c => c.id === activeContainerId);
+            const nameSpan = document.getElementById('ignoredModalContainerName');
+            if (nameSpan) nameSpan.textContent = container ? container.name : 'Todos';
+
+            const recentList = document.getElementById('ignoredModalRecentPricesList');
+            const blockedList = document.getElementById('ignoredModalBlockedList');
+            if (!recentList || !blockedList) return;
+
+            // Coleta pares únicos (itemId + price) do container ativo (no histórico filtrado + latestPrices)
+            const seenPairs = new Map();
+            const cId = container ? container.id : null;
+
+            priceHistory
+                .filter(h => !cId || h.containerId === cId)
+                .forEach(h => {
+                    if (!h.itemId || !h.price) return;
+                    const key = `${h.itemId}_${Number(h.price).toFixed(2)}`;
+                    seenPairs.set(key, {
+                        itemId: h.itemId,
+                        name: h.name || h.itemId,
+                        store: h.store || 'Loja',
+                        price: Number(h.price),
+                        lastDate: h.date || h.timestamp || ''
+                    });
+                });
+
+            latestPrices
+                .filter(p => !cId || p.containerId === cId)
+                .forEach(p => {
+                    if (!p.id || !p.price) return;
+                    const key = `${p.id}_${Number(p.price).toFixed(2)}`;
+                    if (!seenPairs.has(key)) {
+                        seenPairs.set(key, {
+                            itemId: p.id,
+                            name: p.name || p.id,
+                            store: p.store || 'Loja',
+                            price: Number(p.price),
+                            lastDate: p.lastUpdated || ''
+                        });
+                    }
+                });
+
+            const entries = Array.from(seenPairs.values()).sort((a, b) => a.price - b.price);
+            if (entries.length === 0) {
+                recentList.innerHTML = `<div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-xs text-gray-400 text-center">Nenhum valor registrado neste produto.</div>`;
+            } else {
+                const targetPrice = container ? Number(container.targetPrice || 0) : 0;
+                recentList.innerHTML = entries.map(e => {
+                    const isSuspicious = targetPrice > 0 && e.price < targetPrice * 0.45;
+                    const dtObj = parseChartTimestamp(e.lastDate);
+                    const dtLabel = dtObj ? formatChartAxisDate(dtObj, false) : '';
+                    return `
+                        <div class="p-2.5 rounded-xl bg-gray-900/90 border ${isSuspicious ? 'border-amber-500/40 bg-amber-950/15' : 'border-gray-800'} flex items-center justify-between gap-2 text-xs">
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-white font-mono">${formatBRL(e.price)}</span>
+                                    <span class="px-2 py-0.5 rounded-full bg-gray-800 text-gray-300 text-[10px] font-semibold">${e.store}</span>
+                                    ${isSuspicious ? `<span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] font-semibold">Suspeito (muito abaixo do alvo)</span>` : ''}
+                                </div>
+                                <div class="text-[11px] text-gray-400 truncate mt-0.5">${e.name} ${dtLabel ? `&bull; ${dtLabel}` : ''}</div>
+                            </div>
+                            <button type="button" onclick="ignoreItemPrice('${e.itemId}', ${e.price})" class="px-2.5 py-1.5 rounded-lg bg-rose-500/15 hover:bg-rose-600 text-rose-300 hover:text-white border border-rose-500/30 text-[11px] font-semibold flex items-center gap-1 shrink-0 transition">
+                                <i class="ph ph-prohibit"></i>
+                                <span>Valor Errado</span>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            if (ignoredPricesList.length === 0) {
+                blockedList.innerHTML = `<div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-xs text-gray-500 text-center">Nenhum valor marcado como incorreto até o momento.</div>`;
+            } else {
+                blockedList.innerHTML = ignoredPricesList.map(ig => `
+                    <div class="p-2.5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex items-center justify-between gap-2 text-xs">
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-rose-300 line-through font-mono">${formatBRL(ig.price)}</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-800 text-gray-300 text-[10px] font-semibold">${ig.store || 'Loja'}</span>
+                            </div>
+                            <div class="text-[11px] text-gray-400 truncate mt-0.5">${ig.name || ig.itemId}</div>
+                        </div>
+                        <button type="button" onclick="restoreIgnoredPrice('${ig.itemId}', ${ig.price})" class="px-2.5 py-1.5 rounded-lg bg-gray-800 hover:bg-emerald-600 text-gray-300 hover:text-white text-[11px] font-semibold flex items-center gap-1 shrink-0 transition">
+                            <i class="ph ph-arrow-counter-clockwise"></i>
+                            <span>Restaurar</span>
+                        </button>
+                    </div>
+                `).join('');
+            }
         }
 
         function showToast(msg, type = 'info') {
@@ -697,6 +1084,11 @@
             if ((!extractorsData.extractors || extractorsData.extractors.length === 0) && window.PRICE_CHECK_EXTRACTORS) {
                 extractorsData = window.PRICE_CHECK_EXTRACTORS;
             }
+
+            rawLatestPrices = JSON.parse(JSON.stringify(latestPrices || []));
+            rawPriceHistory = JSON.parse(JSON.stringify(priceHistory || []));
+            loadIgnoredPricesState();
+            recomputeFilteredData();
 
             renderDashboard();
             renderExtractorsList();
@@ -853,7 +1245,7 @@
                             <h4 class="text-xs font-semibold text-gray-200 line-clamp-2 leading-relaxed" title="${item.name}">${item.name}</h4>
                         </div>
 
-                        <div class="pt-2 border-t border-gray-800/60 flex items-end justify-between">
+                        <div class="pt-2 border-t border-gray-800/60 flex items-end justify-between gap-2">
                             <div>
                                 ${item.priceOriginal && item.priceOriginal > item.price ? `
                                     <span class="text-[10px] text-gray-500 line-through block font-mono">${formatBRL(item.priceOriginal)}</span>
@@ -865,10 +1257,18 @@
                                 </div>
                             </div>
 
-                            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="py-1.5 px-3 rounded-lg bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white text-xs font-semibold flex items-center gap-1 transition">
-                                <span>Ver</span>
-                                <i class="ph ph-arrow-square-out text-sm"></i>
-                            </a>
+                            <div class="flex items-center gap-1.5">
+                                ${item.price ? `
+                                    <button type="button" onclick="ignoreItemPrice('${item.id}', ${item.price})" class="py-1.5 px-2.5 rounded-lg bg-gray-800/90 hover:bg-rose-500/20 border border-gray-700/60 hover:border-rose-500/40 text-gray-400 hover:text-rose-300 text-xs font-medium flex items-center gap-1 transition" title="Marcar valor ${formatBRL(item.price)} como incorreto e ignorar">
+                                        <i class="ph ph-prohibit text-sm"></i>
+                                        <span>Valor Errado</span>
+                                    </button>
+                                ` : ''}
+                                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="py-1.5 px-3 rounded-lg bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white text-xs font-semibold flex items-center gap-1 transition">
+                                    <span>Ver</span>
+                                    <i class="ph ph-arrow-square-out text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1060,7 +1460,9 @@
             parsedHistory.sort((a, b) => a._time - b._time);
 
             // 3. Filtra apenas checagens onde HOUVE MUDANÇA de valor em alguma loja (evita plotar pontos repetidos sem alteração)
+            //    e propaga (forward-fill) o último preço conhecido das demais ofertas do container em cada checagem válida
             const checksByTime = {};
+            const itemMetaMap = {};
             parsedHistory.forEach(h => {
                 if (!checksByTime[h._time]) {
                     checksByTime[h._time] = {
@@ -1070,10 +1472,19 @@
                 }
                 const key = h.itemId || (h.store ? `${h.store}_${h.name}` : h.name);
                 checksByTime[h._time].items[key] = h.price;
+                if (!itemMetaMap[key]) {
+                    itemMetaMap[key] = {
+                        itemId: h.itemId,
+                        containerId: h.containerId,
+                        name: h.name,
+                        store: h.store
+                    };
+                }
             });
 
             const sortedCheckTimes = Object.keys(checksByTime).map(Number).sort((a, b) => a - b);
             const changeCheckTimes = [];
+            const snapshotsByTime = {};
             let lastKnownPrices = null;
 
             sortedCheckTimes.forEach((t, idx) => {
@@ -1082,6 +1493,7 @@
                     // Primeira checagem é a linha de base inicial
                     changeCheckTimes.push(t);
                     lastKnownPrices = { ...currentPrices };
+                    snapshotsByTime[t] = { ...lastKnownPrices };
                     return;
                 }
 
@@ -1098,11 +1510,27 @@
                 if (hasChange) {
                     changeCheckTimes.push(t);
                     lastKnownPrices = { ...lastKnownPrices, ...currentPrices };
+                    snapshotsByTime[t] = { ...lastKnownPrices };
                 }
             });
 
-            const changeTimesSet = new Set(changeCheckTimes);
-            const changeHistory = parsedHistory.filter(h => changeTimesSet.has(h._time));
+            const changeHistory = [];
+            changeCheckTimes.forEach(t => {
+                const snapshot = snapshotsByTime[t] || {};
+                const d = new Date(t);
+                for (const [key, price] of Object.entries(snapshot)) {
+                    const meta = itemMetaMap[key] || {};
+                    changeHistory.push({
+                        itemId: meta.itemId || key,
+                        containerId: meta.containerId || containerId,
+                        name: meta.name || key,
+                        store: meta.store || 'Loja',
+                        price: price,
+                        _time: t,
+                        _date: d
+                    });
+                }
+            });
 
             // 4. Aplica o filtro de período de tempo ativo (all, 30d, 15d, 7d, 24h)
             let filteredHistory = changeHistory;
@@ -1157,11 +1585,15 @@
             const datasets = Object.values(itemDatasetsMap).map((itemObj, idx) => {
                 const color = colors[idx % colors.length];
                 const points = [];
+                let lastPrice = undefined;
                 uniqueTimestamps.forEach(t => {
                     if (itemObj.dataMap[t] !== undefined) {
+                        lastPrice = itemObj.dataMap[t];
+                    }
+                    if (lastPrice !== undefined) {
                         points.push({
                             x: timeToLabel[t],
-                            y: itemObj.dataMap[t]
+                            y: lastPrice
                         });
                     }
                 });

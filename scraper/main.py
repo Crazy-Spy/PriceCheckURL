@@ -128,6 +128,7 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
     now_br = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
     containers = config.get("containers", [])
+    global_ignored_prices = config.get("ignoredPrices", [])
     logger.info(f"Iniciando verificação de {len(containers)} containers...")
 
     results = []
@@ -166,6 +167,20 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
             current_price = parsed.get("price")
             prev_record = prev_prices.get(item_id, {})
             prev_price = prev_record.get("price")
+
+            # Check if extracted price was marked as invalid/ignored by the user
+            if current_price is not None:
+                item_ignored_values = list(item.get("ignoredPrices", []))
+                for ig in global_ignored_prices:
+                    if isinstance(ig, dict) and ig.get("itemId") == item_id and ig.get("price") is not None:
+                        item_ignored_values.append(ig.get("price"))
+                if any(abs(float(current_price) - float(ig_p)) <= 0.01 for ig_p in item_ignored_values if ig_p is not None):
+                    logger.warning(
+                        f"  [IGNORADO] Preço R$ {current_price:.2f} marcado como incorreto para '{item_name}'. Descartando leitura."
+                    )
+                    current_price = None
+                    parsed["status"] = "ignored_price"
+                    parsed["error"] = "Valor na lista de preços ignorados"
 
             # Calculate price delta
             price_change = 0.0
@@ -257,6 +272,16 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
                     result_item["inStock"] = prev_record.get("inStock", False)
                     result_item["availabilityText"] = prev_record.get("availabilityText", "Desconhecido")
                     result_item["status"] = "cached"
+                    container_history_entries.append({
+                        "timestamp": now_iso,
+                        "date": now_br,
+                        "itemId": item_id,
+                        "containerId": c_id,
+                        "name": item_name,
+                        "store": store,
+                        "price": result_item["price"],
+                        "inStock": result_item["inStock"]
+                    })
 
             results.append(result_item)
 

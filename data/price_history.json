@@ -8565,5 +8565,65 @@
     "store": "Pichau",
     "price": 8099.99,
     "inStock": false
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "terabyte-5800x3d-standard",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Padrão)",
+    "store": "Terabyte",
+    "price": 2091.42,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "terabyte-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Terabyte",
+    "price": 2229.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "kabum-5800x3d-1053828",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF 1053828)",
+    "store": "Kabum",
+    "price": 2049.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "kabum-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Kabum",
+    "price": 2864.29,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "pichau-5800x3d-pof",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF)",
+    "store": "Pichau",
+    "price": 2139.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-10-16T13:20:33",
+    "date": "16/10/2026 13:20:33",
+    "itemId": "pichau-5800x3d-wof",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (WOF)",
+    "store": "Pichau",
+    "price": 2499.99,
+    "inStock": false
   }
 ]

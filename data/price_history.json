@@ -13135,5 +13135,45 @@
     "store": "Pichau",
     "price": 8099.99,
     "inStock": false
+  },
+  {
+    "timestamp": "2026-11-05T06:59:21",
+    "date": "05/11/2026 06:59:21",
+    "itemId": "pichau-xbox-series-x-8493",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Pichau",
+    "price": 4099.9,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-05T06:59:21",
+    "date": "05/11/2026 06:59:21",
+    "itemId": "terabyte-console-xbox-series-x-1tb-black-com-8239",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x 1tb black com",
+    "store": "Terabyte",
+    "price": 3996.32,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-05T06:59:21",
+    "date": "05/11/2026 06:59:21",
+    "itemId": "kabum-console-xbox-series-x-microsoft-1tb-8657",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x microsoft 1tb",
+    "store": "Kabum",
+    "price": 7499.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-05T06:59:21",
+    "date": "05/11/2026 06:59:21",
+    "itemId": "amazon-xbox-series-x-3646",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Amazon",
+    "price": 7179.0,
+    "inStock": true
   }
 ]

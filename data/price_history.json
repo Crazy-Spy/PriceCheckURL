@@ -14145,5 +14145,105 @@
     "store": "Pichau",
     "price": 8099.99,
     "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "terabyte-5800x3d-standard",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Padrão)",
+    "store": "Terabyte",
+    "price": 2091.42,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "terabyte-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Terabyte",
+    "price": 1999.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "kabum-5800x3d-1053828",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF 1053828)",
+    "store": "Kabum",
+    "price": 2026.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "kabum-5800x3d-anniversary",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (Anniversary Edition)",
+    "store": "Kabum",
+    "price": 2254.47,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "pichau-5800x3d-pof",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (POF)",
+    "store": "Pichau",
+    "price": 2139.99,
+    "inStock": true
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "pichau-5800x3d-wof",
+    "containerId": "ryzen-7-5800x3d",
+    "name": "Ryzen 7 5800X3D (WOF)",
+    "store": "Pichau",
+    "price": 2499.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "pichau-xbox-series-x-8493",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Pichau",
+    "price": 4099.9,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "terabyte-console-xbox-series-x-1tb-black-com-8239",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x 1tb black com",
+    "store": "Terabyte",
+    "price": 3996.32,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "kabum-console-xbox-series-x-microsoft-1tb-8657",
+    "containerId": "XBOXX",
+    "name": "Console xbox series x microsoft 1tb",
+    "store": "Kabum",
+    "price": 7499.99,
+    "inStock": false
+  },
+  {
+    "timestamp": "2026-11-10T20:53:35",
+    "date": "10/11/2026 20:53:35",
+    "itemId": "amazon-xbox-series-x-3646",
+    "containerId": "XBOXX",
+    "name": "XBOX Series X",
+    "store": "Amazon",
+    "price": 749.0,
+    "inStock": false
   }
 ]

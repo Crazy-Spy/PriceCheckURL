@@ -23,6 +23,7 @@
   * **Tooltip Focado**: Ao passar o mouse sobre o gráfico, o balão exibe apenas os dados da oferta da linha sob o cursor.
   * **Linha de Preço-Alvo**: Linha tracejada destacando o valor desejado para compra.
 * 🏷️ **Status de Estoque e Oportunidades**: Cálculo automático de melhores preços, alertas de oportunidade (*"Compra Certa"*, *"Preço Aceitável"*) e sinalização de itens esgotados.
+* 🛍️ **Arquivamento e Registro de Compra**: Comprou o item monitorado? Marque-o como **Comprado**, informe o **Preço Pago**, data, loja e observações. O produto é arquivado (pausando novas raspagens e notificações), uma linha tracejada esmeralda com o **Preço Pago** é desenhada no gráfico para comparação direta contra o preço-alvo e o histórico das lojas, e todos os dados ficam salvos para consulta futura com cálculo automático de economia! É possível reativar o monitoramento a qualquer momento com um clique.
 
 ### ⏱️ Automação Serverless (GitHub Actions)
 * 🔄 **Execução Agendada**: Workflow pré-configurado executando **a cada 2 horas no minuto 22** (`22 */2 * * *`), garantindo monitoramento constante sem congestionar a fila global de horários cheios.

@@ -140,6 +140,37 @@ def run_price_check(config_path: str = None, data_dir: str = None) -> None:
         c_target = float(container.get("targetPrice", 0))
         items = container.get("items", [])
 
+        is_archived = container.get("archived", False) or container.get("status") in ("archived", "purchased") or container.get("purchased", False)
+        if is_archived:
+            logger.info(f"--- Container: {c_name} [ARQUIVADO / COMPRADO] - Pulando checagem de novas ofertas ---")
+            for item in items:
+                item_id = item.get("id")
+                prev_record = prev_prices.get(item_id, {})
+                archived_item = {
+                    "id": item_id,
+                    "containerId": c_id,
+                    "containerName": c_name,
+                    "name": item.get("name"),
+                    "store": item.get("store"),
+                    "url": item.get("url"),
+                    "rawTitle": prev_record.get("rawTitle", item.get("name")),
+                    "price": prev_record.get("price"),
+                    "priceOriginal": prev_record.get("priceOriginal"),
+                    "previousPrice": prev_record.get("previousPrice") or prev_record.get("price"),
+                    "priceChange": 0.0,
+                    "priceChangePct": 0.0,
+                    "variationType": "none",
+                    "alertTier": prev_record.get("alertTier") or calculate_alert_tier(prev_record.get("price"), c_target),
+                    "inStock": prev_record.get("inStock", False),
+                    "availabilityText": prev_record.get("availabilityText", "Arquivado / Comprado"),
+                    "imageUrl": prev_record.get("imageUrl"),
+                    "sku": prev_record.get("sku"),
+                    "lastUpdated": prev_record.get("lastUpdated") or now_iso,
+                    "status": "archived"
+                }
+                results.append(archived_item)
+            continue
+
         logger.info(f"--- Container: {c_name} (Alvo: R$ {c_target:.2f}) ---")
 
         container_history_entries = []

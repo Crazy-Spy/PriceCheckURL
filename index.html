@@ -180,11 +180,29 @@
 
             <!-- CONTAINER SELECTOR (Cards de Seleção dos Produtos) -->
             <div class="space-y-3">
-                <div class="flex items-center justify-between">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <span class="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
                         <i class="ph ph-folders text-indigo-400"></i> Selecione o Produto / Grupo:
+                        <span class="text-xs text-indigo-400 font-medium normal-case" id="activeContainerSummary">--</span>
                     </span>
-                    <span class="text-xs text-indigo-400 font-medium" id="activeContainerSummary">--</span>
+                    <!-- Status Filter Tabs: Ativos / Comprados / Todos -->
+                    <div class="flex items-center gap-1.5 bg-gray-900/90 p-1 rounded-xl border border-gray-800 text-xs shrink-0">
+                        <button type="button" onclick="setContainerFilter('active')" id="btnFilterActiveContainers" class="px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-indigo-600 text-white shadow-sm flex items-center gap-1.5">
+                            <i class="ph ph-radar"></i>
+                            <span>Ativos</span>
+                            <span id="badgeCountActiveContainers" class="px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]">0</span>
+                        </button>
+                        <button type="button" onclick="setContainerFilter('purchased')" id="btnFilterPurchasedContainers" class="px-2.5 py-1 rounded-lg font-medium text-[11px] transition text-gray-400 hover:text-white hover:bg-gray-800 flex items-center gap-1.5">
+                            <i class="ph ph-shopping-bag"></i>
+                            <span>Comprados</span>
+                            <span id="badgeCountPurchasedContainers" class="px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px]">0</span>
+                        </button>
+                        <button type="button" onclick="setContainerFilter('all')" id="btnFilterAllContainers" class="px-2.5 py-1 rounded-lg font-medium text-[11px] transition text-gray-400 hover:text-white hover:bg-gray-800 flex items-center gap-1.5">
+                            <i class="ph ph-stack"></i>
+                            <span>Todos</span>
+                            <span id="badgeCountAllContainers" class="px-1.5 py-0.2 rounded-full bg-gray-800 text-gray-300 text-[10px]">0</span>
+                        </button>
+                    </div>
                 </div>
                 <div id="containerTabsBar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     <!-- Cards dinâmicos para cada produto -->
@@ -199,11 +217,14 @@
                             <i class="ph ph-chart-line"></i>
                         </div>
                         <div>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 <h3 id="chartContainerTitle" class="text-base font-bold text-white tracking-tight">Carregando...</h3>
                                 <span id="chartContainerCategory" class="px-2 py-0.5 rounded-md bg-gray-900 border border-gray-800 text-[11px] text-gray-400">Hardware</span>
+                                <span id="chartContainerStatusBadge" class="hidden px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-bold items-center gap-1">
+                                    <i class="ph ph-check-circle"></i> COMPRADO
+                                </span>
                             </div>
-                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-0.5">
+                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-0.5" id="chartContainerSubtitle">
                                 <span>Preço-Alvo: <strong id="chartContainerTarget" class="text-indigo-300 font-mono">R$ --</strong></span>
                                 <span>&bull;</span>
                                 <span class="text-gray-400">Histórico e comparação direta entre lojas</span>
@@ -211,8 +232,13 @@
                         </div>
                     </div>
                     
-                    <div class="flex items-center gap-3" id="chartHeaderBestPrice">
-                        <!-- Preenchido dinamicamente -->
+                    <div class="flex flex-wrap items-center gap-3" id="chartHeaderRight">
+                        <div id="chartHeaderBestPrice" class="flex items-center gap-3">
+                            <!-- Preenchido dinamicamente -->
+                        </div>
+                        <div id="chartHeaderActions" class="flex items-center gap-2">
+                            <!-- Botão Marcar Comprado / Editar Compra -->
+                        </div>
                     </div>
                 </div>
 
@@ -648,6 +674,94 @@
         </div>
     </div>
 
+    <!-- Modal Registrar Compra / Arquivar Container -->
+    <div id="purchaseModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card rounded-2xl w-full max-w-lg p-6 space-y-4 border border-emerald-500/30 bg-[#0c121e] max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="ph ph-shopping-bag"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-white flex items-center gap-2" id="purchaseModalTitle">
+                            Registrar Compra do Produto
+                        </h3>
+                        <p class="text-xs text-gray-400">Marque como comprado e guarde o histórico para consulta</p>
+                    </div>
+                </div>
+                <button onclick="closePurchaseModal()" class="text-gray-400 hover:text-white">
+                    <i class="ph ph-x text-lg"></i>
+                </button>
+            </div>
+
+            <input type="hidden" id="purchaseModalContainerId">
+
+            <!-- Informações do produto sendo arquivado -->
+            <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800 space-y-1">
+                <div class="text-[11px] text-gray-400">Produto Monitorado:</div>
+                <div id="purchaseModalProductName" class="text-sm font-bold text-white">--</div>
+                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-400 mt-1">
+                    <span>Preço-Alvo: <strong id="purchaseModalTargetPrice" class="text-indigo-300 font-mono">R$ --</strong></span>
+                    <span>&bull;</span>
+                    <span>Menor Oferta Atual: <strong id="purchaseModalBestPrice" class="text-emerald-400 font-mono">R$ --</strong></span>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label class="block text-gray-300 font-medium">Preço Pago (R$) *</label>
+                        <div class="flex items-center gap-1.5" id="purchaseQuickFillButtons">
+                            <!-- Quick fill buttons inserted here -->
+                        </div>
+                    </div>
+                    <input type="number" id="purchaseModalPrice" oninput="updatePurchaseEconomyPreview()" step="0.01" placeholder="Ex: 1950.00" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-white font-mono text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-gray-300 mb-1 font-medium">Data da Compra *</label>
+                        <input type="date" id="purchaseModalDate" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-1 font-medium">Loja onde comprou</label>
+                        <input type="text" id="purchaseModalStore" list="purchaseStoreList" placeholder="Ex: Terabyte, Kabum..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-emerald-500">
+                        <datalist id="purchaseStoreList">
+                            <!-- Populated with stores from this container -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-300 mb-1 font-medium">Observações / Detalhes da Compra (Opcional)</label>
+                    <textarea id="purchaseModalNotes" rows="2" placeholder="Ex: Cupom de desconto no PIX, frete grátis, garantia estendida..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-white resize-none focus:outline-none focus:border-emerald-500"></textarea>
+                </div>
+            </div>
+
+            <!-- Economia Estimada Preview -->
+            <div id="purchaseEconomyPreview" class="p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-xs space-y-1 hidden">
+                <div class="flex items-center gap-1.5 text-emerald-400 font-semibold" id="purchaseEconomyTitle">
+                    <i class="ph ph-trend-down text-base"></i>
+                    <span>Economia realizada</span>
+                </div>
+                <p id="purchaseEconomyText" class="text-gray-300 text-[11px]"></p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-4 border-t border-gray-800">
+                <div id="purchaseModalUnarchiveBtnContainer">
+                    <!-- If already purchased, button to reactivate -->
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closePurchaseModal()" class="py-2.5 px-4 rounded-xl bg-gray-900 text-gray-400 hover:text-white text-xs font-medium transition">Cancelar</button>
+                    <button type="button" onclick="savePurchaseFromModal()" class="py-2.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-lg shadow-emerald-600/20">
+                        <i class="ph ph-check-circle text-base"></i>
+                        <span>Confirmar & Arquivar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification Container -->
     <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -668,7 +782,9 @@
         let extractorsData = { version: "2.0.0", extractors: [] };
         let activeContainerId = null;
         let activeFilter = 'all';
+        let activeContainerFilter = 'active'; // 'active', 'purchased', 'all'
         let chartInstance = null;
+        let currentPurchasingContainerId = null;
 
         const storeThemes = {
             'terabyte': { tag: 'bg-orange-500/10 text-orange-400 border-orange-500/20', color: '#f36e21' },
@@ -682,6 +798,25 @@
         function formatBRL(val) {
             if (val === null || val === undefined || isNaN(val) || val <= 0) return 'R$ --,--';
             return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function formatDateBR(dateStr) {
+            if (!dateStr) return '';
+            try {
+                if (typeof dateStr === 'string' && dateStr.includes('/')) return dateStr;
+                const s = String(dateStr).split('T')[0];
+                const [y, m, d] = s.split('-');
+                if (y && m && d) return `${d}/${m}/${y}`;
+            } catch {}
+            return String(dateStr);
+        }
+
+        function saveLocalConfigOverride() {
+            try {
+                localStorage.setItem('pc_config_override', JSON.stringify(appConfig));
+            } catch (e) {
+                console.error('Falha ao salvar no localStorage:', e);
+            }
         }
 
         function calculateAlertTierJS(price, targetPrice) {
@@ -1060,6 +1195,26 @@
                 if (window.PRICE_CHECK_CONFIG) appConfig = window.PRICE_CHECK_CONFIG;
             }
 
+            // Check localStorage for overrides
+            try {
+                const localRaw = localStorage.getItem('pc_config_override');
+                if (localRaw) {
+                    const localCfg = JSON.parse(localRaw);
+                    if (localCfg && Array.isArray(localCfg.containers)) {
+                        localCfg.containers.forEach(lc => {
+                            const match = (appConfig.containers || []).find(c => c.id === lc.id);
+                            if (match) {
+                                if (lc.archived !== undefined) match.archived = lc.archived;
+                                if (lc.status !== undefined) match.status = lc.status;
+                                if (lc.purchase !== undefined) match.purchase = lc.purchase;
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+                console.error('Erro ao ler pc_config_override:', e);
+            }
+
             // 2. Try fetching latest_prices.json
             try {
                 const res = await fetch('data/latest_prices.json');
@@ -1101,11 +1256,22 @@
             let inStockCount = latestPrices.filter(p => p.inStock).length;
             let opportunitiesCount = latestPrices.filter(p => p.alertTier && (p.alertTier.category === 'COMPRA CERTA' || p.alertTier.category === 'PREÇO ACEITÁVEL')).length;
 
+            const totalContainers = appConfig.containers ? appConfig.containers.length : 0;
+            const purchasedContainers = (appConfig.containers || []).filter(c => c.archived || c.status === 'purchased' || Boolean(c.purchase)).length;
+            const activeContainers = totalContainers - purchasedContainers;
+
             document.getElementById('statTotalItems').textContent = totalItems;
-            document.getElementById('statTotalContainers').textContent = `em ${appConfig.containers ? appConfig.containers.length : 0} grupos`;
+            document.getElementById('statTotalContainers').textContent = `em ${totalContainers} grupos (${purchasedContainers} comprados)`;
             document.getElementById('statInStock').textContent = inStockCount;
             document.getElementById('statOutOfStock').textContent = `/ ${totalItems - inStockCount} esgotados`;
             document.getElementById('statOpportunities').textContent = opportunitiesCount;
+
+            const badgeActive = document.getElementById('badgeCountActiveContainers');
+            const badgePurchased = document.getElementById('badgeCountPurchasedContainers');
+            const badgeAll = document.getElementById('badgeCountAllContainers');
+            if (badgeActive) badgeActive.textContent = activeContainers;
+            if (badgePurchased) badgePurchased.textContent = purchasedContainers;
+            if (badgeAll) badgeAll.textContent = totalContainers;
 
             if (latestPrices.length > 0 && latestPrices[0].lastUpdated) {
                 const dt = new Date(latestPrices[0].lastUpdated);
@@ -1118,11 +1284,39 @@
             }
 
             if (!activeContainerId || !appConfig.containers.some(c => c.id === activeContainerId)) {
-                activeContainerId = appConfig.containers[0].id;
+                const firstActive = appConfig.containers.find(c => !(c.archived || c.status === 'purchased'));
+                activeContainerId = firstActive ? firstActive.id : appConfig.containers[0].id;
             }
 
             renderContainerTabs();
             selectContainer(activeContainerId);
+        }
+
+        function setContainerFilter(filter) {
+            activeContainerFilter = filter;
+            const btnActive = document.getElementById('btnFilterActiveContainers');
+            const btnPurchased = document.getElementById('btnFilterPurchasedContainers');
+            const btnAll = document.getElementById('btnFilterAllContainers');
+
+            const defaultBtnClass = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition text-gray-400 hover:text-white hover:bg-gray-800 flex items-center gap-1.5';
+            const activeBtnClass = 'px-2.5 py-1 rounded-lg font-medium text-[11px] transition bg-indigo-600 text-white shadow-sm flex items-center gap-1.5';
+
+            if (btnActive) btnActive.className = filter === 'active' ? activeBtnClass : defaultBtnClass;
+            if (btnPurchased) btnPurchased.className = filter === 'purchased' ? activeBtnClass : defaultBtnClass;
+            if (btnAll) btnAll.className = filter === 'all' ? activeBtnClass : defaultBtnClass;
+
+            let visibleContainers = (appConfig.containers || []);
+            if (filter === 'active') {
+                visibleContainers = visibleContainers.filter(c => !(c.archived || c.status === 'purchased'));
+            } else if (filter === 'purchased') {
+                visibleContainers = visibleContainers.filter(c => c.archived || c.status === 'purchased' || Boolean(c.purchase));
+            }
+
+            if (visibleContainers.length > 0 && !visibleContainers.some(c => c.id === activeContainerId)) {
+                selectContainer(visibleContainers[0].id);
+            } else {
+                renderContainerTabs();
+            }
         }
 
         function getContainerIcon(category, iconName) {
@@ -1149,11 +1343,34 @@
             const activeContainer = (appConfig.containers || []).find(c => c.id === activeContainerId);
             const summarySpan = document.getElementById('activeContainerSummary');
             if (summarySpan && activeContainer) {
-                summarySpan.textContent = `Visualizando: ${activeContainer.name}`;
+                const isCurPurchased = activeContainer.archived || activeContainer.status === 'purchased' || Boolean(activeContainer.purchase);
+                summarySpan.textContent = `Visualizando: ${activeContainer.name} ${isCurPurchased ? '• [COMPRADO]' : ''}`;
             }
 
-            (appConfig.containers || []).forEach(c => {
+            let containersToShow = (appConfig.containers || []);
+            if (activeContainerFilter === 'active') {
+                containersToShow = containersToShow.filter(c => !(c.archived || c.status === 'purchased'));
+            } else if (activeContainerFilter === 'purchased') {
+                containersToShow = containersToShow.filter(c => c.archived || c.status === 'purchased' || Boolean(c.purchase));
+            }
+
+            if (containersToShow.length === 0) {
+                if (activeContainerFilter === 'purchased') {
+                    tabsBar.innerHTML = `
+                        <div class="col-span-full glass-card rounded-2xl p-6 text-center text-gray-400 text-xs flex flex-col items-center gap-2">
+                            <i class="ph ph-shopping-bag text-2xl text-emerald-400"></i>
+                            <span>Nenhum produto marcado como comprado ainda. Ao adquirir um item monitorado, clique no botão <strong>"Marcar como Comprado"</strong> para arquivar e guardar os dados para consulta!</span>
+                        </div>
+                    `;
+                } else {
+                    tabsBar.innerHTML = '<div class="col-span-full glass-card rounded-2xl p-6 text-center text-gray-400 text-xs">Nenhum produto encontrado nesta visualização.</div>';
+                }
+                return;
+            }
+
+            containersToShow.forEach(c => {
                 const isActive = c.id === activeContainerId;
+                const isPurchased = c.archived || c.status === 'purchased' || Boolean(c.purchase);
                 const cItems = latestPrices.filter(p => p.containerId === c.id);
                 const inStockItems = cItems.filter(p => p.inStock && p.price);
                 const bestPriceItem = inStockItems.sort((a,b) => a.price - b.price)[0];
@@ -1162,24 +1379,43 @@
                 btn.type = 'button';
                 btn.onclick = () => selectContainer(c.id);
 
-                const activeClasses = isActive
-                    ? 'bg-indigo-600/20 border-indigo-500 shadow-lg shadow-indigo-500/10 ring-1 ring-indigo-500/50'
-                    : 'bg-gray-900/80 border-gray-800/80 hover:bg-gray-800/70 hover:border-gray-700';
+                let activeClasses = '';
+                if (isActive) {
+                    activeClasses = isPurchased
+                        ? 'bg-emerald-950/30 border-emerald-500 shadow-lg shadow-emerald-500/10 ring-1 ring-emerald-500/50'
+                        : 'bg-indigo-600/20 border-indigo-500 shadow-lg shadow-indigo-500/10 ring-1 ring-indigo-500/50';
+                } else {
+                    activeClasses = isPurchased
+                        ? 'bg-gray-900/80 border-emerald-500/30 hover:bg-gray-800/70 hover:border-emerald-500/50'
+                        : 'bg-gray-900/80 border-gray-800/80 hover:bg-gray-800/70 hover:border-gray-700';
+                }
 
                 btn.className = `p-4 rounded-2xl border text-left transition duration-200 flex flex-col justify-between gap-3 group relative overflow-hidden ${activeClasses}`;
 
-                const badgeBg = bestPriceItem
-                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                    : 'bg-gray-800 text-gray-400 border border-gray-700/50';
-                
-                const badgeText = bestPriceItem
-                    ? `${formatBRL(bestPriceItem.price)}`
-                    : 'Esgotado';
+                let badgeBg = 'bg-gray-800 text-gray-400 border border-gray-700/50';
+                let badgeText = 'Esgotado';
+
+                if (isPurchased) {
+                    badgeBg = 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+                    badgeText = c.purchase?.price ? `<span class="flex items-center gap-1"><i class="ph ph-check-circle"></i> Pago: ${formatBRL(c.purchase.price)}</span>` : '<span class="flex items-center gap-1"><i class="ph ph-check-circle"></i> Comprado</span>';
+                } else if (bestPriceItem) {
+                    badgeBg = 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30';
+                    badgeText = `${formatBRL(bestPriceItem.price)}`;
+                }
+
+                let iconBg = '';
+                if (isPurchased) {
+                    iconBg = 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+                } else if (isActive) {
+                    iconBg = 'bg-indigo-600 text-white shadow-md shadow-indigo-500/30';
+                } else {
+                    iconBg = 'bg-gray-800 text-gray-400 group-hover:text-white';
+                }
 
                 btn.innerHTML = `
                     <div class="flex items-center justify-between gap-2 w-full">
-                        <div class="w-9 h-9 rounded-xl ${isActive ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/30' : 'bg-gray-800 text-gray-400 group-hover:text-white'} flex items-center justify-center text-lg transition shrink-0">
-                            <i class="ph ${getContainerIcon(c.category, c.icon)}"></i>
+                        <div class="w-9 h-9 rounded-xl ${iconBg} flex items-center justify-center text-lg transition shrink-0">
+                            <i class="ph ${isPurchased ? 'ph-shopping-bag' : getContainerIcon(c.category, c.icon)}"></i>
                         </div>
                         <span class="text-[11px] font-bold font-mono px-2.5 py-0.5 rounded-full ${badgeBg}">
                             ${badgeText}
@@ -1189,12 +1425,17 @@
                     <div class="w-full">
                         <h4 class="text-xs font-bold ${isActive ? 'text-white' : 'text-gray-200 group-hover:text-white'} tracking-tight truncate">${c.name}</h4>
                         <div class="flex items-center justify-between text-[11px] text-gray-400 mt-1">
-                            <span>Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(c.targetPrice)}</strong></span>
-                            <span>${cItems.length} ofertas</span>
+                            ${isPurchased ? `
+                                <span>Pago: <strong class="text-emerald-300 font-mono">${formatBRL(c.purchase?.price)}</strong></span>
+                                <span class="text-emerald-400 font-medium">${c.purchase?.date ? formatDateBR(c.purchase.date) : 'Comprado'}</span>
+                            ` : `
+                                <span>Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(c.targetPrice)}</strong></span>
+                                <span>${cItems.length} ofertas</span>
+                            `}
                         </div>
                     </div>
 
-                    ${isActive ? '<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500"></div>' : ''}
+                    ${isActive ? `<div class="absolute bottom-0 left-0 right-0 h-1 ${isPurchased ? 'bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500' : 'bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500'}"></div>` : ''}
                 `;
                 tabsBar.appendChild(btn);
             });
@@ -1391,6 +1632,8 @@
             // Reset active store filter on container change
             activeChartStoreFilter = 'all';
 
+            const isPurchased = container.archived || container.status === 'purchased' || Boolean(container.purchase);
+
             // Update Chart Card Header
             const titleEl = document.getElementById('chartContainerTitle');
             const catEl = document.getElementById('chartContainerCategory');
@@ -1401,7 +1644,79 @@
             if (titleEl) titleEl.textContent = container.name;
             if (catEl) catEl.textContent = container.category || 'Hardware';
             if (targetEl) targetEl.textContent = formatBRL(container.targetPrice);
-            if (iconEl) iconEl.innerHTML = `<i class="ph ${getContainerIcon(container.category, container.icon)}"></i>`;
+            if (iconEl) {
+                if (isPurchased) {
+                    iconEl.className = 'w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl shrink-0 border border-emerald-500/30';
+                    iconEl.innerHTML = `<i class="ph ph-shopping-bag"></i>`;
+                } else {
+                    iconEl.className = 'w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0';
+                    iconEl.innerHTML = `<i class="ph ${getContainerIcon(container.category, container.icon)}"></i>`;
+                }
+            }
+
+            const statusBadge = document.getElementById('chartContainerStatusBadge');
+            if (statusBadge) {
+                if (isPurchased) {
+                    statusBadge.classList.remove('hidden');
+                    statusBadge.classList.add('flex');
+                } else {
+                    statusBadge.classList.add('hidden');
+                    statusBadge.classList.remove('flex');
+                }
+            }
+
+            const subtitleEl = document.getElementById('chartContainerSubtitle');
+            if (subtitleEl) {
+                if (isPurchased && container.purchase) {
+                    let diffHtml = '';
+                    if (container.purchase.price && container.targetPrice) {
+                        const diff = container.targetPrice - container.purchase.price;
+                        if (diff > 0) {
+                            diffHtml = `<span>&bull;</span><span class="text-emerald-400 font-medium">Economia: <strong class="font-mono">${formatBRL(diff)}</strong> abaixo do alvo</span>`;
+                        } else if (diff < 0) {
+                            diffHtml = `<span>&bull;</span><span class="text-amber-300 font-medium">+${formatBRL(Math.abs(diff))} acima do alvo</span>`;
+                        }
+                    }
+                    subtitleEl.innerHTML = `
+                        <span>Comprado em: <strong class="text-white">${formatDateBR(container.purchase.date) || 'Data recente'}</strong></span>
+                        <span>&bull;</span>
+                        <span>Preço Pago: <strong class="text-emerald-300 font-mono">${formatBRL(container.purchase.price)}</strong></span>
+                        ${container.purchase.store ? `<span>&bull;</span><span>Loja: <strong class="text-white">${container.purchase.store}</strong></span>` : ''}
+                        <span>&bull;</span>
+                        <span>Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(container.targetPrice)}</strong></span>
+                        ${diffHtml}
+                    `;
+                } else {
+                    subtitleEl.innerHTML = `
+                        <span>Preço-Alvo: <strong id="chartContainerTarget" class="text-indigo-300 font-mono">${formatBRL(container.targetPrice)}</strong></span>
+                        <span>&bull;</span>
+                        <span class="text-gray-400">Histórico e comparação direta entre lojas</span>
+                    `;
+                }
+            }
+
+            const actionsEl = document.getElementById('chartHeaderActions');
+            if (actionsEl) {
+                if (isPurchased) {
+                    actionsEl.innerHTML = `
+                        <button onclick="openPurchaseModal('${container.id}')" class="py-1.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold flex items-center gap-1.5 transition">
+                            <i class="ph ph-pencil-simple text-sm"></i>
+                            <span>Editar Compra</span>
+                        </button>
+                        <button onclick="unarchiveContainer('${container.id}')" class="py-1.5 px-3 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 border border-indigo-500/30 text-indigo-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition" title="Reativar monitoramento deste produto">
+                            <i class="ph ph-arrow-counter-clockwise text-sm"></i>
+                            <span class="hidden sm:inline">Reativar</span>
+                        </button>
+                    `;
+                } else {
+                    actionsEl.innerHTML = `
+                        <button onclick="openPurchaseModal('${container.id}')" class="py-1.5 px-3.5 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-sm shadow-emerald-500/20">
+                            <i class="ph ph-shopping-bag text-sm"></i>
+                            <span>Marcar como Comprado</span>
+                        </button>
+                    `;
+                }
+            }
 
             const cItems = latestPrices.filter(p => p.containerId === containerId);
             const inStockItems = cItems.filter(p => p.inStock && p.price);
@@ -1629,6 +1944,26 @@
                     borderDash: [6, 4],
                     fill: false,
                     borderWidth: 1.5,
+                    pointRadius: 0,
+                    pointHoverRadius: 0
+                });
+            }
+
+            // Purchased Price reference line
+            if (isPurchased && container.purchase && container.purchase.price && uniqueTimestamps.length > 0) {
+                const purchasedPrice = Number(container.purchase.price);
+                const purchaseLine = uniqueTimestamps.map(t => ({
+                    x: timeToLabel[t],
+                    y: purchasedPrice
+                }));
+                datasets.push({
+                    label: `Preço Pago (${formatBRL(purchasedPrice)})`,
+                    isTargetLine: true,
+                    data: purchaseLine,
+                    borderColor: '#10b981',
+                    borderDash: [5, 4],
+                    fill: false,
+                    borderWidth: 2,
                     pointRadius: 0,
                     pointHoverRadius: 0
                 });
@@ -2164,26 +2499,84 @@
         // CONTAINERS MANAGEMENT
         function renderContainersManagement() {
             const listDiv = document.getElementById('containersManageList');
+            if (!listDiv) return;
             listDiv.innerHTML = '';
 
             (appConfig.containers || []).forEach(c => {
+                const isPurchased = c.archived || c.status === 'purchased' || Boolean(c.purchase);
                 const card = document.createElement('div');
-                card.className = 'p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-3';
+                card.className = `p-4 rounded-xl ${isPurchased ? 'bg-gray-900/90 border border-emerald-500/30' : 'bg-gray-900 border border-gray-800'} space-y-3`;
                 card.innerHTML = `
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h4 class="text-sm font-bold text-white">${c.name}</h4>
-                            <span class="text-xs text-gray-400">Preço-Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(c.targetPrice)}</strong> &bull; ${c.items.length} lojas cadastradas</span>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="space-y-1">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h4 class="text-sm font-bold text-white">${c.name}</h4>
+                                <span class="px-2 py-0.5 rounded-md bg-gray-800 text-[10px] text-gray-300 font-semibold">${c.category || 'Hardware'}</span>
+                                ${isPurchased ? `
+                                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold flex items-center gap-1">
+                                        <i class="ph ph-check-circle"></i> COMPRADO ${c.purchase?.price ? `(${formatBRL(c.purchase.price)})` : ''}
+                                    </span>
+                                ` : `
+                                    <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-[10px] font-bold flex items-center gap-1">
+                                        <i class="ph ph-radar"></i> MONITORANDO
+                                    </span>
+                                `}
+                            </div>
+                            <div class="text-xs text-gray-400 flex flex-wrap items-center gap-2">
+                                <span>Preço-Alvo: <strong class="text-indigo-300 font-mono">${formatBRL(c.targetPrice)}</strong></span>
+                                <span>&bull;</span>
+                                <span>${(c.items || []).length} ofertas cadastradas</span>
+                                ${isPurchased && c.purchase?.store ? `<span>&bull;</span><span>Loja: <strong class="text-white">${c.purchase.store}</strong></span>` : ''}
+                                ${isPurchased && c.purchase?.date ? `<span>&bull;</span><span>Data: <strong class="text-white">${formatDateBR(c.purchase.date)}</strong></span>` : ''}
+                            </div>
+                            ${isPurchased && c.purchase?.notes ? `
+                                <div class="text-[11px] text-gray-300 bg-gray-950/60 p-2 rounded-lg border border-gray-800/80">
+                                    <strong class="text-gray-400">Obs:</strong> ${c.purchase.notes}
+                                </div>
+                            ` : ''}
                         </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="editContainer('${c.id}')" class="p-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white text-xs transition">
-                                <i class="ph ph-pencil-simple text-base"></i>
+                        <div class="flex flex-wrap items-center gap-2 shrink-0">
+                            ${isPurchased ? `
+                                <button onclick="openPurchaseModal('${c.id}')" class="px-2.5 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                                    <i class="ph ph-pencil-simple"></i>
+                                    <span>Editar Compra</span>
+                                </button>
+                                <button onclick="unarchiveContainer('${c.id}')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600/20 hover:bg-indigo-600 border border-indigo-500/30 text-indigo-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition" title="Reativar monitoramento deste produto">
+                                    <i class="ph ph-arrow-counter-clockwise"></i>
+                                    <span>Reativar</span>
+                                </button>
+                            ` : `
+                                <button onclick="openPurchaseModal('${c.id}')" class="px-2.5 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/30 text-emerald-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                                    <i class="ph ph-shopping-bag"></i>
+                                    <span>Marcar Comprado</span>
+                                </button>
+                            `}
+                            <button onclick="editContainer('${c.id}')" class="p-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white text-xs transition" title="Editar URLs e Regras">
+                                <i class="ph ph-sliders text-base"></i>
+                            </button>
+                            <button onclick="deleteContainer('${c.id}')" class="p-1.5 rounded-lg bg-gray-800 hover:bg-rose-600 text-rose-400 hover:text-white text-xs transition" title="Excluir Container">
+                                <i class="ph ph-trash text-base"></i>
                             </button>
                         </div>
                     </div>
                 `;
                 listDiv.appendChild(card);
             });
+        }
+
+        function deleteContainer(id) {
+            const c = (appConfig.containers || []).find(x => x.id === id);
+            if (!c) return;
+            if (!confirm(`Tem certeza que deseja excluir o container "${c.name}"?`)) return;
+            appConfig.containers = appConfig.containers.filter(x => x.id !== id);
+            if (activeContainerId === id) {
+                activeContainerId = appConfig.containers.length > 0 ? appConfig.containers[0].id : null;
+            }
+            saveLocalConfigOverride();
+            saveToGitHubIfConfigured('config.json', JSON.stringify(appConfig, null, 2));
+            renderDashboard();
+            renderContainersManagement();
+            showToast(`Container "${c.name}" excluído com sucesso.`, 'info');
         }
 
         function openNewContainerModal() {
@@ -2255,21 +2648,219 @@
                 return;
             }
 
-            const cObj = { id, name, category, targetPrice: target, items };
             const existingIdx = (appConfig.containers || []).findIndex(x => x.id === id);
+            const existingObj = existingIdx >= 0 ? appConfig.containers[existingIdx] : {};
+            const cObj = {
+                ...existingObj,
+                id,
+                name,
+                category,
+                targetPrice: target,
+                items
+            };
+
             if (existingIdx >= 0) {
                 appConfig.containers[existingIdx] = cObj;
             } else {
                 appConfig.containers.push(cObj);
             }
 
+            saveLocalConfigOverride();
+            saveToGitHubIfConfigured('config.json', JSON.stringify(appConfig, null, 2));
+
             closeContainerModal();
             renderDashboard();
             renderContainersManagement();
             initChart();
             showToast('Container salvo com sucesso!', 'success');
+        }
 
+        // PURCHASE & ARCHIVE MODAL FUNCTIONS
+        function openPurchaseModal(containerId) {
+            const container = (appConfig.containers || []).find(c => c.id === containerId);
+            if (!container) return;
+
+            currentPurchasingContainerId = containerId;
+            document.getElementById('purchaseModalContainerId').value = containerId;
+            document.getElementById('purchaseModalProductName').textContent = container.name;
+            document.getElementById('purchaseModalTargetPrice').textContent = formatBRL(container.targetPrice);
+
+            const cItems = latestPrices.filter(p => p.containerId === containerId && p.inStock && p.price);
+            const bestPriceItem = cItems.sort((a,b) => a.price - b.price)[0];
+            const bestPriceEl = document.getElementById('purchaseModalBestPrice');
+            if (bestPriceEl) {
+                bestPriceEl.textContent = bestPriceItem ? `${formatBRL(bestPriceItem.price)} (${bestPriceItem.store})` : 'Nenhuma em estoque';
+            }
+
+            const quickFillDiv = document.getElementById('purchaseQuickFillButtons');
+            quickFillDiv.innerHTML = '';
+            if (bestPriceItem && bestPriceItem.price) {
+                const btnBest = document.createElement('button');
+                btnBest.type = 'button';
+                btnBest.className = 'text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 transition';
+                btnBest.textContent = `Menor Oferta (${formatBRL(bestPriceItem.price)})`;
+                btnBest.onclick = () => {
+                    document.getElementById('purchaseModalPrice').value = bestPriceItem.price;
+                    if (bestPriceItem.store) document.getElementById('purchaseModalStore').value = bestPriceItem.store;
+                    updatePurchaseEconomyPreview();
+                };
+                quickFillDiv.appendChild(btnBest);
+            }
+            if (container.targetPrice) {
+                const btnTarget = document.createElement('button');
+                btnTarget.type = 'button';
+                btnTarget.className = 'text-[10px] px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30 transition';
+                btnTarget.textContent = `Alvo (${formatBRL(container.targetPrice)})`;
+                btnTarget.onclick = () => {
+                    document.getElementById('purchaseModalPrice').value = container.targetPrice;
+                    updatePurchaseEconomyPreview();
+                };
+                quickFillDiv.appendChild(btnTarget);
+            }
+
+            const storeList = document.getElementById('purchaseStoreList');
+            storeList.innerHTML = '';
+            const containerStores = Array.from(new Set((container.items || []).map(i => i.store).filter(Boolean)));
+            containerStores.forEach(st => {
+                const opt = document.createElement('option');
+                opt.value = st;
+                storeList.appendChild(opt);
+            });
+
+            const isPurchased = container.archived || container.status === 'purchased' || Boolean(container.purchase);
+            const unarchiveBtnContainer = document.getElementById('purchaseModalUnarchiveBtnContainer');
+
+            if (isPurchased && container.purchase) {
+                document.getElementById('purchaseModalTitle').innerHTML = '<i class="ph ph-pencil-simple text-emerald-400"></i> Editar Dados da Compra';
+                document.getElementById('purchaseModalPrice').value = container.purchase.price || '';
+                document.getElementById('purchaseModalDate').value = container.purchase.date || new Date().toISOString().split('T')[0];
+                document.getElementById('purchaseModalStore').value = container.purchase.store || '';
+                document.getElementById('purchaseModalNotes').value = container.purchase.notes || '';
+                
+                unarchiveBtnContainer.innerHTML = `
+                    <button type="button" onclick="unarchiveContainer('${container.id}')" class="py-2 px-3 rounded-xl bg-gray-800 hover:bg-indigo-600 text-indigo-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                        <i class="ph ph-arrow-counter-clockwise"></i>
+                        <span>Reativar Monitoramento</span>
+                    </button>
+                `;
+            } else {
+                document.getElementById('purchaseModalTitle').innerHTML = '<i class="ph ph-shopping-bag text-emerald-400"></i> Registrar Compra do Produto';
+                document.getElementById('purchaseModalPrice').value = bestPriceItem ? bestPriceItem.price : (container.targetPrice || '');
+                document.getElementById('purchaseModalDate').value = new Date().toISOString().split('T')[0];
+                document.getElementById('purchaseModalStore').value = bestPriceItem ? (bestPriceItem.store || '') : (containerStores[0] || '');
+                document.getElementById('purchaseModalNotes').value = '';
+                unarchiveBtnContainer.innerHTML = '';
+            }
+
+            updatePurchaseEconomyPreview();
+            document.getElementById('purchaseModal').classList.remove('hidden');
+        }
+
+        function closePurchaseModal() {
+            document.getElementById('purchaseModal').classList.add('hidden');
+            currentPurchasingContainerId = null;
+        }
+
+        function updatePurchaseEconomyPreview() {
+            const previewDiv = document.getElementById('purchaseEconomyPreview');
+            const containerId = currentPurchasingContainerId || document.getElementById('purchaseModalContainerId').value;
+            const container = (appConfig.containers || []).find(c => c.id === containerId);
+            if (!container) {
+                previewDiv.classList.add('hidden');
+                return;
+            }
+
+            const priceInput = parseFloat(document.getElementById('purchaseModalPrice').value);
+            if (!priceInput || isNaN(priceInput) || priceInput <= 0) {
+                previewDiv.classList.add('hidden');
+                return;
+            }
+
+            const targetPrice = Number(container.targetPrice || 0);
+            const economyTitle = document.getElementById('purchaseEconomyTitle');
+            const economyText = document.getElementById('purchaseEconomyText');
+
+            if (targetPrice > 0) {
+                const diff = targetPrice - priceInput;
+                const pct = ((Math.abs(diff) / targetPrice) * 100).toFixed(1);
+                if (diff > 0) {
+                    economyTitle.innerHTML = `<i class="ph ph-trend-down text-emerald-400 text-base"></i> <span class="text-emerald-400 font-bold">Excelente compra! Economia de ${formatBRL(diff)} (${pct}% abaixo do alvo)</span>`;
+                    economyText.textContent = `Você pagou menos que o seu preço-alvo (${formatBRL(targetPrice)}). Ótima negociação!`;
+                } else if (diff === 0) {
+                    economyTitle.innerHTML = `<i class="ph ph-check-circle text-indigo-400 text-base"></i> <span class="text-indigo-300 font-bold">Na mosca! Preço idêntico ao alvo</span>`;
+                    economyText.textContent = `Você adquiriu exatamente no valor desejado (${formatBRL(targetPrice)}).`;
+                } else {
+                    economyTitle.innerHTML = `<i class="ph ph-info text-amber-400 text-base"></i> <span class="text-amber-300 font-bold">Compra registrada (+${formatBRL(Math.abs(diff))} ou +${pct}% acima do alvo)</span>`;
+                    economyText.textContent = `O valor ficou um pouco acima do alvo (${formatBRL(targetPrice)}), mas o produto está garantido!`;
+                }
+                previewDiv.classList.remove('hidden');
+            } else {
+                previewDiv.classList.add('hidden');
+            }
+        }
+
+        function savePurchaseFromModal() {
+            const containerId = document.getElementById('purchaseModalContainerId').value;
+            const container = (appConfig.containers || []).find(c => c.id === containerId);
+            if (!container) {
+                showToast('Container não encontrado.', 'error');
+                return;
+            }
+
+            const pricePaid = parseFloat(document.getElementById('purchaseModalPrice').value);
+            if (!pricePaid || isNaN(pricePaid) || pricePaid <= 0) {
+                showToast('Informe um preço pago válido.', 'error');
+                return;
+            }
+
+            const purchaseDate = document.getElementById('purchaseModalDate').value || new Date().toISOString().split('T')[0];
+            const purchaseStore = document.getElementById('purchaseModalStore').value.trim();
+            const purchaseNotes = document.getElementById('purchaseModalNotes').value.trim();
+
+            container.archived = true;
+            container.status = 'purchased';
+            container.purchase = {
+                price: pricePaid,
+                date: purchaseDate,
+                store: purchaseStore,
+                notes: purchaseNotes,
+                archivedAt: new Date().toISOString()
+            };
+
+            saveLocalConfigOverride();
             saveToGitHubIfConfigured('config.json', JSON.stringify(appConfig, null, 2));
+
+            closePurchaseModal();
+            renderDashboard();
+            renderContainersManagement();
+            selectContainer(containerId);
+
+            showToast(`"${container.name}" marcado como COMPRADO por ${formatBRL(pricePaid)} e arquivado!`, 'success');
+        }
+
+        function unarchiveContainer(containerId) {
+            const container = (appConfig.containers || []).find(c => c.id === containerId);
+            if (!container) return;
+
+            if (!confirm(`Deseja reativar o monitoramento de "${container.name}"? Ele voltará para a lista de itens ativos.`)) {
+                return;
+            }
+
+            container.archived = false;
+            container.status = 'active';
+
+            saveLocalConfigOverride();
+            saveToGitHubIfConfigured('config.json', JSON.stringify(appConfig, null, 2));
+
+            if (!document.getElementById('purchaseModal').classList.contains('hidden')) {
+                closePurchaseModal();
+            }
+
+            renderDashboard();
+            renderContainersManagement();
+            selectContainer(containerId);
+
+            showToast(`Monitoramento de "${container.name}" reativado!`, 'info');
         }
 
         function setOpportunityFilter(filter) {

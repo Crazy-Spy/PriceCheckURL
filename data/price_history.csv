@@ -827,3 +827,1079 @@
 2026-10-12T15:42:41,12/10/2026 15:42:41,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
 2026-10-12T15:42:41,12/10/2026 15:42:41,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,True
 2026-10-12T15:42:41,12/10/2026 15:42:41,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7020.5,True
+2026-10-14T13:49:58,14/10/2026 13:49:58,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-14T13:49:58,14/10/2026 13:49:58,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-14T13:49:58,14/10/2026 13:49:58,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-14T13:49:58,14/10/2026 13:49:58,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2864.99,True
+2026-10-14T13:49:58,14/10/2026 13:49:58,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-14T13:49:58,14/10/2026 13:49:58,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-14T18:43:14,14/10/2026 18:43:14,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9099.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8499.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8270.6,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-14T18:43:14,14/10/2026 18:43:14,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-14T23:18:03,14/10/2026 23:18:03,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9099.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,9999.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8270.6,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-14T23:18:03,14/10/2026 23:18:03,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-15T04:51:22,15/10/2026 04:51:22,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9099.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,9999.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,9384.33,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-15T04:51:22,15/10/2026 04:51:22,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-15T11:42:10,15/10/2026 11:42:10,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-15T11:42:10,15/10/2026 11:42:10,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-15T11:42:10,15/10/2026 11:42:10,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,True
+2026-10-15T11:42:10,15/10/2026 11:42:10,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7019.55,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9099.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8099.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-15T17:09:50,15/10/2026 17:09:50,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-15T21:31:09,15/10/2026 21:31:09,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-15T21:31:09,15/10/2026 21:31:09,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-15T21:31:09,15/10/2026 21:31:09,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7070.0,True
+2026-10-15T21:31:09,15/10/2026 21:31:09,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7019.55,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9899.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8099.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-16T00:28:42,16/10/2026 00:28:42,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-16T07:19:04,16/10/2026 07:19:04,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9899.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8099.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-16T07:19:04,16/10/2026 07:19:04,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-16T13:20:33,16/10/2026 13:20:33,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-16T13:20:33,16/10/2026 13:20:33,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-16T13:20:33,16/10/2026 13:20:33,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-16T13:20:33,16/10/2026 13:20:33,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2864.29,True
+2026-10-16T13:20:33,16/10/2026 13:20:33,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-16T13:20:33,16/10/2026 13:20:33,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-16T18:09:32,16/10/2026 18:09:32,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,1999.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-16T21:21:28,16/10/2026 21:21:28,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9299.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-17T12:15:37,17/10/2026 12:15:37,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-17T18:34:24,17/10/2026 18:34:24,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-17T18:34:24,17/10/2026 18:34:24,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2990.01,True
+2026-10-17T18:34:24,17/10/2026 18:34:24,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-17T18:34:24,17/10/2026 18:34:24,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-17T18:34:24,17/10/2026 18:34:24,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-17T18:34:24,17/10/2026 18:34:24,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-17T22:26:16,17/10/2026 22:26:16,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-17T22:26:16,17/10/2026 22:26:16,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-17T22:26:16,17/10/2026 22:26:16,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-17T22:26:16,17/10/2026 22:26:16,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-17T22:26:16,17/10/2026 22:26:16,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-17T22:26:16,17/10/2026 22:26:16,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-17T22:26:16,17/10/2026 22:26:16,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-17T22:26:16,17/10/2026 22:26:16,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-17T22:26:16,17/10/2026 22:26:16,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7070.0,True
+2026-10-17T22:26:16,17/10/2026 22:26:16,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7020.5,True
+2026-10-19T04:52:49,19/10/2026 04:52:49,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-19T04:52:49,19/10/2026 04:52:49,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-19T04:52:49,19/10/2026 04:52:49,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7070.0,True
+2026-10-19T04:52:49,19/10/2026 04:52:49,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7019.55,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9299.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,759.99,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-19T13:35:18,19/10/2026 13:35:18,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7070.0,True
+2026-10-19T13:35:18,19/10/2026 13:35:18,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,799.0,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-19T19:59:59,19/10/2026 19:59:59,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-20T17:18:42,20/10/2026 17:18:42,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-20T21:43:22,20/10/2026 21:43:22,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-20T21:43:22,20/10/2026 21:43:22,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-20T21:43:22,20/10/2026 21:43:22,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2045.99,True
+2026-10-20T21:43:22,20/10/2026 21:43:22,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-20T21:43:22,20/10/2026 21:43:22,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-20T21:43:22,20/10/2026 21:43:22,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8899.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-21T13:55:40,21/10/2026 13:55:40,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8899.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-22T21:44:35,22/10/2026 21:44:35,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,11399.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8899.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-23T00:43:37,23/10/2026 00:43:37,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,9999.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8899.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-23T18:28:21,23/10/2026 18:28:21,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7070.0,True
+2026-10-23T18:28:21,23/10/2026 18:28:21,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7086.05,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-26T15:16:53,26/10/2026 15:16:53,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8899.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-26T15:16:53,26/10/2026 15:16:53,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,12339.9,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-10-26T21:04:43,26/10/2026 21:04:43,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7532.55,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-27T01:31:22,27/10/2026 01:31:22,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-27T01:31:22,27/10/2026 01:31:22,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-27T08:00:20,27/10/2026 08:00:20,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-27T08:00:20,27/10/2026 08:00:20,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-27T08:00:20,27/10/2026 08:00:20,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-10-27T08:00:20,27/10/2026 08:00:20,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7504.05,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8599.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-10-27T20:46:53,27/10/2026 20:46:53,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7019.55,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-28T16:43:25,28/10/2026 16:43:25,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,8599.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-28T16:43:25,28/10/2026 16:43:25,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-28T22:42:12,28/10/2026 22:42:12,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-28T22:42:12,28/10/2026 22:42:12,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-28T22:42:12,28/10/2026 22:42:12,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-10-28T22:42:12,28/10/2026 22:42:12,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6996.75,True
+2026-10-29T13:18:20,29/10/2026 13:18:20,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-10-29T13:18:20,29/10/2026 13:18:20,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-10-29T13:18:20,29/10/2026 13:18:20,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-10-29T13:18:20,29/10/2026 13:18:20,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6994.85,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-29T23:59:33,29/10/2026 23:59:33,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8445.9,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-29T23:59:33,29/10/2026 23:59:33,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-30T13:10:00,30/10/2026 13:10:00,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-30T13:10:00,30/10/2026 13:10:00,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-30T13:10:00,30/10/2026 13:10:00,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2899.99,True
+2026-10-30T13:10:00,30/10/2026 13:10:00,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-30T13:10:00,30/10/2026 13:10:00,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-30T13:10:00,30/10/2026 13:10:00,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2399.0,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11034.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,739.99,True
+2026-10-30T19:29:14,30/10/2026 19:29:14,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-10-30T19:29:14,30/10/2026 19:29:14,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2049.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2159.0,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9299.9,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8359.02,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-10-30T23:54:22,30/10/2026 23:54:22,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8886.28,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8359.02,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-02T20:24:20,02/11/2026 20:24:20,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2299.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2159.0,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9079.46,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8359.02,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-03T12:02:26,03/11/2026 12:02:26,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6886.55,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2159.0,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9079.46,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11034.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-03T19:36:26,03/11/2026 19:36:26,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,9999.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8959.9,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11034.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-04T00:40:56,04/11/2026 00:40:56,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8959.9,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-04T18:04:06,04/11/2026 18:04:06,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-05T06:59:21,05/11/2026 06:59:21,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-05T06:59:21,05/11/2026 06:59:21,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-05T06:59:21,05/11/2026 06:59:21,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-05T06:59:21,05/11/2026 06:59:21,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7179.0,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8959.9,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,8359.02,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-05T16:32:38,05/11/2026 16:32:38,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6886.55,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8999.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-06T21:36:31,06/11/2026 21:36:31,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-11-07T21:59:21,07/11/2026 21:59:21,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-07T21:59:21,07/11/2026 21:59:21,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2202.64,True
+2026-11-07T21:59:21,07/11/2026 21:59:21,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-07T21:59:21,07/11/2026 21:59:21,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-07T21:59:21,07/11/2026 21:59:21,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6999.0,True
+2026-11-08T01:30:07,08/11/2026 01:30:07,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-08T01:30:07,08/11/2026 01:30:07,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-08T01:30:07,08/11/2026 01:30:07,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-08T01:30:07,08/11/2026 01:30:07,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6899.0,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-08T09:09:42,08/11/2026 09:09:42,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,8999.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8999.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-08T09:09:42,08/11/2026 09:09:42,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8999.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-09T20:50:26,09/11/2026 20:50:26,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6994.85,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-10T04:10:44,10/11/2026 04:10:44,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10399.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10399.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,12999.99,False
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-10T04:10:44,10/11/2026 04:10:44,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,1999.99,True
+2026-11-10T20:53:35,10/11/2026 20:53:35,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-10T20:53:35,10/11/2026 20:53:35,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2254.47,True
+2026-11-10T20:53:35,10/11/2026 20:53:35,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-10T20:53:35,10/11/2026 20:53:35,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-10T20:53:35,10/11/2026 20:53:35,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,749.0,False
+2026-11-11T17:56:29,11/11/2026 17:56:29,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-11T17:56:29,11/11/2026 17:56:29,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,1969.99,True
+2026-11-11T17:56:29,11/11/2026 17:56:29,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-11T17:56:29,11/11/2026 17:56:29,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2254.47,True
+2026-11-11T17:56:29,11/11/2026 17:56:29,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-11T17:56:29,11/11/2026 17:56:29,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-11T17:56:29,11/11/2026 17:56:29,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,699.99,True
+2026-11-11T17:56:29,11/11/2026 17:56:29,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-11T17:56:29,11/11/2026 17:56:29,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2990.01,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2254.47,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,12339.9,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,12339.9,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,11599.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-12T00:50:07,12/11/2026 00:50:07,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2229.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,2026.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2254.47,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,12339.9,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,11599.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-12T09:56:32,12/11/2026 09:56:32,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,11599.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,831.99,True
+2026-11-12T18:24:44,12/11/2026 18:24:44,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-12T18:24:44,12/11/2026 18:24:44,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-11-13T01:12:01,13/11/2026 01:12:01,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-13T01:12:01,13/11/2026 01:12:01,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-13T01:12:01,13/11/2026 01:12:01,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-13T01:12:01,13/11/2026 01:12:01,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,709.0,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2990.01,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1999.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2254.47,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,799.99,True
+2026-11-13T17:51:26,13/11/2026 17:51:26,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-13T17:51:26,13/11/2026 17:51:26,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2990.01,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1999.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,8499.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-13T23:40:31,13/11/2026 23:40:31,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,8499.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8499.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-14T06:41:55,14/11/2026 06:41:55,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2039.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1999.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,8499.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-14T15:11:12,14/11/2026 15:11:12,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9999.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-14T20:47:14,14/11/2026 20:47:14,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-17T02:58:47,17/11/2026 02:58:47,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-17T02:58:47,17/11/2026 02:58:47,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-17T02:58:47,17/11/2026 02:58:47,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-17T02:58:47,17/11/2026 02:58:47,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,6899.0,True
+2026-11-17T13:36:54,17/11/2026 13:36:54,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-17T13:36:54,17/11/2026 13:36:54,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2039.99,True
+2026-11-17T13:36:54,17/11/2026 13:36:54,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1969.99,True
+2026-11-17T13:36:54,17/11/2026 13:36:54,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-17T13:36:54,17/11/2026 13:36:54,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-17T13:36:54,17/11/2026 13:36:54,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-17T22:28:48,17/11/2026 22:28:48,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-17T22:28:48,17/11/2026 22:28:48,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-17T22:28:48,17/11/2026 22:28:48,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-17T22:28:48,17/11/2026 22:28:48,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,709.0,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2039.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9999.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9499.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-18T17:20:43,18/11/2026 17:20:43,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2990.01,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9499.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,9499.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10899.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-19T00:30:51,19/11/2026 00:30:51,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-19T20:47:42,19/11/2026 20:47:42,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-19T20:47:42,19/11/2026 20:47:42,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,1899.99,True
+2026-11-19T20:47:42,19/11/2026 20:47:42,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-19T20:47:42,19/11/2026 20:47:42,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-19T20:47:42,19/11/2026 20:47:42,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-19T20:47:42,19/11/2026 20:47:42,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-20T03:29:31,20/11/2026 03:29:31,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-20T03:29:31,20/11/2026 03:29:31,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2249.99,True
+2026-11-20T03:29:31,20/11/2026 03:29:31,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-20T03:29:31,20/11/2026 03:29:31,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2229.0,True
+2026-11-20T03:29:31,20/11/2026 03:29:31,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-20T03:29:31,20/11/2026 03:29:31,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-22T23:39:26,22/11/2026 23:39:26,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-22T23:39:26,22/11/2026 23:39:26,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2249.99,True
+2026-11-22T23:39:26,22/11/2026 23:39:26,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-22T23:39:26,22/11/2026 23:39:26,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2590.49,True
+2026-11-22T23:39:26,22/11/2026 23:39:26,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-22T23:39:26,22/11/2026 23:39:26,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-23T07:52:25,23/11/2026 07:52:25,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-23T07:52:25,23/11/2026 07:52:25,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2249.99,True
+2026-11-23T07:52:25,23/11/2026 07:52:25,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-23T07:52:25,23/11/2026 07:52:25,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2201.92,True
+2026-11-23T07:52:25,23/11/2026 07:52:25,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-23T07:52:25,23/11/2026 07:52:25,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,9499.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,11722.91,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10999.99,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,8949.0,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-23T20:19:49,23/11/2026 20:19:49,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-23T20:19:49,23/11/2026 20:19:49,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2249.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,3688.66,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,11722.91,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,11722.91,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10999.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,9999.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,9838.77,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,669.99,True
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-24T17:55:45,24/11/2026 17:55:45,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,7589.55,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2249.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2201.92,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,11722.91,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,12339.9,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10999.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,9999.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,11999.0,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-25T02:35:22,25/11/2026 02:35:22,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,11722.91,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10299.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10999.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,9999.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,12511.91,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-25T14:34:43,25/11/2026 14:34:43,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-25T14:34:43,25/11/2026 14:34:43,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,terabyte-5800x3d-standard,ryzen-7-5800x3d,Ryzen 7 5800X3D (Padrão),Terabyte,2091.42,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,terabyte-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Terabyte,2137.49,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-5800x3d-1053828,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF 1053828),Kabum,1899.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-5800x3d-anniversary,ryzen-7-5800x3d,Ryzen 7 5800X3D (Anniversary Edition),Kabum,2201.92,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-5800x3d-pof,ryzen-7-5800x3d,Ryzen 7 5800X3D (POF),Pichau,2139.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-5800x3d-wof,ryzen-7-5800x3d,Ryzen 7 5800X3D (WOF),Pichau,2499.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10299.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10299.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10999.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,11999.0,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11844.99,False
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-26T00:31:13,26/11/2026 00:31:13,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-26T11:03:26,26/11/2026 11:03:26,pichau-xbox-series-x-8493,XBOXX,XBOX Series X,Pichau,4099.9,False
+2026-11-26T11:03:26,26/11/2026 11:03:26,terabyte-console-xbox-series-x-1tb-black-com-8239,XBOXX,Console xbox series x 1tb black com,Terabyte,3996.32,False
+2026-11-26T11:03:26,26/11/2026 11:03:26,kabum-console-xbox-series-x-microsoft-1tb-8657,XBOXX,Console xbox series x microsoft 1tb,Kabum,7499.99,False
+2026-11-26T11:03:26,26/11/2026 11:03:26,amazon-xbox-series-x-3646,XBOXX,XBOX Series X,Amazon,8530.05,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-26T21:42:48,26/11/2026 21:42:48,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10299.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10299.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10299.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,11999.0,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11299.0,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-26T21:42:48,26/11/2026 21:42:48,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10299.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,10299.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10599.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,11999.0,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11299.0,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,831.99,True
+2026-11-27T04:19:27,27/11/2026 04:19:27,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-27T04:19:27,27/11/2026 04:19:27,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,terabyte-rtx-5070-ti-frieren-edition-oc-6647,rtx-5070-ti-16gb,RTX 5070 Ti Frieren Edition OC,Terabyte,12349.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,terabyte-rtx-5070-ti-ventus-3x-oc-3861,rtx-5070-ti-16gb,RTX 5070 Ti Ventus 3X OC,Terabyte,10299.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,terabyte-rtx-5070-ti-oc-edition-9151,rtx-5070-ti-16gb,RTX 5070 Ti OC Edition,Terabyte,11722.91,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-msi-rtx-5070-ti-gaming-trio-oc-7613,rtx-5070-ti-16gb,MSI RTX 5070 Ti GAMING TRIO OC,Kabum,10599.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-rog-strix-rtx-5070-ti-oc-16g-0271,rtx-5070-ti-16gb,ROG STRIX RTX 5070 TI OC 16G,Kabum,12999.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-palit-geforce-rtx-5070-ti-16gb-9351,rtx-5070-ti-16gb,Palit GeForce RTX 5070 Ti 16GB,Kabum,11004.48,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-rtx-5070-ti-16g-ventus-3x-oc-6813,rtx-5070-ti-16gb,RTX 5070 TI 16G VENTUS 3X OC,Kabum,10309.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-asus-prime-rtx-5070-ti-o16g-6761,rtx-5070-ti-16gb,ASUS PRIME RTX 5070 Ti O16G,Kabum,9999.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-msi-nvidia-geforce-rtx-5070-ti-ventus-3x-oc-2841,rtx-5070-ti-16gb,Msi Nvidia Geforce RTX 5070 Ti Ventus 3x Oc,Kabum,12511.91,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-msi-rtx5070ti-16gb-4669,rtx-5070-ti-16gb,Msi RTX5070ti 16gb,Kabum,11299.0,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-msi-geforce-rtx-5070-ti-shadow-3x-oc-2916,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Shadow 3X OC,Pichau,9099.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-msi-geforce-rtx-5070-ti-frieren-edition-oc-6476,rtx-5070-ti-16gb,MSI GeForce RTX 5070 Ti Frieren Edition OC,Pichau,9699.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-zotac-gaming-geforce-rtx-5070-ti-solid-sff-oc-3308,rtx-5070-ti-16gb,Zotac Gaming GeForce RTX 5070 Ti Solid SFF OC,Pichau,9499.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-geforce-rtx-5070-ti-ventus-3x-oc-2498,rtx-5070-ti-16gb,GeForce RTX 5070 Ti Ventus 3X OC,Pichau,9299.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-asus-geforce-rtx-5070-ti-16gb-1271,rtx-5070-ti-16gb,Asus GeForce RTX 5070 Ti 16GB,Pichau,8099.99,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,kabum-fonte-corsair-rme-series-rm850e-0816,RM850e,Fonte CORSAIR RMe Series RM850e,Kabum,669.99,True
+2026-11-27T14:00:22,27/11/2026 14:00:22,terabyte-fonte-corsair-rm850e-850w-4469,RM850e,Fonte corsair rm850e 850w,Terabyte,1149.49,False
+2026-11-27T14:00:22,27/11/2026 14:00:22,pichau-fonte-corsair-rm850e-850w-4601,RM850e,Fonte corsair rm850e 850w,Pichau,759.99,False
